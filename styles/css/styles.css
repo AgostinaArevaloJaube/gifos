@@ -11,8 +11,8 @@
 body {
   font-family: "Roboto", sans-serif;
   color: #572EE5;
-  -webkit-transition: 0.1s ease all;
-  transition: 0.1s ease all;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 body.darkMode {
@@ -26,8 +26,17 @@ body.darkMode {
   padding: 2% 10% 1.5% 10%;
   position: fixed;
   background-color: white;
-  -webkit-transition: 0.1s ease all;
-  transition: 0.1s ease all;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 1000;
 }
 
@@ -119,6 +128,49 @@ body.darkMode .navbar__link {
   color: white;
 }
 
+.navbarSearch__container {
+  width: 30%;
+  height: 60%;
+  padding: 1%;
+  border: 1px solid #572EE5;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+body.darkMode .navbarSearch__container {
+  border: 1px solid #fff;
+}
+
+.navbarSearch__container .navbarSearch__input {
+  width: 100%;
+  padding-left: 2%;
+  border: none;
+  color: #9CAFC3;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+.navbarSearch__container .navbarSearch__input:focus {
+  outline: none;
+}
+
+body.darkMode .navbarSearch__container .navbarSearch__input {
+  color: #9CAFC3;
+}
+
+.navbarSearch__container .navbarSearch__icon {
+  padding-right: 10px;
+}
+
 .hidden {
   display: none;
 }
@@ -131,10 +183,20 @@ body.darkMode .navbar__link {
   }
 }
 
+.hiddenSearchBar {
+  display: none;
+}
+
 .hero__container {
   padding: 5%;
   padding-top: 30%;
   text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .hero__container {
+    padding-top: 20%;
+  }
 }
 
 .hero__title {

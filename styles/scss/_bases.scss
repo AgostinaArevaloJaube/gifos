@@ -10,7 +10,7 @@
 body {
 	font-family: $primary-font;
 	color: $purple;
-	transition: 0.1s ease all;
+	transition: $transition;
 
 	&.darkMode {
 		background-color: $backgroundDark;

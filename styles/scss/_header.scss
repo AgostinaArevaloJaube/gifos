@@ -1,11 +1,13 @@
-
 .header__container {
 	width: 100%;
 	border-top: 5px solid $purple;
 	padding: 2% 10% 1.5% 10%;
 	position: fixed;
 	background-color: white;
-	transition: 0.1s ease all;
+	transition: $transition;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	z-index: 1000;
 
 	body.darkMode & {
@@ -13,7 +15,6 @@
 		border: none;
 	}
 }
-
 
 .navbar {
 	float: right;
@@ -88,10 +89,52 @@
 
 }
 
+.navbarSearch__container {
+	width: 30%;
+	height: 60%;
+	padding: 1%;
+	border: 1px solid $purple;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 2;
+
+	body.darkMode & {
+		border: 1px solid #fff;
+	}
+
+	.navbarSearch__input {
+		width: 100%;
+		padding-left: 2%;
+		border: none;
+		color: #9CAFC3 ;
+		background-color: transparent;
+		font-size: 12px;
+
+		&:focus {
+			outline: none;
+		}
+
+		body.darkMode & {
+			color: #9CAFC3 ;
+		}
+	}
+
+	.navbarSearch__icon {
+		padding-right: 10px;
+	}
+
+}
+
 .hidden {
 	display: none;
 
 	@media screen and (min-width: $tablet) {
 		display: flex;
 	}
+}
+
+.hiddenSearchBar {
+	display: none;
 }

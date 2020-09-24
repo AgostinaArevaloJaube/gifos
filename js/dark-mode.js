@@ -17,7 +17,8 @@ if (localStorage.getItem('dark-mode') === 'true') {
 	$switchThemeBtn.textContent = 'Modo Diurno';
 	$logo.src = 'assets/logo-mobile-modo-noct.svg';
 	$crearGifBtn.src = 'assets/CTA-crar-gifo-modo-noc.svg';
-	$burgerMenu.src = 'assets/burger-modo-noct.svg'
+	$burgerMenu.src = 'assets/burger-modo-noct.svg';
+	$navbarSearchIcon.src = 'assets/icon-search-mod-noc.svg'
 
 } else {
 	document.body.classList.remove('darkMode');
