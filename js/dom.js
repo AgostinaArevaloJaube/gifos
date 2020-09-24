@@ -9,3 +9,7 @@ const $logo = document.querySelector('#logo');
 
 const $switchThemeBtn = document.querySelector('#switchTheme');
 const $crearGifBtn = document.querySelector('#crateGifBtn');
+
+
+// DOM elements hero
+const $searchIcon = document.querySelector('#search-icon');

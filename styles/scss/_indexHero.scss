@@ -12,54 +12,97 @@
 
 .hero__title {
 	padding: 0 8% 5% 8%;
-	font-size: 26px;
+	font-size: 1.6em;
 	font-weight: 700;
 
 	.aqua-text {
 		color: $aqua;
 	}
+
+	@media screen and (min-width: $tablet) {
+		font-size: 2em;
+		max-width: 85%;
+		margin: 0 auto;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 2.5em;
+	}
 }
 
 .ilustra-header {
 	max-width: 90%;
+
+	@media screen and (min-width: $tablet) {
+		width: 60%;
+	}
+
 }
 
 .search__container {
 	margin: 0 auto;
-	padding: 10px;
 	border: 1px solid $purple;
 	border-radius: 20px;
+	padding: 10px;
 	position: relative;
 	top: -5px;
 	display: flex;
 	justify-content: space-between;
 	z-index: 2;
 
+	body.darkMode & {
+		border: 1px solid #fff;
+	}
+
 	.search__input {
 		width: 100%;
-		padding-left: 12%;
 		border: none;
-		color: #8f8f8f;
+		padding-left: 12%;
 		background-color: none;
+		font-family: $primary-font;
 		font-size: 16px;
+		color: $lightGray;
+		outline: none;
 
-		&:focus {
-			outline: none;
+		body.darkMode & {
+			background-color: transparent;
 		}
 	}
 
 	.search__icon {
 		padding-right: 5px;
 	}
+
+	@media screen and (min-width: $tablet) {
+		width: 55%;
+	}
+
+	@media screen and (min-width: $desktop) {
+		width: 75%;
+	}
 }
 
-.hero__subtitle {
-	padding: 5%;
-	font-weight: 700;
+.hero__trending {
+	font-family: $secondary-font;
+	font-weight: 500;
+	padding: 7% 0 2% 0;
+
+	.hero__subtitle {
+		padding-bottom: 2%;
+		font-size: 1em;
+	}
+
+	.trending_list {
+		display: flex;
+		justify-content: center;
+		gap: 4px;
+	}
+	
+	
+	.trending__item {
+		font-weight: 400;
+	}
+	
 }
 
-.hero__paragraph {
-	width: 70%;
-	margin: 0 auto;
-	margin-bottom: 5%;
-}
+

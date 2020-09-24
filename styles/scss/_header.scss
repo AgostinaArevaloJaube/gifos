@@ -72,6 +72,7 @@
 		margin: 0 auto;
 		display: block;
 		font-family: $secondary-font;
+		font-weight: 500;
 		font-size: 1em;
 		line-height: 3.5em;
 		letter-spacing: 0.5px;
@@ -86,7 +87,6 @@
 			color: white;
 		}
 	}
-
 }
 
 .navbarSearch__container {
@@ -106,25 +106,23 @@
 
 	.navbarSearch__input {
 		width: 100%;
-		padding-left: 2%;
+		padding-left: 12%;
 		border: none;
-		color: #9CAFC3 ;
-		background-color: transparent;
-		font-size: 12px;
-
-		&:focus {
-			outline: none;
-		}
+		color: $lightGray;
+		
+		font-family: $primary-font;
+		font-size: 14px;
+		outline: none;
 
 		body.darkMode & {
-			color: #9CAFC3 ;
+			color: #9cafc3;
+			background-color: transparent;
 		}
 	}
 
 	.navbarSearch__icon {
 		padding-right: 10px;
 	}
-
 }
 
 .hidden {

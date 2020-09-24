@@ -1,19 +1,20 @@
 // Fonts
 
 $primary-font: 'Roboto', sans-serif;
-$secondary-font:'Montserrat', sans-serif;;
+$secondary-font: 'Montserrat', sans-serif;
 
 // Color theme
 
-$purple: #572EE5;
-$aqua: #50E3C2;
-$white: #F3F5F8 ;
-$backgroundDark: #37383C;
+$purple: #572ee5;
+$aqua: #50e3c2;
+$white: #f3f5f8;
+$lightGray: #9cafc3;
+$backgroundDark: #37383c;
 $backgroundBlack: #222326;
 
 // Media Query
 
-$tablet: 800px;
+$tablet: 768px;
 $desktop: 1024px;
 
-$transition: .3s ease-in-out;
+$transition: 0.3s ease-in-out;
