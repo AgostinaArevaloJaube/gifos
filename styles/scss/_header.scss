@@ -1,0 +1,97 @@
+
+.header__container {
+	width: 100%;
+	border-top: 5px solid $purple;
+	padding: 2% 10% 1.5% 10%;
+	position: fixed;
+	background-color: white;
+	transition: 0.1s ease all;
+	z-index: 1000;
+
+	body.darkMode & {
+		background-color: $backgroundDark;
+		border: none;
+	}
+}
+
+
+.navbar {
+	float: right;
+
+	&__burguer {
+		cursor: pointer;
+		padding: 1rem;
+
+		@media screen and (min-width: $tablet) {
+			display: none;
+		}
+	}
+
+	.lines {
+		width: 12%;
+		margin: 0 auto;
+		border: 0.2px solid rgba(211, 211, 211, 0.493);
+
+		@media screen and (min-width: $tablet) {
+			display: none;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		height: 100vh;
+		padding: 0.5rem 0;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: transparentize($purple, 0.1);
+		text-align: center;
+
+		body.darkMode & {
+			background-color: $backgroundBlack;
+		}
+
+		@media screen and (min-width: $tablet) {
+			height: 100%;
+			position: relative;
+			top: 0;
+			right: 0;
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			background-color: transparent;
+
+			body.darkMode & {
+				background-color: transparent;
+			}
+		}
+	}
+
+	&__link {
+		margin: 0 auto;
+		display: block;
+		font-family: $secondary-font;
+		font-size: 1em;
+		line-height: 3.5em;
+		letter-spacing: 0.5px;
+		color: #fff;
+
+		@media screen and (min-width: $tablet) {
+			color: $purple;
+			text-transform: uppercase;
+		}
+
+		body.darkMode & {
+			color: white;
+		}
+	}
+
+}
+
+.hidden {
+	display: none;
+
+	@media screen and (min-width: $tablet) {
+		display: flex;
+	}
+}

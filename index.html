@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- fonts -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,900;1,400&family=Roboto:ital,wght@0,400;0,700;0,900;1,500&display=swap"
+		rel="stylesheet">
+
+	<!-- icon -->
+	<link rel="icon" href="assets/logo-mobile.svg">
+
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+		integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+
+	<!-- styles -->
+	<link rel="stylesheet" href="styles/css/styles.css">
+
+	<title>GIFOS</title>
+</head>
+
+<body>
+
+	<header class="header__container" id="header__container">
+
+
+		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-mobile.svg"
+				alt="Logo"></a>
+
+		<nav class="navbar">
+
+			<img src="assets/burger.svg" alt="Menu hamburguesa" class="navbar__burguer" id="navbar__burger">
+
+			<!-- ! LINKEAR -->
+			<ul class="navbar__list hidden" id="navbar__list">
+				<li class="navbar__list__item"><a class="navbar__link" href="" id="switchTheme">Modo Nocturno</a></li>
+				<hr class="lines">
+				<li class="navbar__list__item"><a class="navbar__link" href="#">Favoritos</a></li>
+				<hr class="lines">
+				<li class="navbar__list__item"><a class="navbar__link" href="#">Mis GIFOS</a></li>
+				<hr class="lines">
+				<li class="navbar__list__item hidden">
+					<a href="#">
+						<img class="navbar__createGif" id="crateGifBtn" src="assets/button-crear-gifo.svg" alt="">
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<!-- Main -->
+	<main class="hero__container">
+		<section class="heading__container">
+			<h1 class="hero__title">
+				Inspírate, busca, guarda y crea los mejores
+				<span class="aqua-text">GIFOS</span>
+			</h1>
+
+			<section>
+				<img class="ilustra-header" src="assets/ilustra_header.svg" alt="" />
+
+				<section class="search__container">
+					<input class="search__input" id="searcInput" type="text" name="" id="" value="Busca GIFOS y más">
+					<a href="">
+						<img class="search__icon" id="search-icon" src="assets/icon-search.svg" alt="">
+					</a>
+				</section>
+
+			</section>
+
+			<p class="hero__subtitle">
+				Trending:
+			</p>
+			<p class="hero__paragraph">
+				Reactions, Entertainment, Sports, Stickers,
+				Artists
+			</p>
+		</section>
+
+	</main>
+
+
+
+	<!-- Trending -->
+	<section class="container trending__background">
+		<h2 class="trending__title">Trending GIFOS</h2>
+		<p class="trending__paragraph">Mira los últimos GIFOS de nuestra comunidad</p>
+
+		<article class="tranding__container">
+
+			<!-- placeholder -->
+			<img src="assets/" alt="">
+			<img src="" alt="">
+
+		</article>
+
+	</section>
+
+
+	<!-- Footer -->
+	<footer class="footer">
+		<article>
+			<p class="footer_paragraph">Compartir en:</p>
+			<a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+			<a href="twitter.com"><i class="fab fa-twitter"></i></a>
+			<a href="instagram.com"><i class="fab fa-instagram"></i></a>
+		</article>
+
+
+		<p class="footer_paragraph">© GIFOS 2020 All Rights Reserved.</p>
+	</footer>
+
+	<div class="decoration-line"></div>
+
+
+	<script src="js/dom.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/dark-mode.js"></script>
+
+</body>
+
+</html>

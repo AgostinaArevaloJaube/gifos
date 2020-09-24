@@ -1,0 +1,61 @@
+// Mobile diurno
+
+.hero__container {
+	padding: 5%;
+	padding-top: 30%;
+	text-align: center;
+}
+
+.hero__title {
+	padding: 0 8% 5% 8%;
+	font-size: 26px;
+	font-weight: 700;
+
+	.aqua-text {
+		color: $aqua;
+	}
+}
+
+.ilustra-header {
+	max-width: 90%;
+}
+
+.search__container {
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid $purple;
+	border-radius: 20px;
+	position: relative;
+	top: -5px;
+	display: flex;
+	justify-content: space-between;
+	z-index: 2;
+
+	.search__input {
+		width: 100%;
+		padding-left: 12%;
+		border: none;
+		color: #8f8f8f;
+		background-color: none;
+		font-size: 16px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.search__icon {
+		padding-right: 5px;
+	}
+}
+
+.hero__subtitle {
+	padding: 5%;
+	font-weight: 700;
+}
+
+.hero__paragraph {
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 5%;
+}
