@@ -1,22 +1,25 @@
+// muestra el menu hamburguesa y lo setea de acuerdo al theme elegido
 const displayBurgerMenu = () => {
 	if (localStorage.getItem('dark-mode') === 'true') {
-		if ($navbar__list.classList.contains('hidden')) {
-			$navbar__list.classList.remove('hidden');
+		if ($navbarList.classList.contains('hidden')) {
+			$navbarList.classList.remove('hidden');
 			$burgerMenu.src = 'assets/close-modo-noct.svg';
 		} else {
-			$navbar__list.classList.add('hidden');
+			$navbarList.classList.add('hidden');
 			$burgerMenu.src = 'assets/burger-modo-noct.svg';
 		}
 	} else {
-		if ($navbar__list.classList.contains('hidden')) {
-			$navbar__list.classList.remove('hidden');
+		if ($navbarList.classList.contains('hidden')) {
+			$navbarList.classList.remove('hidden');
 			$burgerMenu.src = 'assets/close.svg';
 		} else {
-			$navbar__list.classList.add('hidden');
+			$navbarList.classList.add('hidden');
 			$burgerMenu.src = 'assets/burger.svg';
 		}
 	}
 };
+
+// Navbar Events
 $burgerMenu.addEventListener('click', displayBurgerMenu);
 
 $crearGifBtn.addEventListener('click', () => {
@@ -31,16 +34,7 @@ $crearGifBtn.addEventListener('mouseout', () => {
 	$crearGifBtn.src = 'assets/button-crear-gifo.svg';
 });
 
-// TODO displayBurgerMenu original, sin tener en cuenta el modo nocturno. Lo dejo por si tengo que cambiarlo.
-// if ($navbar__list.classList.contains('hidden')) {
-// 	$navbar__list.classList.remove('hidden');
-// 	$burgerMenu.src = 'assets/close.svg';
-
-// } else {
-// 	$navbar__list.classList.add('hidden');
-// 	$burgerMenu.src = 'assets/burger.svg';
-// }
-
+// Navbar Sticky
 function stickyNav() {
 	if (document.documentElement.scrollTop > 100) {
 		if (window.innerWidth < 1024) {

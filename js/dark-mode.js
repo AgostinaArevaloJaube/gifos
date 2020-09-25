@@ -1,6 +1,6 @@
+// Switch Theme Event
 
-
-$switchThemeBtn.addEventListener('click', () => {
+const switchTheme = () => {
 	document.body.classList.toggle('darkMode');
 
 	// Guarda la elección en el localStorage
@@ -9,9 +9,12 @@ $switchThemeBtn.addEventListener('click', () => {
 	} else {
 		localStorage.setItem('dark-mode', false);
 	}
-});
+}
+
+$switchThemeBtn.addEventListener('click', switchTheme);
 
 // consulta cual es el modo elegido y setea las propiedades nocturnas
+const setLocalStorageTheme = () => {
 if (localStorage.getItem('dark-mode') === 'true') {
 	document.body.classList.add('darkMode');
 	$switchThemeBtn.textContent = 'Modo Diurno';
@@ -25,6 +28,9 @@ if (localStorage.getItem('dark-mode') === 'true') {
 	document.body.classList.remove('darkMode');
 	$switchThemeBtn.textContent = 'Modo Nocturno';
 }
+}
+
+setLocalStorageTheme();
 
 
 
