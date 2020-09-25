@@ -1,19 +1,19 @@
 // muestra el menu hamburguesa y lo setea de acuerdo al theme elegido
 const displayBurgerMenu = () => {
 	if (localStorage.getItem('dark-mode') === 'true') {
-		if ($navbarList.classList.contains('hidden')) {
-			$navbarList.classList.remove('hidden');
+		if ($navbarList.classList.contains('hiddenMenu')) {
+			$navbarList.classList.remove('hiddenMenu');
 			$burgerMenu.src = 'assets/close-modo-noct.svg';
 		} else {
-			$navbarList.classList.add('hidden');
+			$navbarList.classList.add('hiddenMenu');
 			$burgerMenu.src = 'assets/burger-modo-noct.svg';
 		}
 	} else {
-		if ($navbarList.classList.contains('hidden')) {
-			$navbarList.classList.remove('hidden');
+		if ($navbarList.classList.contains('hiddenMenu')) {
+			$navbarList.classList.remove('hiddenMenu');
 			$burgerMenu.src = 'assets/close.svg';
 		} else {
-			$navbarList.classList.add('hidden');
+			$navbarList.classList.add('hiddenMenu');
 			$burgerMenu.src = 'assets/burger.svg';
 		}
 	}

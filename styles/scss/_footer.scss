@@ -1,0 +1,51 @@
+.footer {
+	text-align: center;
+	max-height: 20vh;
+	margin-bottom: 1px;
+
+	&__paragraph {
+		color: black;
+		padding: 30px;
+
+		body.darkMode & {
+			color: #fff;
+		}
+
+		@media screen and (min-width: $tablet) {
+			padding: 0;
+		}
+	}
+
+	.socialmedia {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+
+		.socialmedia__item {
+			width: 2rem;
+			text-decoration: none;
+			color: rgb(172, 172, 172);
+
+			&:hover {
+				color: $purple;
+				width: 2.5rem;
+
+				body.darkMode & {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: $tablet) {
+		height: 15vh;
+		padding: 4rem 8rem 4rem 8rem;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 5px solid $purple;
+
+		.footer__socialmediaContainer {
+			display: flex;
+		}
+	}
+}

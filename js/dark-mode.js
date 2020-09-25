@@ -23,6 +23,8 @@ if (localStorage.getItem('dark-mode') === 'true') {
 	$burgerMenu.src = 'assets/burger-modo-noct.svg';
 	$navbarSearchIcon.src = 'assets/icon-search-mod-noc.svg';
 	$searchIcon.src = 'assets/icon-search-mod-noc.svg';
+	$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
+	$nextBtn.src = 'assets/button-slider-right-md-noct.svg';
 
 } else {
 	document.body.classList.remove('darkMode');

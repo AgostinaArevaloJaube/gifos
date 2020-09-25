@@ -31,29 +31,27 @@
 		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-mobile.svg"
 				alt="Logo"></a>
 
-		<section class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
-			<input class="navbarSearch__input" id="NavbarSearchInput" type="text" name="" id=""
-				placeholder="Busca GIFOS y más">
+		<form class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
+			<input class="navbarSearch__input" id="NavbarSearchInput" type="text" placeholder="Busca GIFOS y más">
 			<a href="">
 				<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
 			</a>
-		</section>
+		</form>
 
 		<nav class="navbar">
 
 			<img src="assets/burger.svg" alt="Menu hamburguesa" class="navbar__burguer" id="navbar__burger">
 
 
-
 			<!-- ! LINKEAR -->
-			<ul class="navbar__list hidden" id="navbar__list">
+			<ul class="navbar__list hiddenMenu" id="navbar__list">
 				<li class="navbar__list__item"><a class="navbar__link" href="" id="switchTheme">Modo Nocturno</a></li>
 				<hr class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Favoritos</a></li>
 				<hr class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Mis GIFOS</a></li>
 				<hr class="lines">
-				<li class="navbar__list__item hidden">
+				<li class="navbar__list__item hiddenMenu">
 					<a href="#">
 						<img class="navbar__createGif" id="crateGifBtn" src="assets/button-crear-gifo.svg" alt="">
 					</a>
@@ -74,13 +72,12 @@
 			<section>
 				<img class="ilustra-header" src="assets/ilustra_header.svg" alt="" />
 
-				<section class="search__container">
-					<input class="search__input" id="searchInput" type="text" name="" id=""
-						placeholder="Busca GIFOS y más">
+				<form class="search__container">
+					<input class="search__input" id="searchInput" type="text" placeholder="Busca GIFOS y más">
 					<a href="">
 						<img class="search__icon" id="search-icon" src="assets/icon-search.svg" alt="">
 					</a>
-				</section>
+				</form>
 
 			</section>
 
@@ -88,32 +85,81 @@
 			<article class="hero__trending">
 				<h4 class="hero__subtitle">Trending:</h4>
 
-				<article class="trending_list">
-					<p class="trending__item">Reactions,</p>
-					<p class="trending__item">Entretainment,</p>
-					<p class="trending__item">Sports,</p>
-					<p class="trending__item">Stickers,</p>
-					<p class="trending__item">Artists</p>
-				</article>
+				<p class="trending_list">
+					<span class="trending__item">Reactions,</span>
+					<span class="trending__item">Entretainment,</span>
+					<span class="trending__item">Sports,</span>
+					<span class="trending__item">Stickers,</span>
+					<span class="trending__item">Artists</span>
+				</p>
 
 			</article>
 		</section>
 
 	</main>
 
+	<!-- Resultados de la búsqueda -->
+	<!-- <section id="searchResult">
+
+			<h4 class="searchResult__title"></h4>
+			<section class="searchResult__gallery"> </section>
+			
+		<a href="" class="verMasBtn"><img src="" alt=""> Ver Mas</a>
+	</section> -->
 
 
 	<!-- Trending -->
-	<section class="container trending__background">
+	<section class="trending">
 		<h2 class="trending__title">Trending GIFOS</h2>
 		<p class="trending__paragraph">Mira los últimos GIFOS de nuestra comunidad</p>
 
-		<article class="tranding__container">
+		<article class="trending__container">
 
-			<!-- placeholder -->
-			<img src="assets/" alt="">
-			<img src="" alt="">
+			<!-- flecha -->
+			<div class="previous-btn arrows">
+				<img src="assets/button-slider-left.svg" alt="" id="previous-btn">
+			</div>
 
+			<!-- trending gif sliders -->
+			<div class="trending__slider-container">
+
+				<div class="trending__slider">
+
+					<div class="trending__gif">
+						<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+							alt="Lmao Lol GIF by Originals" class="gif">
+						<div class="gifActions">
+							<div class="gifActions__btn"></div>
+							<div class="gifActions__info"></div>
+						</div>
+
+					</div>
+
+					<div class="trending__gif">
+						<img src="https://media0.giphy.com/media/1yiNjCj4GtYJWmSEpA/giphy.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy.gif"
+							alt="Way To Go Thank You GIF by Dirty Bandits" class="gif">
+						<div class="gifActions">
+							<div class="gifActions__btn"></div>
+							<div class="gifActions__info"></div>
+						</div>
+					</div>
+
+					<div class="trending__gif">
+						<img src="https://media0.giphy.com/media/3o7527pa7qs9kCG78A/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+							alt="Confused What Is It GIF by Nebraska Humane Society" class="gif">
+						<div class="gifActions">
+							<div class="gifActions__btn"></div>
+							<div class="gifActions__info"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- flecha -->
+			<div class="next-btn arrows">
+				<img src="assets/Button-Slider-right.svg" alt="" id="next-btn">
+			</div>
 		</article>
 
 	</section>
@@ -121,23 +167,23 @@
 
 	<!-- Footer -->
 	<footer class="footer">
-		<article>
-			<p class="footer_paragraph">Compartir en:</p>
-			<a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
-			<a href="twitter.com"><i class="fab fa-twitter"></i></a>
-			<a href="instagram.com"><i class="fab fa-instagram"></i></a>
-		</article>
 
+		<div class="footer__socialmediaContainer">
+			<p class="footer__paragraph">Compartir en:</p>
+			<section class="socialmedia">
+				<a class="socialmedia__item" href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+				<a class="socialmedia__item" href="twitter.com"><i class="fab fa-twitter"></i></a>
+				<a class="socialmedia__item" href="instagram.com"><i class="fab fa-instagram"></i></a>
+			</section>
+		</div>
+		<p class="footer__paragraph">© GIFOS 2020 All Rights Reserved.</p>
 
-		<p class="footer_paragraph">© GIFOS 2020 All Rights Reserved.</p>
 	</footer>
-
-	<div class="decoration-line"></div>
-
 
 	<script src="js/dom.js"></script>
 	<script src="js/navbar.js"></script>
 	<script src="js/dark-mode.js"></script>
+	<script src="js/trending.js"></script>
 
 </body>
 

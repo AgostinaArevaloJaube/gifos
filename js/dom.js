@@ -13,3 +13,7 @@ const $crearGifBtn = document.querySelector('#crateGifBtn');
 
 // DOM elements hero
 const $searchIcon = document.querySelector('#search-icon');
+
+// DOM elements tranding 
+const $previousBtn = document.querySelector('#previous-btn')
+const $nextBtn = document.querySelector('#next-btn');
