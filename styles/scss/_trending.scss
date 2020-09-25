@@ -1,0 +1,50 @@
+.trending {
+	padding: 15%;
+	background-color: #f3f5f8;
+	text-align: center;
+
+	body.darkMode & {
+		background-color: $backgroundBlack;
+	}
+
+	&__title {
+		margin: 10px;
+		font-family: $secondary-font;
+		font-weight: 500;
+	}
+
+	&__paragraph {
+		margin: 10px;
+		color: #000;
+
+		body.darkMode & {
+			color: #fff;
+		}
+	}
+
+	&__container {
+		display: flex;
+		// justify-content: center;
+		align-items: center;
+		overflow: scroll;
+
+		@media screen and (min-width: $tablet) {
+			overflow: visible;
+		}
+	}
+
+	.trending__slider {
+		display: flex;
+	}
+
+}
+
+.gif {
+	width: 23rem;
+	height: 18rem;
+	padding: 1rem;
+}
+
+.arrows {
+	padding: 1rem;
+}
