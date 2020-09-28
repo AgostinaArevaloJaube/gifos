@@ -9,30 +9,26 @@ const switchTheme = () => {
 	} else {
 		localStorage.setItem('dark-mode', false);
 	}
-}
+};
 
 $switchThemeBtn.addEventListener('click', switchTheme);
 
 // consulta cual es el modo elegido y setea las propiedades nocturnas
 const setLocalStorageTheme = () => {
-if (localStorage.getItem('dark-mode') === 'true') {
-	document.body.classList.add('darkMode');
-	$switchThemeBtn.textContent = 'Modo Diurno';
-	$logo.src = 'assets/logo-mobile-modo-noct.svg';
-	$crearGifBtn.src = 'assets/CTA-crar-gifo-modo-noc.svg';
-	$burgerMenu.src = 'assets/burger-modo-noct.svg';
-	$navbarSearchIcon.src = 'assets/icon-search-mod-noc.svg';
-	$searchIcon.src = 'assets/icon-search-mod-noc.svg';
-	$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
-	$nextBtn.src = 'assets/button-slider-right-md-noct.svg';
-
-} else {
-	document.body.classList.remove('darkMode');
-	$switchThemeBtn.textContent = 'Modo Nocturno';
-}
-}
+	if (localStorage.getItem('dark-mode') == 'true') {
+		document.body.classList.add('darkMode');
+		$switchThemeBtn.textContent = 'Modo Diurno';
+		$logo.src = 'assets/logo-mobile-modo-noct.svg';
+		$crearGifBtn.src = 'assets/CTA-crar-gifo-modo-noc.svg';
+		$burgerMenu.src = 'assets/burger-modo-noct.svg';
+		$navbarSearchIcon.src = 'assets/icon-search-mod-noc.svg';
+		$searchBtn.src = 'assets/icon-search-mod-noc.svg';
+		$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
+		$nextBtn.src = 'assets/button-slider-right-md-noct.svg';
+	} else {
+		document.body.classList.remove('darkMode');
+		$switchThemeBtn.textContent = 'Modo Nocturno';
+	}
+};
 
 setLocalStorageTheme();
-
-
-

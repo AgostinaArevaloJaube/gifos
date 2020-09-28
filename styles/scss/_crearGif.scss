@@ -1,0 +1,36 @@
+@media screen and (min-width: $desktop) {
+	.crearGif {
+		padding-top: 150px;
+		position: relative;
+
+		.crearGif__container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.crearGif__camara {
+				margin: 0 auto;
+				max-width: 15%;
+				position: relative;
+	
+				.path {
+					position: absolute;
+					top: 19px;
+				}
+			}
+	
+			.crearGif__recordingZone {
+				margin: 0 auto;
+				width: 50%;
+				height: 25rem;
+				border: 1px solid $purple;
+			}
+	
+			// .crearGif__celluloidFilm {
+			// 	max-width: 25%;
+			// }
+		}
+
+		
+	}
+}

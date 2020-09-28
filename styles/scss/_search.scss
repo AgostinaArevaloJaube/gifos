@@ -1,0 +1,30 @@
+.searchResult {
+
+	.search-line {
+		margin: 0 auto;
+	 	width: 20%;
+	}
+
+	&__title {
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+		font-family: $secondary-font;
+		font-weight: 600;
+		font-size: 1.8em;
+		text-align: center;
+	}
+
+	&__gallery {
+		margin: 0 auto;
+		width: 80%;
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-evenly;
+		align-items: center;
+
+		@media screen and (min-width: $tablet) {
+			flex-direction: row;
+		}
+	}
+
+}

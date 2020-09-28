@@ -7,6 +7,7 @@ const displayBurgerMenu = () => {
 		} else {
 			$navbarList.classList.add('hiddenMenu');
 			$burgerMenu.src = 'assets/burger-modo-noct.svg';
+
 		}
 	} else {
 		if ($navbarList.classList.contains('hiddenMenu')) {

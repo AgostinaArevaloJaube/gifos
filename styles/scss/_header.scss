@@ -16,6 +16,16 @@
 	}
 }
 
+.logo__link {
+	.logo__imagen {
+		width: 3rem;
+
+		@media screen and (min-width: $tablet) {
+			width: 3.7rem;
+		}
+	}
+}
+
 .navbar {
 	float: right;
 
@@ -69,6 +79,7 @@
 	}
 
 	&__link {
+		width: 100%;
 		margin: 0 auto;
 		display: block;
 		font-family: $secondary-font;
@@ -79,8 +90,20 @@
 		color: #fff;
 
 		@media screen and (min-width: $tablet) {
+			width: fit-content;
+			padding-top: 1rem;
+			line-height: 1.5rem;
 			color: $purple;
 			text-transform: uppercase;
+
+			&:hover {
+				border-bottom: 2px solid $aqua;
+			}
+
+			&:active {
+				color: $lightGray;
+				border-bottom: hidden;
+			}
 		}
 
 		body.darkMode & {
@@ -109,7 +132,7 @@
 		padding-left: 12%;
 		border: none;
 		color: $lightGray;
-		
+
 		font-family: $primary-font;
 		font-size: 14px;
 		outline: none;

@@ -28,7 +28,7 @@
 	<header class="header__container" id="header__container">
 
 
-		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-mobile.svg"
+		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-desktop.svg"
 				alt="Logo"></a>
 
 		<form class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
@@ -43,16 +43,15 @@
 			<img src="assets/burger.svg" alt="Menu hamburguesa" class="navbar__burguer" id="navbar__burger">
 
 
-			<!-- ! LINKEAR -->
 			<ul class="navbar__list hiddenMenu" id="navbar__list">
-				<li class="navbar__list__item"><a class="navbar__link" href="" id="switchTheme">Modo Nocturno</a></li>
+				<li class="navbar__list__item"><a class="navbar__link" id="switchTheme">Modo Nocturno</a></li>
 				<hr class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Favoritos</a></li>
 				<hr class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Mis GIFOS</a></li>
 				<hr class="lines">
 				<li class="navbar__list__item hiddenMenu">
-					<a href="#">
+					<a href="crear-gif.html">
 						<img class="navbar__createGif" id="crateGifBtn" src="assets/button-crear-gifo.svg" alt="">
 					</a>
 				</li>
@@ -72,14 +71,19 @@
 			<section>
 				<img class="ilustra-header" src="assets/ilustra_header.svg" alt="" />
 
-				<form class="search__container">
+				<section class="search__container">
 					<input class="search__input" id="searchInput" type="text" placeholder="Busca GIFOS y más">
 					<a href="">
 						<img class="search__icon" id="search-icon" src="assets/icon-search.svg" alt="">
 					</a>
-				</form>
-
+				</section>
 			</section>
+
+			<div>
+				<ul>
+
+				</ul>
+			</div>
 
 
 			<article class="hero__trending">
@@ -99,13 +103,58 @@
 	</main>
 
 	<!-- Resultados de la búsqueda -->
-	<!-- <section id="searchResult">
+	<section class="searchResult" id="searchResult">
 
-			<h4 class="searchResult__title"></h4>
-			<section class="searchResult__gallery"> </section>
-			
-		<a href="" class="verMasBtn"><img src="" alt=""> Ver Mas</a>
-	</section> -->
+		<hr class="search-line">
+		<h4 class="searchResult__title" id="searchResult__title"></h4>
+		<section class="searchResult__gallery" id="searchResult_gallery">
+
+
+
+			<!-- <div class="gif__container">
+				<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+					alt="Lmao Lol GIF by Originals" class="gif">
+			</div>
+			<div class="gif__container">
+				<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+					alt="Lmao Lol GIF by Originals" class="gif">
+			</div>
+			<div class="gif__container">
+				<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+					alt="Lmao Lol GIF by Originals" class="gif">
+			</div>
+			<div class="gif__container">
+				<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+					alt="Lmao Lol GIF by Originals" class="gif">
+			</div>
+			<div class="gif__container">
+				<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+					alt="Lmao Lol GIF by Originals" class="gif">
+			</div>
+			<div class="gif__container">
+				<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
+					alt="Lmao Lol GIF by Originals" class="gif">
+			</div>
+ -->
+
+			<!-- <div class="gifActions">
+						<div class="gifActions__btn">
+							<img src="assets/icon-fav.svg" class="favorite"
+								alt="Botón para agregar a mis favoritos">
+							<img src="assets/icon-download.svg" class="download" alt="Botón para descargar">
+							<img src="assets/icon-max-normal.svg" class="maximize" alt="Botón para maximizar">
+						</div>
+						<div class="gif__info">
+							<p class="gif_user">User</p>
+							<p class="gif_title">Titulo Gif</p>
+						</div> -->
+			</div>
+		</section>
+
+
+
+		<a href="" class="verMasBtn">Ver Mas</a>
+	</section>
 
 
 	<!-- Trending -->
@@ -117,7 +166,7 @@
 
 			<!-- flecha -->
 			<div class="previous-btn arrows">
-				<img src="assets/button-slider-left.svg" alt="" id="previous-btn">
+				<img src="assets/button-slider-left.svg" alt="Flecha Previous" id="previous-btn">
 			</div>
 
 			<!-- trending gif sliders -->
@@ -125,40 +174,31 @@
 
 				<div class="trending__slider">
 
-					<div class="trending__gif">
+					<div class="gif__container">
 						<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
 							alt="Lmao Lol GIF by Originals" class="gif">
 						<div class="gifActions">
-							<div class="gifActions__btn"></div>
-							<div class="gifActions__info"></div>
+							<div class="gifActions__btn">
+								<img src="assets/icon-fav.svg" class="favorite"
+									alt="Botón para agregar a mis favoritos">
+								<img src="assets/icon-download.svg" class="download" alt="Botón para descargar">
+								<img src="assets/icon-max-normal.svg" class="maximize" alt="Botón para maximizar">
+							</div>
+							<div class="gif__info">
+								<p class="gif_user">User</p>
+								<p class="gif_title">Titulo Gif</p>
+							</div>
 						</div>
 
 					</div>
 
-					<div class="trending__gif">
-						<img src="https://media0.giphy.com/media/1yiNjCj4GtYJWmSEpA/giphy.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy.gif"
-							alt="Way To Go Thank You GIF by Dirty Bandits" class="gif">
-						<div class="gifActions">
-							<div class="gifActions__btn"></div>
-							<div class="gifActions__info"></div>
-						</div>
-					</div>
-
-					<div class="trending__gif">
-						<img src="https://media0.giphy.com/media/3o7527pa7qs9kCG78A/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
-							alt="Confused What Is It GIF by Nebraska Humane Society" class="gif">
-						<div class="gifActions">
-							<div class="gifActions__btn"></div>
-							<div class="gifActions__info"></div>
-						</div>
-					</div>
 				</div>
 
 			</div>
 
 			<!-- flecha -->
 			<div class="next-btn arrows">
-				<img src="assets/Button-Slider-right.svg" alt="" id="next-btn">
+				<img src="assets/Button-Slider-right.svg" alt="Flecha Next" id="next-btn">
 			</div>
 		</article>
 
@@ -181,8 +221,9 @@
 	</footer>
 
 	<script src="js/dom.js"></script>
-	<script src="js/navbar.js"></script>
 	<script src="js/dark-mode.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/api.js"></script>
 	<script src="js/trending.js"></script>
 
 </body>

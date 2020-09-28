@@ -1,0 +1,38 @@
+.gif__container {
+	position: relative;
+
+	.gif {
+		width: 10rem;
+		height: 8rem;
+	}
+
+	@media screen and (min-width: $tablet) {
+		.gif {
+			width: 17rem;
+			height: 13rem;
+		}
+		.gifActions {
+			width: 17rem;
+			height: 13rem;
+			padding: 1rem;
+			position: absolute;
+			top: 0;
+			background-color: $purpleTransparency;
+		}
+
+		.gifActions__btn {
+			padding: 4%;
+			position: absolute;
+			right: 0;
+		}
+
+		.gif__info {
+			position: absolute;
+			left: 8%;
+			bottom: 15%;
+			font-weight: 500;
+			text-align: left;
+			color: #fff;
+		}
+	}
+}

@@ -49,6 +49,16 @@ body.darkMode .header__container {
   border: none;
 }
 
+.logo__link .logo__imagen {
+  width: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .logo__link .logo__imagen {
+    width: 3.7rem;
+  }
+}
+
 .navbar {
   float: right;
 }
@@ -112,6 +122,7 @@ body.darkMode .navbar__list {
 }
 
 .navbar__link {
+  width: 100%;
   margin: 0 auto;
   display: block;
   font-family: "Montserrat", sans-serif;
@@ -124,8 +135,20 @@ body.darkMode .navbar__list {
 
 @media screen and (min-width: 768px) {
   .navbar__link {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-top: 1rem;
+    line-height: 1.5rem;
     color: #572ee5;
     text-transform: uppercase;
+  }
+  .navbar__link:hover {
+    border-bottom: 2px solid #50e3c2;
+  }
+  .navbar__link:active {
+    color: #9cafc3;
+    border-bottom: hidden;
   }
 }
 
@@ -302,6 +325,45 @@ body.darkMode .search__container .search__input {
   font-weight: 400;
 }
 
+.searchResult .search-line {
+  margin: 0 auto;
+  width: 20%;
+}
+
+.searchResult__title {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.searchResult__gallery {
+  margin: 0 auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .searchResult__gallery {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .trending {
   padding: 15%;
   background-color: #f3f5f8;
@@ -331,6 +393,9 @@ body.darkMode .trending__paragraph {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -339,7 +404,7 @@ body.darkMode .trending__paragraph {
 
 @media screen and (min-width: 768px) {
   .trending__container {
-    overflow: visible;
+    overflow: hidden;
   }
 }
 
@@ -347,12 +412,6 @@ body.darkMode .trending__paragraph {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.gif {
-  width: 23rem;
-  height: 18rem;
-  padding: 1rem;
 }
 
 .arrows {
@@ -422,6 +481,76 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .crearGif {
+    padding-top: 150px;
+    position: relative;
+  }
+  .crearGif .crearGif__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .crearGif .crearGif__container .crearGif__camara {
+    margin: 0 auto;
+    max-width: 15%;
+    position: relative;
+  }
+  .crearGif .crearGif__container .crearGif__camara .path {
+    position: absolute;
+    top: 19px;
+  }
+  .crearGif .crearGif__container .crearGif__recordingZone {
+    margin: 0 auto;
+    width: 50%;
+    height: 25rem;
+    border: 1px solid #572ee5;
+  }
+}
+
+.gif__container {
+  position: relative;
+}
+
+.gif__container .gif {
+  width: 10rem;
+  height: 8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .gif__container .gif {
+    width: 17rem;
+    height: 13rem;
+  }
+  .gif__container .gifActions {
+    width: 17rem;
+    height: 13rem;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    background-color: rgba(87, 46, 229, 0.6);
+  }
+  .gif__container .gifActions__btn {
+    padding: 4%;
+    position: absolute;
+    right: 0;
+  }
+  .gif__container .gif__info {
+    position: absolute;
+    left: 8%;
+    bottom: 15%;
+    font-weight: 500;
+    text-align: left;
+    color: #fff;
   }
 }
 /*# sourceMappingURL=styles.css.map */
