@@ -1,27 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="63px" height="60px" viewBox="0 0 63 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
-    <title>logo-desktop</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <polygon id="path-1" points="0.494619458 0.526112695 58.2715334 0.526112695 58.2715334 24.1695652 0.494619458 24.1695652"></polygon>
-    </defs>
-    <g id="GIFOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="00-UI-Kit" transform="translate(-156.000000, -2463.000000)">
-            <g id="logo-desktop" transform="translate(156.000000, 2463.000000)">
-                <g id="Group-5">
-                    <polygon id="Fill-1" fill="#5ED7C6" points="0 -0.0002 0 59.1084314 59.1086314 59.1084314 59.1086314 46.4422961 54.8865863 46.4422961 54.8865863 54.8863863 4.2220451 54.8863863 4.2220451 4.2218451 42.220451 4.2218451 42.220451 16.8879804 54.8865863 16.8879804 54.8865863 25.332915 59.1086314 25.332915 59.1086314 12.6659353 46.4424961 -0.0002"></polygon>
-                    <g id="Group-4" transform="translate(9.000000, 20.000000)">
-                        <mask id="mask-2" fill="white">
-                            <use xlink:href="#path-1"></use>
-                        </mask>
-                        <g id="Clip-3"></g>
-                        <text id="GIFOS" mask="url(#mask-2)" font-family="Roboto-Black, Roboto" font-size="18" font-weight="700" fill="#572EE5">
-                            <tspan x="3" y="21">GIFOS</tspan>
-                        </text>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 63 60" style="enable-background:new 0 0 63 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#5ED7C6;}
+	.st1{filter:url(#Adobe_OpacityMaskFilter);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st3{mask:url(#mask-2_1_);enable-background:new    ;}
+	.st4{fill:#572EE5;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="GIFOS_1_">
+	<g id="_x30_0-UI-Kit" transform="translate(-156.000000, -2463.000000)">
+		<g id="logo-desktop" transform="translate(156.000000, 2463.000000)">
+			<g id="Group-5">
+				<polygon id="Fill-1" class="st0" points="0,0 0,59.1 59.1,59.1 59.1,46.4 54.9,46.4 54.9,54.9 4.2,54.9 4.2,4.2 42.2,4.2 
+					42.2,16.9 54.9,16.9 54.9,25.3 59.1,25.3 59.1,12.7 46.4,0 				"/>
+				<g id="Group-4" transform="translate(9.000000, 20.000000)">
+					<g id="Clip-3">
+					</g>
+					<defs>
+						<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="3.8" y="8" width="49.4" height="13.1">
+							<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+						</filter>
+					</defs>
+					<mask maskUnits="userSpaceOnUse" x="3.8" y="8" width="49.4" height="13.1" id="mask-2_1_">
+						<g class="st1">
+							<polygon id="path-1_1_" class="st2" points="0.5,0.5 58.3,0.5 58.3,24.2 0.5,24.2 							"/>
+						</g>
+					</mask>
+					<g class="st3">
+						<path class="st4" d="M14.3,19.4c-0.5,0.6-1.1,1-2,1.3c-0.9,0.3-1.8,0.5-2.9,0.5c-1.1,0-2.1-0.2-2.9-0.7
+							C5.6,20,5,19.3,4.5,18.3s-0.7-2-0.7-3.2v-0.9c0-1.3,0.2-2.4,0.6-3.3C4.9,10,5.5,9.3,6.3,8.8C7.1,8.3,8.1,8,9.2,8
+							c1.5,0,2.7,0.4,3.6,1.1s1.4,1.8,1.5,3.2h-2.6c-0.1-0.7-0.4-1.3-0.8-1.6s-1-0.5-1.7-0.5c-0.9,0-1.6,0.3-2,1s-0.7,1.7-0.7,3V15
+							c0,1.3,0.3,2.4,0.8,3s1.3,1,2.2,1c1,0,1.7-0.2,2.1-0.6v-2.2H9.2v-1.9h5V19.4z"/>
+						<path class="st4" d="M19.2,21h-2.6V8.2h2.6V21z"/>
+						<path class="st4" d="M29.3,15.8h-5.1V21h-2.6V8.2H30v2.1h-5.7v3.3h5.1V15.8z"/>
+						<path class="st4" d="M42,14.9c0,1.3-0.2,2.4-0.7,3.3s-1.1,1.7-1.9,2.2c-0.8,0.5-1.8,0.8-2.9,0.8c-1.1,0-2-0.3-2.8-0.8
+							s-1.5-1.2-1.9-2.2c-0.5-0.9-0.7-2-0.7-3.3v-0.6c0-1.3,0.2-2.4,0.7-3.3c0.5-1,1.1-1.7,1.9-2.2C34.6,8.3,35.5,8,36.6,8
+							s2,0.3,2.8,0.8c0.8,0.5,1.5,1.2,1.9,2.2c0.5,1,0.7,2.1,0.7,3.3V14.9z M39.4,14.3c0-1.3-0.2-2.4-0.7-3.1s-1.2-1-2.1-1
+							c-0.9,0-1.6,0.3-2,1s-0.7,1.7-0.7,3v0.6c0,1.3,0.2,2.3,0.7,3s1.2,1.1,2.1,1.1c0.9,0,1.6-0.3,2-1c0.5-0.7,0.7-1.7,0.7-3V14.3z"
+							/>
+						<path class="st4" d="M50.6,17.6c0-0.5-0.2-0.9-0.5-1.1s-1-0.5-1.9-0.8s-1.6-0.6-2.2-0.9c-1.5-0.8-2.2-1.8-2.2-3.2
+							c0-0.7,0.2-1.3,0.6-1.9c0.4-0.5,0.9-1,1.7-1.3C46.8,8.2,47.6,8,48.5,8c0.9,0,1.7,0.2,2.4,0.5c0.7,0.3,1.3,0.8,1.7,1.4
+							c0.4,0.6,0.6,1.3,0.6,2.1h-2.6c0-0.6-0.2-1-0.6-1.4c-0.4-0.3-0.9-0.5-1.6-0.5c-0.6,0-1.1,0.1-1.5,0.4
+							c-0.4,0.3-0.5,0.6-0.5,1.1c0,0.4,0.2,0.8,0.6,1c0.4,0.3,1,0.5,1.8,0.8c1.5,0.5,2.6,1,3.3,1.7s1,1.5,1,2.5c0,1.1-0.4,2-1.3,2.6
+							c-0.8,0.6-2,0.9-3.4,0.9c-1,0-1.9-0.2-2.7-0.5c-0.8-0.4-1.4-0.9-1.8-1.5c-0.4-0.6-0.6-1.4-0.6-2.2H46c0,1.4,0.8,2.1,2.5,2.1
+							c0.6,0,1.1-0.1,1.5-0.4C50.4,18.5,50.6,18.1,50.6,17.6z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>
