@@ -1,8 +1,7 @@
 .searchResult {
-
 	.search-line {
 		margin: 0 auto;
-	 	width: 20%;
+		width: 20%;
 	}
 
 	&__title {
@@ -26,5 +25,16 @@
 			flex-direction: row;
 		}
 	}
+}
 
+.error__container {
+	text-align: center;
+}
+
+.error-search-text {
+	font-family: $secondary-font;
+	font-weight: 500;
+	font-size: 1.2em;
+	line-height: 2em;
+	color: $aqua;
 }

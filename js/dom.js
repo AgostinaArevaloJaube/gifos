@@ -15,7 +15,8 @@ const $crearGifBtn = document.querySelector('#crateGifBtn');
 const $searchBtn = document.querySelector('#search-icon');
 const $searchInputHero = document.querySelector('#searchInput');
 const $searchResultGallery = document.querySelector('#searchResult_gallery');
-const $searchTitle = document.querySelector('#searchResult__title')
+const $searchTitle = document.querySelector('#searchResult__title');
+const $verMasbtn = document.querySelector('#verMas-btn');
 
 // DOM elements trending
 const $previousBtn = document.querySelector('#previous-btn');
