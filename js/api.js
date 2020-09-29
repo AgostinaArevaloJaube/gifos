@@ -38,7 +38,7 @@ const getSearch = async () => {
 // --- Mostrar gif
 const displaySearchGif = (results) => {
 	$searchResultContainer.classList.remove('hidden');
-	$searchBtn.classList.remove('hidden');
+	$verMasbtn.classList.remove('hidden');
 	for (let i = 0; i < results.data.length; i++) {
 		const gifContainer = document.createElement('div');
 		gifContainer.classList.add('gif__container');
@@ -63,6 +63,9 @@ const displaySearchGif = (results) => {
 
 // --- Mostrar mensaje de error de búsqueda
 const displayErrorSearch = () => {
+	$searchResultContainer.classList.remove('hidden');
+	$verMasbtn.style.display = 'none';
+
 	$searchResultGallery.innerHTML = `
 	<div class="error__container">
 		<img class="" id="error-search" src="assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" >

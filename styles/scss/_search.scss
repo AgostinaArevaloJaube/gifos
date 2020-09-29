@@ -29,13 +29,18 @@
 
 .error__container {
 	text-align: center;
+	margin-bottom: 4rem;
+
+	@media screen and (min-width: $tablet) {
+		margin: 5rem;
+	}
 }
 
 .error-search-text {
 	font-family: $secondary-font;
 	font-weight: 500;
 	font-size: 1.2em;
-	line-height: 2em;
+	line-height: 3em;
 	color: $aqua;
 }
 
