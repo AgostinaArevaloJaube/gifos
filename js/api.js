@@ -7,10 +7,11 @@ const trendingTagsEndpoint = 'https://api.giphy.com/v1/gifs/trending/searches';
 let offsetSearch = 0;
 
 // --------------- Búsqueda --------------- \\
+
 // --- Fetch
-const getSearch = async () => {
+const getSearch = async (search) => {
 	event.preventDefault();
-	const USER_SEARCH = $searchInputHero.value;
+	const USER_SEARCH = search.value;
 	$searchTitle.innerHTML = USER_SEARCH;
 
 	// si el offset está en 0, limpia la galería de gif
@@ -76,6 +77,7 @@ const displayErrorSearch = () => {
 	`;
 };
 
+// --- Vuelve los seteos a la configuración inicial
 const cleanResultsContianer = () => {
 	$searchResultContainer.classList.add('hidden');
 	$errorContainer.classList.add('hidden');
@@ -89,15 +91,24 @@ const verMas = () => {
 	getSearch();
 };
 
-// --- Eventos de la búsqueda
-$searchBtn.addEventListener('click', getSearch);
+// --- Eventos de la búsqueda en HERO
+$searchBtn.addEventListener('click', () => getSearch($searchInputHero));
 $searchInputHero.addEventListener('input', cleanResultsContianer);
 $searchInputHero.addEventListener('keypress', function (e) {
 	if (e.keyCode === 13) {
-		getSearch();
+		getSearch($searchInputHero);
 	}
 });
 $verMasbtn.addEventListener('click', verMas);
+
+// --- Eventos de la búsqueda en NAVBAR
+$navbarSearchBtn.addEventListener('click', () => getSearch($navbarSearchInput));
+$navbarSearchInput.addEventListener('input', cleanResultsContianer);
+$navbarSearchInput.addEventListener('keypress', function (e) {
+	if (e.keyCode === 13) {
+		getSearch($navbarSearchInput);
+	}
+});
 
 // --------------- Trending --------------- \\
 // const getTrendingGif = async () => {
