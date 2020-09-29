@@ -376,6 +376,36 @@ body.darkMode .search__container .search__input {
   color: #50e3c2;
 }
 
+.verMasBtn {
+  display: block;
+  width: 10rem;
+  margin: 1rem auto;
+  border: 2px solid #572ee5;
+  border-radius: 2rem;
+  padding: 1.3rem 1.5rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1em;
+  color: #572ee5;
+}
+
+.verMasBtn:hover {
+  background-color: #572ee5;
+  color: #fff;
+}
+
+body.darkMode .verMasBtn {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+body.darkMode .verMasBtn:hover {
+  background-color: #fff;
+  color: #37383c;
+}
+
 .trending {
   padding: 15%;
   background-color: #f3f5f8;

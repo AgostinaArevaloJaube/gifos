@@ -4,32 +4,30 @@ const trendingEndpoint = 'https://api.giphy.com/v1/gifs/trending';
 // endpoint de los tranding tags
 const trendingTagsEndpoint = 'https://api.giphy.com/v1/gifs/trending/searches';
 
-let offset = 0;
+let offsetSearch = 0;
 
-// --------------- Búsqueda
+// --------------- Búsqueda --------------- \\
 // --- Fetch
 const getSearch = async () => {
 	event.preventDefault();
-	$searchTitle.innerHTML = $searchInputHero.value;
+	const USER_SEARCH = $searchInputHero.value;
+	$searchTitle.innerHTML = USER_SEARCH;
 
-	if (offset === 0) {
+	// si el offset está en 0, limpia la galería de gif
+	if (offsetSearch === 0) {
 		$searchResultGallery.innerHTML = '';
 	}
 
 	await fetch(
-		`${searchEndpoint}?api_key=${apiKey}&q=${$searchInputHero.value}&offset=${offset}&limit=12&rating=g`
+		`${searchEndpoint}?api_key=${apiKey}&q=${USER_SEARCH}&offset=${offsetSearch}&limit=12&rating=g`
 	)
 		.then((response) => response.json())
 		.then((results) => {
-			console.log(results);
+			console.log(results); //! sacar este console log antes de entregar
 
+			// si no encuentra ningún resultado muestra un mensaje de error
 			if (results.data == 0) {
-				$searchResultGallery.innerHTML = `
-				<div class="error__container">
-			<img class="" id="error-search" src="assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" >
-			<h4 class="error-search-text">Intenta con otra búsqueda.</h4>
-			</div>
-				`;
+				displayErrorSearch();
 			} else {
 				displaySearchGif(results);
 			}
@@ -39,6 +37,8 @@ const getSearch = async () => {
 
 // --- Mostrar gif
 const displaySearchGif = (results) => {
+	$searchResultContainer.classList.remove('hidden');
+	$searchBtn.classList.remove('hidden');
 	for (let i = 0; i < results.data.length; i++) {
 		const gifContainer = document.createElement('div');
 		gifContainer.classList.add('gif__container');
@@ -57,17 +57,27 @@ const displaySearchGif = (results) => {
 			</div>
 		</div>
 		`;
-
 		$searchResultGallery.appendChild(gifContainer);
 	}
 };
 
+// --- Mostrar mensaje de error de búsqueda
+const displayErrorSearch = () => {
+	$searchResultGallery.innerHTML = `
+	<div class="error__container">
+		<img class="" id="error-search" src="assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" >
+		<h4 class="error-search-text">Intenta con otra búsqueda.</h4>
+	</div>
+	`;
+};
+
+// --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch
 const verMas = () => {
-	offset += 12;
+	offsetSearch += 12;
 	getSearch();
 };
 
-// --- Eventos
+// --- Eventos de la búsqueda
 $searchBtn.addEventListener('click', getSearch);
 $searchInputHero.addEventListener('keypress', function (e) {
 	if (e.keyCode === 13) {
@@ -76,7 +86,7 @@ $searchInputHero.addEventListener('keypress', function (e) {
 });
 $verMasbtn.addEventListener('click', verMas);
 
-// // trending gifs
+// --------------- Trending --------------- \\
 // const getTrendingGif = async () => {
 // 	await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=12&rating=g`)
 // 		.then((response) => response.json())

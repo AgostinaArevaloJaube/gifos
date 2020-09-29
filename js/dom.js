@@ -12,6 +12,7 @@ const $switchThemeBtn = document.querySelector('#switchTheme');
 const $crearGifBtn = document.querySelector('#crateGifBtn');
 
 // DOM elements SEARCH
+const $searchResultContainer = document.querySelector('#searchResult');
 const $searchBtn = document.querySelector('#search-icon');
 const $searchInputHero = document.querySelector('#searchInput');
 const $searchResultGallery = document.querySelector('#searchResult_gallery');

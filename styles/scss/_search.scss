@@ -38,3 +38,33 @@
 	line-height: 2em;
 	color: $aqua;
 }
+
+.verMasBtn {
+	display: block;
+	width: 10rem;
+	margin: 1rem auto;
+	border: 2px solid $purple;
+	border-radius: 2rem;
+	padding: 1.3rem 1.5rem;
+	text-decoration: none;
+	font-family: $secondary-font;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1em;
+	color: $purple;
+
+	&:hover {
+		background-color: $purple;
+		color: #fff;
+	}
+
+	body.darkMode & {
+		border: 2px solid #fff;
+		color: #fff;
+
+		&:hover {
+			background-color: #fff;
+			color: #37383c;
+		}
+	}
+}
