@@ -544,25 +544,31 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
     height: 13rem;
   }
   .gif__container .gifActions {
-    width: 17rem;
-    height: 13rem;
-    padding: 1rem;
-    position: absolute;
-    top: 0;
-    background-color: rgba(87, 46, 229, 0.6);
+    display: none;
   }
-  .gif__container .gifActions__btn {
-    padding: 4%;
+  .gif__container .gifActions .gifActions__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     position: absolute;
-    right: 0;
+    top: 1rem;
+    left: 8rem;
+    width: 47%;
   }
-  .gif__container .gif__info {
+  .gif__container .gifActions .gif__info {
     position: absolute;
     left: 8%;
     bottom: 15%;
     font-weight: 500;
     text-align: left;
     color: #fff;
+  }
+  .gif__container .gifActions:hover {
+    display: block;
+    background-color: rgba(87, 46, 229, 0.6);
   }
 }
 /*# sourceMappingURL=styles.css.map */

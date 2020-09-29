@@ -44,6 +44,18 @@ const displaySearchGif = (results) => {
 		gifContainer.classList.add('gif__container');
 		gifContainer.innerHTML = ` 
 		<img class="gif" src="${results.data[i].images.original.url}" alt="${results.data[i].title}">
+	
+		<div class="gifActions">
+			<div class="gifActions__btn">
+				<img src="assets/icon-fav.svg" class="favorite" alt="Botón para agregar a mis favoritos">
+				<img src="assets/icon-download.svg" class="download" alt="Botón para descargar">
+				<img src="assets/icon-max-normal.svg" class="maximize" alt="Botón para maximizar">
+			</div>
+			<div class="gif__info">
+				<p class="gif_user">${results.data[i].username}</p>
+				<p class="gif_title">${results.data[i].title}</p>
+			</div>
+		</div>
 		`;
 
 		$searchResultGallery.appendChild(gifContainer);
