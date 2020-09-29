@@ -83,6 +83,8 @@ const cleanResultsContianer = () => {
 	$errorContainer.classList.add('hidden');
 	$verMasbtn.style.display = 'block';
 	$searchResultGallery.innerHTML = '';
+	$navbarSearchInput.placeholder = 'Busca GIFOS y más';
+	$searchInputHero.placeholder = 'Busca GIFOS y más';
 };
 
 // --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch
