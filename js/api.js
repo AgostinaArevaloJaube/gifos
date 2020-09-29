@@ -32,13 +32,14 @@ const getSearch = async () => {
 				displaySearchGif(results);
 			}
 		})
-		.catch((err) => console.error(err));
+		.catch((err) => console.log(err));
 };
 
 // --- Mostrar gif
 const displaySearchGif = (results) => {
 	$searchResultContainer.classList.remove('hidden');
 	$verMasbtn.classList.remove('hidden');
+
 	for (let i = 0; i < results.data.length; i++) {
 		const gifContainer = document.createElement('div');
 		gifContainer.classList.add('gif__container');
@@ -64,14 +65,22 @@ const displaySearchGif = (results) => {
 // --- Mostrar mensaje de error de búsqueda
 const displayErrorSearch = () => {
 	$searchResultContainer.classList.remove('hidden');
+	$errorContainer.classList.remove('hidden');
 	$verMasbtn.style.display = 'none';
 
-	$searchResultGallery.innerHTML = `
-	<div class="error__container">
+	$errorContainer.innerHTML = `
+	<div class="error__container" id="error-container">
 		<img class="" id="error-search" src="assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" >
 		<h4 class="error-search-text">Intenta con otra búsqueda.</h4>
 	</div>
 	`;
+};
+
+const cleanResultsContianer = () => {
+	$searchResultContainer.classList.add('hidden');
+	$errorContainer.classList.add('hidden');
+	$verMasbtn.style.display = 'block';
+	$searchResultGallery.innerHTML = '';
 };
 
 // --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch
@@ -82,6 +91,7 @@ const verMas = () => {
 
 // --- Eventos de la búsqueda
 $searchBtn.addEventListener('click', getSearch);
+$searchInputHero.addEventListener('input', cleanResultsContianer);
 $searchInputHero.addEventListener('keypress', function (e) {
 	if (e.keyCode === 13) {
 		getSearch();

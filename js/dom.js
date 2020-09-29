@@ -18,6 +18,7 @@ const $searchInputHero = document.querySelector('#searchInput');
 const $searchResultGallery = document.querySelector('#searchResult_gallery');
 const $searchTitle = document.querySelector('#searchResult__title');
 const $verMasbtn = document.querySelector('#verMas-btn');
+const $errorContainer = document.querySelector('#error-container')
 
 // DOM elements trending
 const $previousBtn = document.querySelector('#previous-btn');
