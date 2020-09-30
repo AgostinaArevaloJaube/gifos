@@ -3,6 +3,8 @@ const searchEndpoint = 'https://api.giphy.com/v1/gifs/search';
 const trendingEndpoint = 'https://api.giphy.com/v1/gifs/trending';
 // endpoint de los tranding tags
 const trendingTagsEndpoint = 'https://api.giphy.com/v1/gifs/trending/searches';
+// endpoint de sugerencias de busquedas
+const searchSuggestions = 'https://api.giphy.com/v1/tags/related/';
 
 let offsetSearch = 0;
 
@@ -90,7 +92,11 @@ const cleanResultsContianer = () => {
 // --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch
 const verMas = () => {
 	offsetSearch += 12;
-	getSearch();
+	if ($searchInputHero.value) {
+		getSearch($searchInputHero);
+	} else {
+		getSearch($navbarSearchInput);
+	}
 };
 
 // --- Eventos de la búsqueda en HERO
@@ -111,6 +117,38 @@ $navbarSearchInput.addEventListener('keypress', function (e) {
 		getSearch($navbarSearchInput);
 	}
 });
+
+// --------------- Search Suggestions --------------- \\
+
+const getSearchSuggestions = async () => {
+	// event.preventDefault();
+	const USER_INPUT = $searchInputHero.value;
+
+	if (USER_INPUT.length >= 1) {
+		await fetch(
+			`https://api.giphy.com/v1/tags/related/${USER_INPUT}?api_key=${apiKey}&limit=4`
+		)
+			.then((response) => response.json())
+			.then((suggestions) => {
+				console.log(suggestions);
+				displaySuggestions(suggestions);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+};
+
+const displaySuggestions = (suggesitons) => {
+	for (let i = 0; i < suggesitons.data.length; i++) {
+		const searchSuggestionItem = document.createElement('li');
+		searchSuggestionItem.classList.add('SearchSuggestions__item');
+		searchSuggestionItem.innerHTML = `${suggesitons.data[i].name}`;
+		$searchSuggestionList.appendChild(searchSuggestionItem);
+	}
+};
+
+$searchBtn.addEventListener('click', getSearchSuggestions);
 
 // --------------- Trending --------------- \\
 // const getTrendingGif = async () => {

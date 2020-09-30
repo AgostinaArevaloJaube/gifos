@@ -326,7 +326,7 @@ body.darkMode .search__container .search__input {
 }
 
 .searchResult .search-line {
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 20%;
 }
 
@@ -571,8 +571,12 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 }
 
 .gif__container .gif {
-  width: 10rem;
-  height: 8rem;
+  width: 12rem;
+  height: 10rem;
+}
+
+.gif__container .gifActions {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -581,21 +585,25 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
     height: 13rem;
   }
   .gif__container .gifActions {
-    display: none;
-  }
-  .gif__container .gifActions .gifActions__btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    display: block;
+    opacity: 0;
+    width: 17rem;
+    height: 13rem;
     position: absolute;
-    top: 1rem;
-    left: 8rem;
-    width: 47%;
+    top: 0;
+    background-color: rgba(87, 46, 229, 0.6);
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
-  .gif__container .gifActions .gif__info {
+  .gif__container .gifActions:hover {
+    opacity: 100;
+  }
+  .gif__container .gifActions__btn {
+    padding: 4%;
+    position: absolute;
+    right: 0;
+  }
+  .gif__container .gif__info {
     position: absolute;
     left: 8%;
     bottom: 15%;
@@ -603,9 +611,16 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
     text-align: left;
     color: #fff;
   }
-  .gif__container .gifActions:hover {
-    display: block;
-    background-color: rgba(87, 46, 229, 0.6);
+}
+
+@media screen and (min-width: 1024px) {
+  .gif__container .gif {
+    width: 21rem;
+    height: 17rem;
+  }
+  .gif__container .gifActions {
+    width: 21rem;
+    height: 17rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

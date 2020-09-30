@@ -2,8 +2,12 @@
 	position: relative;
 
 	.gif {
-		width: 10rem;
-		height: 8rem;
+		width: 12rem;
+		height: 10rem;
+	}
+
+	.gifActions {
+		display: none;
 	}
 
 	@media screen and (min-width: $tablet) {
@@ -11,38 +15,45 @@
 			width: 17rem;
 			height: 13rem;
 		}
-
 		.gifActions {
-			display: none;
-
-			.gifActions__btn {
-				display: flex;
-				justify-content: space-between;
-				position: absolute;
-				top: 1rem;
-				left: 8rem;
-				width: 47%;
-			}
-
-			.gif__info {
-				position: absolute;
-				left: 8%;
-				bottom: 15%;
-				font-weight: 500;
-				text-align: left;
-				color: #fff;
-			}
+			display: block;
+			opacity: 0;
+			width: 17rem;
+			height: 13rem;
+			position: absolute;
+			top: 0;
+			background-color: $purpleTransparency;
+			transition: 0.2s ease-in-out;
 
 			&:hover {
-				display: block;
-				// width: 17rem;
-				// height: 13rem;
-				// padding: 1rem;
-				// position: absolute;
-				// top: 0;
-
-				background-color: $purpleTransparency;
+				opacity: 100;
 			}
+		}
+
+		.gifActions__btn {
+			padding: 4%;
+			position: absolute;
+			right: 0;
+		}
+
+		.gif__info {
+			position: absolute;
+			left: 8%;
+			bottom: 15%;
+			font-weight: 500;
+			text-align: left;
+			color: #fff;
+		}
+	}
+
+	@media screen and (min-width: $desktop) {
+		.gif {
+			width: 21rem;
+			height: 17rem;
+		}
+		.gifActions {
+			width: 21rem;
+			height: 17rem;
 		}
 	}
 }

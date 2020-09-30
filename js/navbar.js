@@ -7,7 +7,6 @@ const displayBurgerMenu = () => {
 		} else {
 			$navbarList.classList.add('hiddenMenu');
 			$burgerMenu.src = 'assets/burger-modo-noct.svg';
-
 		}
 	} else {
 		if ($navbarList.classList.contains('hiddenMenu')) {
@@ -37,7 +36,7 @@ $crearGifBtn.addEventListener('mouseout', () => {
 
 // Navbar Sticky
 function stickyNav() {
-	if (document.documentElement.scrollTop > 100) {
+	if (document.documentElement.scrollTop > 600) {
 		if (window.innerWidth < 1024) {
 			$navbarSearchContainer.classList.add('hiddenSearchBar');
 		} else {

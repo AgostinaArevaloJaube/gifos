@@ -7,25 +7,24 @@ const $switchThemeBtn = document.querySelector('#switchTheme');
 const $crearGifBtn = document.querySelector('#crateGifBtn');
 
 // DOM elements SEARCH
+const $searchResultContainer = document.querySelector('#searchResult');
+const $errorContainer = document.querySelector('#error-container');
+const $searchResultGallery = document.querySelector('#searchResult_gallery');
+const $searchTitle = document.querySelector('#searchResult__title');
+const $verMasbtn = document.querySelector('#verMas-btn');
 
 // --- navbar search
-const $navbarSearchContainer = document.querySelector(
-	'#navbarSearch__container'
-);
+const $navbarSearchContainer = document.querySelector('#navbarSearch__container');
 const $navbarSearchInput = document.querySelector('#navbarSearch__input')
 const $navbarSearchBtn = document.querySelector('#navbarSearch__icon');
 
 // --- hero search
-const $searchResultContainer = document.querySelector('#searchResult');
 const $searchBtn = document.querySelector('#search-icon');
 const $searchInputHero = document.querySelector('#searchInput');
-const $searchResultGallery = document.querySelector('#searchResult_gallery');
-const $searchTitle = document.querySelector('#searchResult__title');
-const $verMasbtn = document.querySelector('#verMas-btn');
-const $errorContainer = document.querySelector('#error-container')
 
-// DOM elements NAVBAR SEARCH
-
+// --- search suggestions
+const $searchSuggestionsContainer = document.querySelector('#SearchSuggestions__container')
+const $searchSuggestionList = document.querySelector('#search-sugestion-list')
 
 // DOM elements trending
 const $previousBtn = document.querySelector('#previous-btn');
