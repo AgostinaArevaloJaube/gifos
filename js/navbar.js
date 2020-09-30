@@ -1,4 +1,4 @@
-// muestra el menu hamburguesa y lo setea de acuerdo al theme elegido
+//--muestra el menu hamburguesa y lo setea de acuerdo al theme elegido
 const displayBurgerMenu = () => {
 	if (localStorage.getItem('dark-mode') === 'true') {
 		if ($navbarList.classList.contains('hiddenMenu')) {
@@ -20,8 +20,10 @@ const displayBurgerMenu = () => {
 };
 
 // Navbar Events
+// --muestra la hamburguesa
 $burgerMenu.addEventListener('click', displayBurgerMenu);
 
+// --cambia los assets del botón crear gifos
 $crearGifBtn.addEventListener('click', () => {
 	$crearGifBtn.src = 'assets/CTA-crear-gifo-active.svg';
 });
@@ -34,7 +36,9 @@ $crearGifBtn.addEventListener('mouseout', () => {
 	$crearGifBtn.src = 'assets/button-crear-gifo.svg';
 });
 
+
 // Navbar Sticky
+// --función para dejar sticky el navbar, aparezca la barra de búsqueda y se agregue la sombra.
 function stickyNav() {
 	if (document.documentElement.scrollTop > 600) {
 		if (window.innerWidth < 1024) {

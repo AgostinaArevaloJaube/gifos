@@ -27,19 +27,19 @@
 
 	<header class="header__container" id="header__container">
 
-
+		<!-- Logo -->
 		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-desktop.svg"
 				alt="Logo"></a>
 
+		<!-- Barra de búsqueda del navbar -->
 		<section class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
 			<input class="navbarSearch__input" id="navbarSearch__input" type="text" placeholder="Busca GIFOS y más">
 			<a href="">
 				<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
 			</a>
 		</section>
-
+		<!-- Menú -->
 		<nav class="navbar">
-
 			<img src="assets/burger.svg" alt="Menu hamburguesa" class="navbar__burguer" id="navbar__burger">
 
 
@@ -62,12 +62,15 @@
 
 	<!-- Main -->
 	<main class="hero__container">
+
+		<!-- hero -->
 		<section class="heading__container">
 			<h1 class="hero__title">
 				Inspírate, busca, guarda y crea los mejores
 				<span class="aqua-text">GIFOS</span>
 			</h1>
 
+			<!-- Barra buscadora del hero -->
 			<section>
 				<img class="ilustra-header" src="assets/ilustra_header.svg" alt="" />
 
@@ -79,13 +82,18 @@
 				</section>
 			</section>
 
+			<!-- Recomendaciones de búsqueda -->
 			<div class="SearchSuggestions__container" id="SearchSuggestions__container">
 				<ul class="search-sugestion-list" id="search-sugestion-list">
-
+					<li class="SearchSuggestions__item">Michael Scott</li>
+					<li class="SearchSuggestions__item">Jim Halpert</li>
+					<li class="SearchSuggestions__item">Kevin Malone</li>
+					<li class="SearchSuggestions__item">Dwight Schrute</li>
 				</ul>
 			</div>
 
 
+			<!-- Trending tags -->
 			<article class="hero__trending">
 				<h4 class="hero__subtitle">Trending:</h4>
 
@@ -110,24 +118,7 @@
 		<section class="errorContainer" id="error-container"></section>
 		<section class="searchResult__gallery" id="searchResult_gallery">
 
-			<!-- <div class="gif__container">
-				<img class="gif" src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
-					alt="Lmao Lol GIF by Originals" >
-				<div class="gifActions">
-					<div class="gifActions__btn">
-						<img src="assets/icon-fav.svg" class="favorite" alt="Botón para agregar a mis favoritos">
-						<img src="assets/icon-download.svg" class="download" alt="Botón para descargar">
-						<img src="assets/icon-max-normal.svg" class="maximize" alt="Botón para maximizar">
-					</div>
-					<div class="gif__info">
-						<p class="gif_user">User</p>
-						<p class="gif_title">Titulo Gif</p>
-					</div>
-				</div>
-
-			</div> -->
-
-
+			<!-- Acá van a aparecer los gifs buscados -->
 		</section>
 
 		<a href="" class="verMasBtn hidden" id="verMas-btn">VER MÁS</a>
@@ -146,12 +137,12 @@
 				<img src="assets/button-slider-left.svg" alt="Flecha Previous" id="previous-btn">
 			</div>
 
-			<!-- trending gif sliders -->
+			<!-- trending gif slider -->
 			<div class="trending__slider-container">
 
-				<div class="trending__slider">
+				<div class="trending__slider" id="trending__slider">
 
-					<div class="gif__container">
+					<!-- <div class="gif__container">
 						<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
 							alt="Lmao Lol GIF by Originals" class="gif">
 						<div class="gifActions">
@@ -167,7 +158,7 @@
 							</div>
 						</div>
 
-					</div>
+					</div> -->
 				</div>
 
 			</div>
@@ -201,6 +192,7 @@
 	<script src="js/dark-mode.js"></script>
 	<script src="js/navbar.js"></script>
 	<script src="js/api.js"></script>
+	<script src="js/search.js"></script>
 	<script src="js/trending.js"></script>
 
 </body>

@@ -29,6 +29,7 @@ const $searchSuggestionList = document.querySelector('#search-sugestion-list')
 // DOM elements trending
 const $previousBtn = document.querySelector('#previous-btn');
 const $nextBtn = document.querySelector('#next-btn');
+const $trendingSlider = document.querySelector('#trending__slider')
 
 // DOM gif elements
 const $gifContainer = document.querySelectorAll('.gif__container');

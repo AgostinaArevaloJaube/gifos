@@ -82,6 +82,21 @@
 	}
 }
 
+//  Sugerencias de busqueda
+
+.SearchSuggestions__container {
+	border: 1px solid $purple;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	margin: 0 auto;
+	width: 55%;
+}
+
+.search-sugestion-list {
+	color: $lightGray;
+}
+
+
 .hero__trending {
 	font-family: $secondary-font;
 	font-weight: 500;
@@ -97,6 +112,5 @@
 	}
 	
 }
-
 
 

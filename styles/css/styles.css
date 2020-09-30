@@ -310,6 +310,18 @@ body.darkMode .search__container .search__input {
   }
 }
 
+.SearchSuggestions__container {
+  border: 1px solid #572ee5;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 0 auto;
+  width: 55%;
+}
+
+.search-sugestion-list {
+  color: #9cafc3;
+}
+
 .hero__trending {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
