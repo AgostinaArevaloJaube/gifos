@@ -129,7 +129,7 @@
 
 	.navbarSearch__input {
 		width: 100%;
-		padding-left: 12%;
+		padding-left: 3%;
 		border: none;
 		color: $lightGray;
 
@@ -143,9 +143,19 @@
 		}
 	}
 
-	.navbarSearch__icon {
-		padding-right: 10px;
-	}
+}
+
+.navbarSearch__icon {
+	padding-right: 10px;
+}
+
+.navbarSearch__btn {
+	width: 1.25rem;
+	margin-left: 2%;
+}
+
+.navbarSearch-close-icon {
+	margin-right: 2%;
 }
 
 .hiddenMenu {

@@ -180,7 +180,7 @@ body.darkMode .navbarSearch__container {
 
 .navbarSearch__container .navbarSearch__input {
   width: 100%;
-  padding-left: 12%;
+  padding-left: 3%;
   border: none;
   color: #9cafc3;
   font-family: "Roboto", sans-serif;
@@ -193,8 +193,17 @@ body.darkMode .navbarSearch__container .navbarSearch__input {
   background-color: transparent;
 }
 
-.navbarSearch__container .navbarSearch__icon {
+.navbarSearch__icon {
   padding-right: 10px;
+}
+
+.navbarSearch__btn {
+  width: 1.25rem;
+  margin-left: 2%;
+}
+
+.navbarSearch-close-icon {
+  margin-right: 2%;
 }
 
 .hiddenMenu {
@@ -216,6 +225,7 @@ body.darkMode .navbarSearch__container .navbarSearch__input {
 .hero__container {
   padding: 5%;
   padding-top: 30%;
+  position: relative;
   text-align: center;
 }
 
@@ -282,7 +292,7 @@ body.darkMode .search__container {
 .search__container .search__input {
   width: 100%;
   border: none;
-  padding-left: 12%;
+  padding-left: 3%;
   background-color: none;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -295,7 +305,13 @@ body.darkMode .search__container .search__input {
 }
 
 .search__container .search__icon {
-  padding-right: 5px;
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.search__container .search__btn {
+  width: 1.25rem;
+  margin-left: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -312,14 +328,57 @@ body.darkMode .search__container .search__input {
 
 .SearchSuggestions__container {
   border: 1px solid #572ee5;
+  border-top-color: transparent;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin: 0 auto;
-  width: 55%;
+  width: 100%;
+}
+
+body.darkMode .SearchSuggestions__container {
+  border: 1px solid #fff;
+}
+
+.SearchSuggestions__container .suggestions-line {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .SearchSuggestions__container {
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .SearchSuggestions__container {
+    width: 75%;
+  }
 }
 
 .search-sugestion-list {
   color: #9cafc3;
+}
+
+.SearchSuggestions__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5rem;
+  margin: 0 4px;
+}
+
+.search__btnGray {
+  width: 1rem;
+  margin: 0 2%;
+}
+
+.search__Text {
+  margin: 0 10px;
+}
+
+.search-close-icon {
+  margin-right: 2%;
 }
 
 .hero__trending {

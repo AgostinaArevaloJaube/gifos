@@ -21,8 +21,11 @@ const setLocalStorageTheme = () => {
 		$logo.src = 'assets/logo-mobile-modo-noct.svg';
 		$crearGifBtn.src = 'assets/CTA-crar-gifo-modo-noc.svg';
 		$burgerMenu.src = 'assets/burger-modo-noct.svg';
-		$navbarSearchIcon.src = 'assets/icon-search-mod-noc.svg';
+		$navbarSearchBtn.src = 'assets/icon-search-mod-noc.svg';
+		$navbarSearchCloseBtn.src = 'assets/close-modo-noct.svg';
 		$searchBtn.src = 'assets/icon-search-mod-noc.svg';
+		$searchCloseBtn.src = 'assets/close-modo-noct.svg';
+
 		$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
 		$nextBtn.src = 'assets/button-slider-right-md-noct.svg';
 	} else {

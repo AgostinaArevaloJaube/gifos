@@ -33,10 +33,10 @@
 
 		<!-- Barra de búsqueda del navbar -->
 		<section class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
+			<img class="navbarSearch__btn hidden" id="navbarSearch-gray-btn" src="assets/icon-search-gray.svg" alt="">
 			<input class="navbarSearch__input" id="navbarSearch__input" type="text" placeholder="Busca GIFOS y más">
-			<a href="">
-				<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
-			</a>
+			<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
+			<img class="navbarSearch-close-icon hidden" id="navbarSearch-close-icon" src="assets/close.svg" alt="">
 		</section>
 		<!-- Menú -->
 		<nav class="navbar">
@@ -75,20 +75,33 @@
 				<img class="ilustra-header" src="assets/ilustra_header.svg" alt="" />
 
 				<section class="search__container">
+					<img class="search__btn hidden" id="search-gray-btn" src="assets/icon-search-gray.svg" alt="">
 					<input class="search__input" id="searchInput" type="text" placeholder="Busca GIFOS y más">
-					<a href="">
-						<img class="search__icon" id="search-icon" src="assets/icon-search.svg" alt="">
-					</a>
+					<img class="search__icon" id="search-icon" src="assets/icon-search.svg" alt="">
+					<img class="search-close-icon hidden" id="search-close-icon" src="assets/close.svg" alt="">
 				</section>
 			</section>
 
 			<!-- Recomendaciones de búsqueda -->
 			<div class="SearchSuggestions__container" id="SearchSuggestions__container">
+				<hr class="suggestions-line">
 				<ul class="search-sugestion-list" id="search-sugestion-list">
-					<li class="SearchSuggestions__item">Michael Scott</li>
-					<li class="SearchSuggestions__item">Jim Halpert</li>
-					<li class="SearchSuggestions__item">Kevin Malone</li>
-					<li class="SearchSuggestions__item">Dwight Schrute</li>
+					<li class="SearchSuggestions__item">
+						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
+						<p class="search__Text"> Michael Scott</p>
+					</li>
+					<li class="SearchSuggestions__item">
+						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
+						<p class="search__Text"> Kevin Malone</p>
+					</li>
+					<li class="SearchSuggestions__item">
+						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
+						<p class="search__Text"> Kevin Malone</p>
+					</li>
+					<li class="SearchSuggestions__item">
+						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
+						<p class="search__Text"> Kevin Malone</p>
+					</li>
 				</ul>
 			</div>
 
@@ -198,4 +211,3 @@
 </body>
 
 </html>
-

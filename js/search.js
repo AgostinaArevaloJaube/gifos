@@ -1,11 +1,11 @@
-// ---------------------- Búsqueda ----------------------  \\
+// TODO ---------------------- Búsqueda ----------------------  \\
 
 let offsetSearch = 0;
 
-// --- Fetch
+// --- Busqueda de gifs
 const getSearch = async (search) => {
 	event.preventDefault();
-	limpiarBusqueda();
+	cleanSearchSuggestions();
 	$searchInputHero.value = search;
 	$navbarSearchInput.value = search;
 	$searchTitle.innerHTML = search;
@@ -15,6 +15,7 @@ const getSearch = async (search) => {
 		$searchResultGallery.innerHTML = '';
 	}
 
+	//-----------fetch
 	await fetch(
 		`${searchEndpoint}?api_key=${apiKey}&q=${search}&offset=${offsetSearch}&limit=12&rating=g`
 	)
@@ -36,10 +37,7 @@ const getSearch = async (search) => {
 const displaySearchGif = (results) => {
 	$searchResultContainer.classList.remove('hidden');
 	$verMasbtn.classList.remove('hidden');
-
-	if (offsetSearch === 0) {
-		window.scrollTo({ top: 600, behavior: 'smooth' });
-	}
+	window.scrollTo({ top: 600, behavior: 'smooth' });
 
 	for (let i = 0; i < results.data.length; i++) {
 		const gifContainer = document.createElement('div');
@@ -77,17 +75,7 @@ const displayErrorSearch = () => {
 	`;
 };
 
-// --- Vuelve los seteos a la configuración inicial
-const cleanResultsContianer = () => {
-	$searchResultContainer.classList.add('hidden');
-	$errorContainer.classList.add('hidden');
-	$verMasbtn.style.display = 'block';
-	$searchResultGallery.innerHTML = '';
-	$navbarSearchInput.placeholder = 'Busca GIFOS y más';
-	$searchInputHero.placeholder = 'Busca GIFOS y más';
-};
-
-// --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch
+// --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch.
 const verMas = () => {
 	offsetSearch += 12;
 	if ($searchInputHero.value) {
@@ -97,31 +85,10 @@ const verMas = () => {
 	}
 };
 
-// --- Eventos de la búsqueda en HERO
-$searchBtn.addEventListener('click', () => getSearch($searchInputHero.value));
-$searchInputHero.addEventListener('input', cleanResultsContianer);
-$searchInputHero.addEventListener('keypress', function (e) {
-	if (e.keyCode === 13) {
-		getSearch($searchInputHero.value);
-	}
-});
-$verMasbtn.addEventListener('click', verMas);
-
-// --- Eventos de la búsqueda en NAVBAR
-$navbarSearchBtn.addEventListener('click', () =>
-	getSearch($navbarSearchInput.value)
-);
-$navbarSearchInput.addEventListener('input', cleanResultsContianer);
-$navbarSearchInput.addEventListener('keypress', function (e) {
-	if (e.keyCode === 13) {
-		getSearch($navbarSearchInput.value);
-	}
-});
-
 // TODO--------------- Search Suggestions --------------- \\
 
 const getSearchSuggestions = async () => {
-	limpiarBusqueda();
+	cleanSearchSuggestions();
 	$searchSuggestionList.classList.remove('hidden');
 	const USER_INPUT = $searchInputHero.value;
 
@@ -146,28 +113,94 @@ const displaySuggestions = (suggestions) => {
 	for (let i = 0; i < 4; i++) {
 		const searchSuggestionItem = document.createElement('li');
 		searchSuggestionItem.classList.add('SearchSuggestions__item');
-		searchSuggestionItem.innerHTML = `<p onclick="getSearch('${suggestions.data[i].name}')">${suggestions.data[i].name}</p>`;
+		// con los eventos permito que se realicen busquedas al clickear la lupa o el texto
+		searchSuggestionItem.innerHTML = `
+		<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="Boton Buscar" onclick="getSearch('${suggestions.data[i].name}')">
+		<p class="search__Text" onclick="getSearch('${suggestions.data[i].name}')">${suggestions.data[i].name}</p>`;
 		$searchSuggestionList.appendChild(searchSuggestionItem);
 	}
-
-	//
 };
 
-$searchBtn.addEventListener('click', getSearchSuggestions);
-$searchInputHero.addEventListener('keypress', function (e) {
-	if (e.keyCode === 13) {
-		getSearchSuggestions();
-	}
-});
-// $searchInputHero.addEventListener('keyup', getSearchSuggestions);
+// --- Vuelve los seteos del contenedor a la configuración inicial
+const cleanResultsContianer = () => {
+	$searchResultContainer.classList.add('hidden');
+	$errorContainer.classList.add('hidden');
+	$verMasbtn.style.display = 'block';
+	$searchResultGallery.innerHTML = '';
+	$navbarSearchInput.placeholder = 'Busca GIFOS y más';
+	$searchInputHero.placeholder = 'Busca GIFOS y más';
+};
 
-// limpiar la busqueda
-// autocompletado mientras escribe
-// que cuando clickee o haga enter vaya al resultado
-
-const limpiarBusqueda = () => {
+// Limpia las sugerencias de búsqueda
+const cleanSearchSuggestions = () => {
 	$searchSuggestionList.classList.add('hidden');
 	$searchSuggestionList.innerHTML = '';
 };
 
-$searchInputHero.addEventListener('input', getSearchSuggestions);
+// --- Seteos para cuando el buscador está activo
+const setActiveSearchBar = () => {
+	$searchGrayBtn.classList.remove('hidden');
+	$searchCloseBtn.classList.remove('hidden');
+	$searchBtn.classList.add('hidden');
+	getSearchSuggestions();
+};
+
+const setActiveNavbarSearch = () => {
+	$navbarSearchGrayBtn.classList.remove('hidden');
+	$navbarSearchCloseBtn.classList.remove('hidden');
+	$navbarSearchBtn.classList.add('hidden');
+};
+
+// --- Seteos para cuando el buscador está inactivo
+// Resetea contendeores, valores de los inputs y cambia cruz por lupa.
+const setInactiveSearchBar = () => {
+	$navbarSearchInput.value = '';
+	$searchInputHero.value = '';
+	cleanResultsContianer();
+	cleanSearchSuggestions();
+	$searchBtn.classList.remove('hidden');
+	$searchCloseBtn.classList.add('hidden');
+	$searchGrayBtn.classList.add('hidden');
+};
+
+const setInactiveNavbarSearch = () => {
+	$navbarSearchInput.value = '';
+	$searchInputHero.value = '';
+	cleanResultsContianer();
+	$navbarSearchBtn.classList.remove('hidden');
+	$navbarSearchBtn.classList.add('hidden');
+	$navbarSearchGrayBtn.classList.add('hidden');
+};
+
+// ---------- EVENTOS
+
+// --- Eventos de la búsqueda en HERO
+$searchGrayBtn.addEventListener('click', () =>
+	getSearch($searchInputHero.value)
+);
+$searchInputHero.addEventListener('input', cleanResultsContianer);
+$searchInputHero.addEventListener('keypress', (event) => {
+	if (event.keyCode === 13) {
+		getSearch($searchInputHero.value);
+		getSearchSuggestions();
+	}
+});
+$searchGrayBtn.addEventListener('click', getSearchSuggestions);
+$searchCloseBtn.addEventListener('click', setInactiveSearchBar);
+$searchInputHero.addEventListener('input', setActiveSearchBar);
+$searchInputHero.addEventListener('click', setActiveSearchBar);
+$verMasbtn.addEventListener('click', verMas);
+
+// --- Eventos de la búsqueda en NAVBAR
+$navbarSearchGrayBtn.addEventListener('click', () =>
+	getSearch($navbarSearchInput.value)
+);
+$navbarSearchInput.addEventListener('input', cleanResultsContianer);
+$navbarSearchInput.addEventListener('keypress', (event) => {
+	if (event.keyCode === 13) {
+		getSearch($navbarSearchInput.value);
+	}
+});
+$navbarSearchInput.addEventListener('input', setActiveNavbarSearch);
+$navbarSearchInput.addEventListener('click', setActiveNavbarSearch);
+$navbarSearchCloseBtn.addEventListener('click', setInactiveNavbarSearch);

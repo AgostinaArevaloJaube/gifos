@@ -14,13 +14,17 @@ const $searchTitle = document.querySelector('#searchResult__title');
 const $verMasbtn = document.querySelector('#verMas-btn');
 
 // --- navbar search
+const $navbarSearchGrayBtn = document.querySelector('#navbarSearch-gray-btn')
 const $navbarSearchContainer = document.querySelector('#navbarSearch__container');
 const $navbarSearchInput = document.querySelector('#navbarSearch__input')
 const $navbarSearchBtn = document.querySelector('#navbarSearch__icon');
+const $navbarSearchCloseBtn = document.querySelector('#navbarSearch-close-icon')
 
 // --- hero search
-const $searchBtn = document.querySelector('#search-icon');
+const $searchGrayBtn = document.querySelector('#search-gray-btn')
 const $searchInputHero = document.querySelector('#searchInput');
+const $searchBtn = document.querySelector('#search-icon');
+const $searchCloseBtn = document.querySelector('#search-close-icon')
 
 // --- search suggestions
 const $searchSuggestionsContainer = document.querySelector('#SearchSuggestions__container')

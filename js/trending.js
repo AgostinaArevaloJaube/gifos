@@ -1,4 +1,4 @@
-// ----------------------  Trending Styles ----------------------  \\
+// TODO ----------------------  Trending Styles ----------------------  \\
 // Setea los botones previo y next, de acuerdo al estado y al theme elegido
 const setTrendingBtn = () => {
 	if (localStorage.getItem('dark-mode') === 'true') {
@@ -22,7 +22,7 @@ $previousBtn.addEventListener('mouseout', setTrendingBtn);
 $nextBtn.addEventListener('mouseout', setTrendingBtn);
 
 
-// ----------------------  Trending API ----------------------  \\
+// TODO ----------------------  Trending API ----------------------  \\
 
 const getTrendingGif = async () => {
 	await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=12&rating=g`)
