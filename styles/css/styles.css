@@ -387,6 +387,18 @@ body.darkMode .SearchSuggestions__container {
   margin-right: 2%;
 }
 
+#search__container.searchActive {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: transparent;
+}
+
+#searchSuggestions__container.searchActiveContainer {
+  border-top-color: transparent;
+  position: relative;
+  top: -0.5rem;
+}
+
 .hero__trending {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
