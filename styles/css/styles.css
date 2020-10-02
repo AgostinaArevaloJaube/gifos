@@ -235,6 +235,10 @@ body.darkMode .navbarSearch__container .navbarSearch__input {
   }
 }
 
+.heading__container {
+  position: relative;
+}
+
 .hero__title {
   padding: 0 8% 5% 8%;
   font-size: 1.6em;
@@ -341,7 +345,7 @@ body.darkMode .SearchSuggestions__container {
 
 .SearchSuggestions__container .suggestions-line {
   width: 95%;
-  margin: 0 auto;
+  margin: 0 auto 2% auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -366,6 +370,7 @@ body.darkMode .SearchSuggestions__container {
   display: flex;
   padding: 0.5rem;
   margin: 0 4px;
+  cursor: pointer;
 }
 
 .search__btnGray {
@@ -375,6 +380,7 @@ body.darkMode .SearchSuggestions__container {
 
 .search__Text {
   margin: 0 10px;
+  display: block;
 }
 
 .search-close-icon {
@@ -394,6 +400,10 @@ body.darkMode .SearchSuggestions__container {
 
 .hero__trending .trending_list {
   font-weight: 400;
+}
+
+.search {
+  position: relative;
 }
 
 .searchResult .search-line {
@@ -513,9 +523,6 @@ body.darkMode .trending__paragraph {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

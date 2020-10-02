@@ -23,7 +23,6 @@ const getSearch = async (search) => {
 		.then((results) => {
 			console.log(results); //! sacar este console log antes de entregar
 
-			// si no encuentra ningún resultado muestra un mensaje de error
 			if (results.data == 0) {
 				displayErrorSearch();
 			} else {
@@ -37,7 +36,10 @@ const getSearch = async (search) => {
 const displaySearchGif = (results) => {
 	$searchResultContainer.classList.remove('hidden');
 	$verMasbtn.classList.remove('hidden');
-	window.scrollTo({ top: 600, behavior: 'smooth' });
+
+	if (offsetSearch === 0) {
+		window.scrollTo({ top: 600, behavior: 'smooth' });
+	}
 
 	for (let i = 0; i < results.data.length; i++) {
 		const gifContainer = document.createElement('div');
@@ -93,8 +95,9 @@ const getSearchSuggestions = async () => {
 	const USER_INPUT = $searchInputHero.value;
 
 	if (USER_INPUT.length >= 1) {
+		// setActiveSearchBar();
+
 		await fetch(
-			// `https://api.giphy.com/v1/tags/related/${USER_INPUT}?api_key=${apiKey}&limit=4`
 			`${searchAutocomplete}?api_key=${apiKey}&q=${USER_INPUT}&limit=4&rating=g`
 		)
 			.then((response) => response.json())
@@ -105,12 +108,13 @@ const getSearchSuggestions = async () => {
 			.catch((err) => {
 				console.log(err);
 			});
+	} else {
+		setInactiveSearchBar();
 	}
 };
 
 const displaySuggestions = (suggestions) => {
-	// acá cambiar los estilos
-	for (let i = 0; i < 4; i++) {
+	for (let i = 0; i < suggestions.data.length; i++) {
 		const searchSuggestionItem = document.createElement('li');
 		searchSuggestionItem.classList.add('SearchSuggestions__item');
 		// con los eventos permito que se realicen busquedas al clickear la lupa o el texto
@@ -139,10 +143,17 @@ const cleanSearchSuggestions = () => {
 
 // --- Seteos para cuando el buscador está activo
 const setActiveSearchBar = () => {
+	// getSearchSuggestions($searchInputHero.value);
 	$searchGrayBtn.classList.remove('hidden');
 	$searchCloseBtn.classList.remove('hidden');
 	$searchBtn.classList.add('hidden');
-	getSearchSuggestions();
+	$searchSuggestionsContainer.classList.remove('hidden');
+
+	$searchContainer.style.borderBottomLeftRadius = '0';
+	$searchContainer.style.borderBottomRightRadius = '0';
+	// $searchContainer.style.borderBottomColor = 'transparent';
+	$searchSuggestionsContainer.style.position = 'relative';
+	$searchSuggestionsContainer.style.top = '-0.5rem';
 };
 
 const setActiveNavbarSearch = () => {
@@ -158,9 +169,12 @@ const setInactiveSearchBar = () => {
 	$searchInputHero.value = '';
 	cleanResultsContianer();
 	cleanSearchSuggestions();
+	$searchSuggestionsContainer.classList.add('hidden');
 	$searchBtn.classList.remove('hidden');
 	$searchCloseBtn.classList.add('hidden');
 	$searchGrayBtn.classList.add('hidden');
+	$searchContainer.style.borderRadius = '20px';
+	// $searchContainer.style.borderBottomColor = '#572ee5';
 };
 
 const setInactiveNavbarSearch = () => {
@@ -175,32 +189,32 @@ const setInactiveNavbarSearch = () => {
 // ---------- EVENTOS
 
 // --- Eventos de la búsqueda en HERO
-$searchGrayBtn.addEventListener('click', () =>
-	getSearch($searchInputHero.value)
-);
-$searchInputHero.addEventListener('input', cleanResultsContianer);
-$searchInputHero.addEventListener('keypress', (event) => {
-	if (event.keyCode === 13) {
+$searchGrayBtn.addEventListener('click', () => {
+	getSearch($searchInputHero.value);
+});
+$searchInputHero.addEventListener('keypress', (e) => {
+	if (e.keyCode === 13) {
 		getSearch($searchInputHero.value);
-		getSearchSuggestions();
 	}
 });
-$searchGrayBtn.addEventListener('click', getSearchSuggestions);
+$searchInputHero.addEventListener('click', setActiveSearchBar);
+$searchInputHero.addEventListener('click', getSearchSuggestions);
 $searchCloseBtn.addEventListener('click', setInactiveSearchBar);
 $searchInputHero.addEventListener('input', setActiveSearchBar);
-$searchInputHero.addEventListener('click', setActiveSearchBar);
+$searchInputHero.addEventListener('input', getSearchSuggestions);
+$searchInputHero.addEventListener('input', cleanResultsContianer);
 $verMasbtn.addEventListener('click', verMas);
 
 // --- Eventos de la búsqueda en NAVBAR
-$navbarSearchGrayBtn.addEventListener('click', () =>
-	getSearch($navbarSearchInput.value)
-);
+$navbarSearchGrayBtn.addEventListener('click', () => {
+	getSearch($navbarSearchInput.value);
+});
+$navbarSearchInput.addEventListener('click', setActiveNavbarSearch);
 $navbarSearchInput.addEventListener('input', cleanResultsContianer);
+$navbarSearchInput.addEventListener('input', setActiveNavbarSearch);
 $navbarSearchInput.addEventListener('keypress', (event) => {
 	if (event.keyCode === 13) {
 		getSearch($navbarSearchInput.value);
 	}
 });
-$navbarSearchInput.addEventListener('input', setActiveNavbarSearch);
-$navbarSearchInput.addEventListener('click', setActiveNavbarSearch);
 $navbarSearchCloseBtn.addEventListener('click', setInactiveNavbarSearch);
