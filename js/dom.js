@@ -37,7 +37,10 @@ const $searchSuggestionsContainer = document.querySelector(
 );
 const $searchSuggestionList = document.querySelector('#search-sugestion-list');
 
-// DOM elements trending
+// DOM elements trending tags
+const $trendingTagList = document.querySelector('#trendingTag_list')
+
+// DOM elements trending slider
 const $previousBtn = document.querySelector('#previous-btn');
 const $nextBtn = document.querySelector('#next-btn');
 const $trendingSlider = document.querySelector('#trending__slider');

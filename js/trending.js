@@ -1,4 +1,4 @@
-// TODO ----------------------  Trending Styles ----------------------  \\
+// TODO ---------------------- Trending Styles ----------------------  \\
 // Setea los botones previo y next, de acuerdo al estado y al theme elegido
 const setTrendingBtn = () => {
 	if (localStorage.getItem('dark-mode') === 'true') {
@@ -21,9 +21,35 @@ $nextBtn.addEventListener('mouseover', () => {
 $previousBtn.addEventListener('mouseout', setTrendingBtn);
 $nextBtn.addEventListener('mouseout', setTrendingBtn);
 
+// TODO ---------------------- Trending API ----------------------  \\
 
-// TODO ----------------------  Trending API ----------------------  \\
+// TODO ------- Trending tags
 
+const getTrendingTags = async () => {
+	await fetch(`${trendingTagsEndpoint}?api_key=${apiKey}`)
+		.then((response) => response.json())
+		.then((trendingTags) => {
+			console.log(trendingTags);
+			displayTrendingTags(trendingTags);
+		})
+		.catch((err) => console.log(err));
+};
+
+getTrendingTags();
+
+const displayTrendingTags = (trendingTags) => {
+	for (let i = 0; i < 6; i++) {
+		const trendingTagItem = document.createElement('span');
+		trendingTagItem.classList.add('trending__item');
+		trendingTagItem.setAttribute(
+			'onclick',`getSearch("${trendingTags.data[i]}")`
+		);
+		trendingTagItem.innerHTML = `${trendingTags.data[i]}`;
+		$trendingTagList.appendChild(trendingTagItem);
+	}
+};
+
+// TODO ------- Trending slider
 const getTrendingGif = async () => {
 	await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=12&rating=g`)
 		.then((response) => response.json())
@@ -35,7 +61,6 @@ const getTrendingGif = async () => {
 };
 
 getTrendingGif();
-
 
 const displayTrendingGifs = (trendings) => {
 	for (let i = 0; i < trendings.data.length; i++) {
@@ -58,5 +83,5 @@ const displayTrendingGifs = (trendings) => {
 		`;
 		$trendingSlider.appendChild(gifContainer);
 	}
-}
+};
 

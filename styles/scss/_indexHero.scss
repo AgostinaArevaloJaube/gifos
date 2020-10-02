@@ -147,33 +147,12 @@
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 	border-bottom-color: transparent;
-
-	// body.darkMode & {
-	// 	border-bottom-color: $backgroundDark;
-	// }
 }
 
 #searchSuggestions__container.searchActiveContainer {
 	border-top-color: transparent;
 	position: relative;
 	top: -0.5rem;
-}
-
-
-// Trending tags
-.hero__trending {
-	font-family: $secondary-font;
-	font-weight: 500;
-	padding: 7% 0 2% 0;
-
-	.hero__subtitle {
-		padding-bottom: 2%;
-		font-size: 1em;
-	}
-
-	.trending_list {
-		font-weight: 400;
-	}
 }
 
 .search {

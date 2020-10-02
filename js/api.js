@@ -9,8 +9,7 @@ const searchEndpoint = 'https://api.giphy.com/v1/gifs/search';
 const trendingEndpoint = 'https://api.giphy.com/v1/gifs/trending';
 
 //--endpoint de los tranding tags
-const trendingTagsEndpoint = 'https://api.giphy.com/v1/gifs/trending/searches';
+const trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches';
 
 //--eendpoint de sugerencias de busquedas
-const searchSuggestions = 'https://api.giphy.com/v1/tags/related/';
 const searchAutocomplete = 'https://api.giphy.com/v1/gifs/search/tags';

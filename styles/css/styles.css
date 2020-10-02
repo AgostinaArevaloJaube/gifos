@@ -399,21 +399,6 @@ body.darkMode .SearchSuggestions__container {
   top: -0.5rem;
 }
 
-.hero__trending {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  padding: 7% 0 2% 0;
-}
-
-.hero__trending .hero__subtitle {
-  padding-bottom: 2%;
-  font-size: 1em;
-}
-
-.hero__trending .trending_list {
-  font-weight: 400;
-}
-
 .search {
   position: relative;
 }
@@ -434,7 +419,7 @@ body.darkMode .SearchSuggestions__container {
 
 .searchResult__gallery {
   margin: 0 auto;
-  width: 80%;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -443,9 +428,6 @@ body.darkMode .SearchSuggestions__container {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -504,6 +486,38 @@ body.darkMode .verMasBtn {
 body.darkMode .verMasBtn:hover {
   background-color: #fff;
   color: #37383c;
+}
+
+.hero__trending {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 7% 0 2% 0;
+}
+
+.hero__trending .hero__subtitle {
+  padding-bottom: 2%;
+  font-size: 1em;
+}
+
+.hero__trending .trendingTag_list {
+  font-weight: 400;
+}
+
+.hero__trending .trending__item {
+  cursor: pointer;
+}
+
+.hero__trending .trending__item:hover {
+  font-weight: 600;
+}
+
+.hero__trending .trending__item::after {
+  content: ',  ';
+}
+
+.hero__trending .trending__item:last-child::after {
+  content: ' ';
 }
 
 .trending {

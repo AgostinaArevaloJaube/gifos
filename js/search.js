@@ -4,7 +4,7 @@ let offsetSearch = 0;
 
 // --- Busqueda de gifs
 const getSearch = async (search) => {
-	event.preventDefault();
+	// event.preventDefault();
 	cleanSearchSuggestions();
 	$searchInputHero.value = search;
 	$navbarSearchInput.value = search;
@@ -102,7 +102,6 @@ const getSearchSuggestions = async () => {
 		)
 			.then((response) => response.json())
 			.then((suggestions) => {
-				console.log(suggestions);
 				displaySuggestions(suggestions);
 			})
 			.catch((err) => {
@@ -148,7 +147,7 @@ const setActiveSearchBar = () => {
 	$searchBtn.classList.add('hidden');
 	$searchSuggestionsContainer.classList.remove('hidden');
 	$searchContainer.classList.add('searchActive');
-	$searchSuggestionsContainer.classList.add('searchActiveContainer')
+	$searchSuggestionsContainer.classList.add('searchActiveContainer');
 };
 
 const setActiveNavbarSearch = () => {

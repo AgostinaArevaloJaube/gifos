@@ -1,3 +1,37 @@
+//------ Trending tags
+.hero__trending {
+	font-family: $secondary-font;
+	font-size: 1.2em;
+	font-weight: 500;
+	padding: 7% 0 2% 0;
+
+	.hero__subtitle {
+		padding-bottom: 2%;
+		font-size: 1em;
+	}
+
+	.trendingTag_list {
+		font-weight: 400;
+	}
+
+	.trending__item {
+		cursor: pointer;
+
+		&:hover {
+			font-weight: 600;
+		}
+
+		&::after {
+			content: ',  ';
+		}
+
+		&:last-child::after {
+			content: ' ';
+		}
+	}
+}
+
+//------ Trending slider
 .trending {
 	padding: 15%;
 	background-color: #f3f5f8;
@@ -36,11 +70,8 @@
 	.trending__slider {
 		display: flex;
 	}
-
 }
-
 
 .arrows {
 	padding: 1rem;
 }
-
