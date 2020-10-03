@@ -490,7 +490,7 @@ body.darkMode .verMasBtn:hover {
 
 .hero__trending {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 500;
   padding: 7% 0 2% 0;
 }
@@ -675,12 +675,19 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 }
 
 .gif__container .gif {
-  width: 12rem;
-  height: 10rem;
+  width: 8rem;
+  height: 6rem;
 }
 
 .gif__container .gifActions {
   display: none;
+}
+
+@media screen and (min-width: 400px) {
+  .gif__container .gif {
+    width: 12rem;
+    height: 10rem;
+  }
 }
 
 @media screen and (min-width: 768px) {

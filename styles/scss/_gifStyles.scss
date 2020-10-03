@@ -2,12 +2,19 @@
 	position: relative;
 
 	.gif {
-		width: 12rem;
-		height: 10rem;
+		width: 8rem;
+		height: 6rem;
 	}
 
 	.gifActions {
 		display: none;
+	}
+
+	@media screen and (min-width: $iphone) {
+		.gif {
+			width: 12rem;
+			height: 10rem;
+		}
 	}
 
 	@media screen and (min-width: $tablet) {
