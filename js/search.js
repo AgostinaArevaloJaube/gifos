@@ -4,7 +4,7 @@ let offsetSearch = 0;
 
 // --- Busqueda de gifs
 const getSearch = async (search) => {
-	// event.preventDefault();
+	event.preventDefault();
 	cleanSearchSuggestions();
 	$searchInputHero.value = search;
 	$navbarSearchInput.value = search;
@@ -95,8 +95,6 @@ const getSearchSuggestions = async () => {
 	const USER_INPUT = $searchInputHero.value;
 
 	if (USER_INPUT.length >= 1) {
-		// setActiveSearchBar();
-
 		await fetch(
 			`${searchAutocomplete}?api_key=${apiKey}&q=${USER_INPUT}&limit=4&rating=g`
 		)
@@ -107,8 +105,6 @@ const getSearchSuggestions = async () => {
 			.catch((err) => {
 				console.log(err);
 			});
-	} else {
-		setInactiveSearchBar();
 	}
 };
 

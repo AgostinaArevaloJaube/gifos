@@ -2,6 +2,7 @@
 	position: relative;
 
 	.gif {
+		margin: 0.5rem;
 		width: 8rem;
 		height: 6rem;
 	}
@@ -12,21 +13,24 @@
 
 	@media screen and (min-width: $iphone) {
 		.gif {
-			width: 12rem;
-			height: 10rem;
+			margin: 1rem;
+			width: 10rem;
+			height: 8rem;
 		}
 	}
 
 	@media screen and (min-width: $tablet) {
 		.gif {
-			width: 17rem;
-			height: 13rem;
+			width: 14rem;
+			height: 11rem;
 		}
+
 		.gifActions {
+			margin: 1rem;
 			display: block;
 			opacity: 0;
-			width: 17rem;
-			height: 13rem;
+			width: 14rem;
+			height: 11rem;
 			position: absolute;
 			top: 0;
 			background-color: $purpleTransparency;
@@ -55,12 +59,25 @@
 
 	@media screen and (min-width: $desktop) {
 		.gif {
-			width: 21rem;
-			height: 17rem;
+			width: 17rem;
+			height: 14rem;
 		}
 		.gifActions {
-			width: 21rem;
-			height: 17rem;
+			width: 17rem;
+			height: 14rem;
 		}
 	}
+
+	@media screen and (min-width: $genericLaptop) {
+		.gif {
+			width: 22rem;
+			height: 16rem;
+		}
+		.gifActions {
+			width: 22rem;
+			height: 16rem;
+		}
+	}
+
+
 }

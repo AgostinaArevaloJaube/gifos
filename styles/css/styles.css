@@ -419,7 +419,7 @@ body.darkMode .SearchSuggestions__container {
 
 .searchResult__gallery {
   margin: 0 auto;
-  width: 95%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -428,6 +428,9 @@ body.darkMode .SearchSuggestions__container {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -675,6 +678,7 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 }
 
 .gif__container .gif {
+  margin: 0.5rem;
   width: 8rem;
   height: 6rem;
 }
@@ -685,21 +689,23 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 
 @media screen and (min-width: 400px) {
   .gif__container .gif {
-    width: 12rem;
-    height: 10rem;
+    margin: 1rem;
+    width: 10rem;
+    height: 8rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .gif__container .gif {
-    width: 17rem;
-    height: 13rem;
+    width: 14rem;
+    height: 11rem;
   }
   .gif__container .gifActions {
+    margin: 1rem;
     display: block;
     opacity: 0;
-    width: 17rem;
-    height: 13rem;
+    width: 14rem;
+    height: 11rem;
     position: absolute;
     top: 0;
     background-color: rgba(87, 46, 229, 0.6);
@@ -726,12 +732,23 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 
 @media screen and (min-width: 1024px) {
   .gif__container .gif {
-    width: 21rem;
-    height: 17rem;
+    width: 17rem;
+    height: 14rem;
   }
   .gif__container .gifActions {
-    width: 21rem;
-    height: 17rem;
+    width: 17rem;
+    height: 14rem;
+  }
+}
+
+@media screen and (min-width: 1530px) {
+  .gif__container .gif {
+    width: 22rem;
+    height: 16rem;
+  }
+  .gif__container .gifActions {
+    width: 22rem;
+    height: 16rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */
