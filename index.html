@@ -32,12 +32,12 @@
 				alt="Logo"></a>
 
 		<!-- Barra de búsqueda del navbar -->
-		<section class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
+		<div class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
 			<img class="navbarSearch__btn hidden" id="navbarSearch-gray-btn" src="assets/icon-search-gray.svg" alt="">
 			<input class="navbarSearch__input" id="navbarSearch__input" type="text" placeholder="Busca GIFOS y más">
 			<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
 			<img class="navbarSearch-close-icon hidden" id="navbarSearch-close-icon" src="assets/close.svg" alt="">
-		</section>
+		</div>
 		<!-- Menú -->
 		<nav class="navbar">
 			<img src="assets/burger.svg" alt="Menu hamburguesa" class="navbar__burguer" id="navbar__burger">
@@ -45,11 +45,11 @@
 
 			<ul class="navbar__list hiddenMenu" id="navbar__list">
 				<li class="navbar__list__item"><a href="" class="navbar__link" id="switchTheme">Modo Nocturno</a></li>
-				<hr class="lines">
+				<li class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Favoritos</a></li>
-				<hr class="lines">
+				<li class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Mis GIFOS</a></li>
-				<hr class="lines">
+				<li class="lines">
 				<li class="navbar__list__item hiddenMenu">
 					<a href="crear-gif.html">
 						<img class="navbar__createGif" id="crateGifBtn" src="assets/button-crear-gifo.svg" alt="">
@@ -71,74 +71,98 @@
 			</h1>
 
 			<!-- Barra buscadora del hero -->
-			<section class="search">
+			<div class="search">
 				<img class="ilustra-header" src="assets/ilustra_header.svg" alt="" />
 
-				<section class="search__container" id="search__container">
+				<div class="search__container" id="search__container">
 					<img class="search__btn hidden" id="search-gray-btn" src="assets/icon-search-gray.svg" alt="">
 					<input class="search__input" id="searchInput" type="text" placeholder="Busca GIFOS y más">
 					<img class="search__icon" id="search-icon" src="assets/icon-search.svg" alt="">
 					<img class="search-close-icon hidden" id="search-close-icon" src="assets/close.svg" alt="">
-				</section>
-			</section>
+				</div>
+			</div>
 
 			<!-- Recomendaciones de búsqueda -->
 			<div class="SearchSuggestions__container hidden" id="searchSuggestions__container">
 				<hr class="suggestions-line">
 				<ul class="search-sugestion-list" id="search-sugestion-list">
-					<!-- <li class="SearchSuggestions__item">
-						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
-						<p class="search__Text"> Michael Scott</p>
-					</li>
-					<li class="SearchSuggestions__item">
-						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
-						<p class="search__Text"> Kevin Malone</p>
-					</li>
-					<li class="SearchSuggestions__item">
-						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
-						<p class="search__Text"> Kevin Malone</p>
-					</li>
-					<li class="SearchSuggestions__item">
-						<img class="search__btnGray" id="" src="assets/icon-search-gray.svg" alt="">
-						<p class="search__Text"> Kevin Malone</p>
-					</li> -->
 				</ul>
 			</div>
 
 			<!-- Trending tags -->
-			<article class="hero__trending">
+			<section class="hero__trending">
 				<h4 class="hero__subtitle">Trending:</h4>
 
 				<p class="trendingTag_list" id="trendingTag_list">
 				</p>
 
-			</article>
+			</section>
 		</section>
 
+		<!-- Resultados de la búsqueda -->
+		<section class="searchResult hidden" id="searchResult">
+
+			<hr class="search-line">
+			<h4 class="searchResult__title" id="searchResult__title">Titulo de búsqueda</h4>
+			<div class="errorContainer" id="error-container"></div>
+			<div class="searchResult__gallery" id="searchResult_gallery">
+
+				<!-- Acá van a aparecer los gifs buscados -->
+			</div>
+
+			<a href="" class="verMasBtn hidden" id="verMas-btn">VER MÁS</a>
+		</section>
 	</main>
 
-	<!-- Resultados de la búsqueda -->
-	<section class="searchResult hidden" id="searchResult">
+	<!-- Favoritos -->
+	<section class="container hidden" id="Favoritos">
 
-		<hr class="search-line">
-		<h4 class="searchResult__title" id="searchResult__title"></h4>
-		<section class="errorContainer" id="error-container"></section>
-		<section class="searchResult__gallery" id="searchResult_gallery">
+		<img src="assets/icon-favoritos.svg" alt="Imagen decorativa">
+		<h2 class="title">Favoritos</h2>
 
-			<!-- Acá van a aparecer los gifs buscados -->
+		<section class="empty__container" id="noFavs_container">
+			<img class="empty__image" src="assets/icon-fav-sin-contenido.svg" alt="Imagen decorativa">
+			<h3 class="empty__text">¡Guarda tu primer GIFO en Favoritos <br>
+				para que se muestre aquí!</h3>
 		</section>
 
-		<a href="" class="verMasBtn hidden" id="verMas-btn">VER MÁS</a>
+		<div class="searchResult">
+			<div class="searchResult__gallery">
+				<!-- Acá van a aparecer los gifs favoriteados -->
+			</div>
+
+			<a href="" class="verMasBtn">VER MÁS</a>
+		</div>
+
 	</section>
 
+	<!-- Mis gifs -->
+	<section class="container hidden" id="MisGifos">
+
+		<img src="assets/icon-mis-gifos.svg" alt="Imagen decorativa">
+		<h2 class="title">Mis GIFOS</h2>
+
+		<section class="empty__container" id="noGif_container">
+			<img class="empty__image" src="assets/icon-mis-gifos-sin-contenido.svg" alt="Imagen decorativa">
+			<h3 class="empty__text">¡Anímate a crear tu primer GIFO!</h3>
+		</section>
+
+		<div class="searchResult">
+			<div class="searchResult__gallery">
+				<!-- Acá van a aparecer los gifs creados y subidos a gifos -->
+			</div>
+
+			<a href="" class="verMasBtn">VER MÁS</a>
+		</div>
+
+	</section>
 
 	<!-- Trending -->
 	<section class="trending">
 		<h2 class="trending__title">Trending GIFOS</h2>
 		<p class="trending__paragraph">Mira los últimos GIFOS de nuestra comunidad</p>
 
-		<article class="trending__container">
-
+		<div class="trending__container">
 			<!-- flecha -->
 			<div class="previous-btn arrows">
 				<img src="assets/button-slider-left.svg" alt="Flecha Previous" id="previous-btn">
@@ -148,48 +172,27 @@
 			<div class="trending__slider-container">
 
 				<div class="trending__slider" id="trending__slider">
-
-					<div class="gif__container">
-						<img src="https://media2.giphy.com/media/l378bu6ZYmzS6nBrW/giphy-downsized.gif?cid=4de92765pllw05wz9ukljvq5z0ul6xb5y38jzfpglxufr8u2&amp;rid=giphy-downsized.gif"
-							alt="Lmao Lol GIF by Originals" class="gif">
-						<div class="gifActions">
-							<div class="gifActions__btn">
-								<img src="assets/icon-fav.svg" class="favorite"
-									alt="Botón para agregar a mis favoritos">
-								<img src="assets/icon-download.svg" class="download" alt="Botón para descargar">
-								<img src="assets/icon-max-normal.svg" class="maximize" alt="Botón para maximizar">
-							</div>
-							<div class="gif__info">
-								<p class="gif_user">User</p>
-								<p class="gif_title">Titulo Gif</p>
-							</div>
-						</div>
-
-					</div>
 				</div>
-
 			</div>
 
 			<!-- flecha -->
 			<div class="next-btn arrows">
 				<img src="assets/Button-Slider-right.svg" alt="Flecha Next" id="next-btn">
 			</div>
-		</article>
+
+		</div>
 
 	</section>
 
-
 	<!-- Footer -->
 	<footer class="footer">
-
-
 		<div class="footer__socialmediaContainer">
 			<p class="footer__paragraph">Compartir en:</p>
-			<section class="socialmedia">
+			<div class="socialmedia">
 				<a class="socialmedia__item" href="facebook.com"><i class="fab fa-facebook-f"></i></a>
 				<a class="socialmedia__item" href="twitter.com"><i class="fab fa-twitter"></i></a>
 				<a class="socialmedia__item" href="instagram.com"><i class="fab fa-instagram"></i></a>
-			</section>
+			</div>
 		</div>
 		<p class="footer__paragraph">© GIFOS 2020 All Rights Reserved.</p>
 
@@ -201,6 +204,8 @@
 	<script src="js/api.js"></script>
 	<script src="js/search.js"></script>
 	<script src="js/trending.js"></script>
+	<script src="js/gif-functions.js"></script>
+	<script src="js/create-gif.js"></script>
 
 </body>
 

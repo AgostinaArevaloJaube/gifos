@@ -524,7 +524,7 @@ body.darkMode .verMasBtn:hover {
 }
 
 .trending {
-  padding: 15%;
+  padding: 15% 0 0 0;
   background-color: #f3f5f8;
   text-align: center;
 }
@@ -638,6 +638,48 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+.container {
+  padding: 5%;
+  padding-top: 30%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 400px) {
+  .container {
+    padding-top: 20%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-top: 15%;
+  }
+}
+
+@media screen and (min-width: 1530px) {
+  .container {
+    padding-top: 10%;
+  }
+}
+
+.title {
+  margin-top: 0.5rem;
+  margin-bottom: 2.8rem;
+}
+
+.empty__image {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.empty__text {
+  padding: 1rem 0 1rem 0;
+  color: #50e3c2;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 1024px) {

@@ -21,8 +21,6 @@ const getSearch = async (search) => {
 	)
 		.then((response) => response.json())
 		.then((results) => {
-			console.log(results); //! sacar este console log antes de entregar
-
 			if (results.data == 0) {
 				displayErrorSearch();
 			} else {
@@ -39,6 +37,10 @@ const displaySearchGif = (results) => {
 
 	if (offsetSearch === 0) {
 		window.scrollTo({ top: 600, behavior: 'smooth' });
+	}
+
+	if (results.data.length < 12) {
+		$verMasbtn.style.display = "none";
 	}
 
 	for (let i = 0; i < results.data.length; i++) {
@@ -67,14 +69,13 @@ const displaySearchGif = (results) => {
 const displayErrorSearch = () => {
 	$searchResultContainer.classList.remove('hidden');
 	$errorContainer.classList.remove('hidden');
-	$verMasbtn.style.display = 'none';
-
 	$errorContainer.innerHTML = `
 	<div class="error__container" id="error-container">
-		<img class="" id="error-search" src="assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" >
-		<h4 class="error-search-text">Intenta con otra búsqueda.</h4>
+	<img class="" id="error-search" src="assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" >
+	<h4 class="error-search-text">Intenta con otra búsqueda.</h4>
 	</div>
 	`;
+	$verMasbtn.style.display = 'none';
 };
 
 // --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch.
@@ -165,7 +166,7 @@ const setInactiveSearchBar = () => {
 	$searchGrayBtn.classList.add('hidden');
 	$searchContainer.classList.remove('searchActive');
 };
-
+654;
 const setInactiveNavbarSearch = () => {
 	$navbarSearchInput.value = '';
 	$searchInputHero.value = '';
