@@ -1,36 +1,120 @@
-@media screen and (min-width: $desktop) {
-	.crearGif {
-		padding-top: 150px;
+.crearGif {
+	padding-top: 150px;
+	position: relative;
+
+	&__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__camara {
+		max-width: 25%;
 		position: relative;
 
-		.crearGif__container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			.crearGif__camara {
-				margin: 0 auto;
-				max-width: 15%;
-				position: relative;
-	
-				.path {
-					position: absolute;
-					top: 19px;
-				}
-			}
-	
-			.crearGif__recordingZone {
-				margin: 0 auto;
-				width: 50%;
-				height: 25rem;
-				border: 1px solid $purple;
-			}
-	
-			// .crearGif__celluloidFilm {
-			// 	max-width: 25%;
-			// }
+		.path {
+			position: relative;
+			top: -1rem;
 		}
-
-		
 	}
+
+	&__celluloidFilm {
+		max-width: 25%;
+		height: 20rem;
+		padding-top: 18rem;
+		padding-left: 1.5rem;
+	}
+
+	&__recordingZone {
+		padding: 2rem;
+		width: 50%;
+		height: 20rem;
+		border: 1px solid $purple;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+		align-items: center;
+		position: relative;
+
+		body.darkMode & {
+			border: 1px solid #fff;
+		}
+	}
+
+	&__title {
+		font-family: $secondary-font;
+	}
+
+	&__text {
+		padding-top: 10px;
+		color: #000;
+
+		body.darkMode & {
+			color: #fff;
+		}
+	}
+
+	.corner {
+		width: 1.7rem;
+		height: 1.7rem;
+		position: absolute;
+	}
+	.top--left {
+		border-top: 1px solid $aqua;
+		border-left: 1px solid $aqua;
+		top: 1.25rem;
+		left: 1.25rem;
+	}
+	.top--right {
+		border-top: 1px solid $aqua;
+		border-right: 1px solid $aqua;
+		top: 1.25rem;
+		right: 1.25rem;
+	}
+	.bottom--right {
+		border-bottom: 1px solid $aqua;
+		border-right: 1px solid $aqua;
+		bottom: 1.25rem;
+		right: 1.25rem;
+	}
+	.bottom--left {
+		border-bottom: 1px solid $aqua;
+		border-left: 1px solid $aqua;
+		bottom: 1.25rem;
+		left: 1.25rem;
+	}
+
+	.pagination {
+		margin: 0 auto;
+		width: fit-content;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		text-align: center;
+
+		.step {
+			width: 2rem;
+			height: 2rem;
+			padding-top: 0.2em;
+			margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+			border: 1px solid $purple;
+			border-radius: 50%;
+			font-size: 1.2em;
+
+			body.darkMode & {
+				border: 1px solid #fff;
+			}
+		}
+	}
+
+	.border {
+		width: 40rem;
+		margin: 0 auto;
+		border: 2px solid $purple;
+	}
+
+
 }

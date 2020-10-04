@@ -245,10 +245,6 @@ body.darkMode .navbarSearch__container .navbarSearch__input {
   font-weight: 700;
 }
 
-.hero__title .aqua-text {
-  color: #50e3c2;
-}
-
 @media screen and (min-width: 768px) {
   .hero__title {
     font-size: 2em;
@@ -261,6 +257,10 @@ body.darkMode .navbarSearch__container .navbarSearch__input {
   .hero__title {
     font-size: 2.5em;
   }
+}
+
+.aqua-text {
+  color: #50e3c2;
 }
 
 .ilustra-header {
@@ -461,32 +461,34 @@ body.darkMode .SearchSuggestions__container {
   color: #50e3c2;
 }
 
-.verMasBtn {
+.button {
   display: block;
-  width: 10rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: 1rem auto;
-  border: 2px solid #572ee5;
+  border: 1.8px solid #572ee5;
   border-radius: 2rem;
-  padding: 1.3rem 1.5rem;
+  padding: 1.2rem 1.3rem;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   font-weight: 500;
-  font-size: 1em;
+  font-size: 13px;
   color: #572ee5;
 }
 
-.verMasBtn:hover {
+.button:hover {
   background-color: #572ee5;
   color: #fff;
 }
 
-body.darkMode .verMasBtn {
+body.darkMode .button {
   border: 2px solid #fff;
   color: #fff;
 }
 
-body.darkMode .verMasBtn:hover {
+body.darkMode .button:hover {
   background-color: #fff;
   color: #37383c;
 }
@@ -682,37 +684,155 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
   font-size: 16px;
 }
 
-@media screen and (min-width: 1024px) {
-  .crearGif {
-    padding-top: 150px;
-    position: relative;
-  }
-  .crearGif .crearGif__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .crearGif .crearGif__container .crearGif__camara {
-    margin: 0 auto;
-    max-width: 15%;
-    position: relative;
-  }
-  .crearGif .crearGif__container .crearGif__camara .path {
-    position: absolute;
-    top: 19px;
-  }
-  .crearGif .crearGif__container .crearGif__recordingZone {
-    margin: 0 auto;
-    width: 50%;
-    height: 25rem;
-    border: 1px solid #572ee5;
-  }
+.crearGif {
+  padding-top: 150px;
+  position: relative;
+}
+
+.crearGif__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crearGif__camara {
+  max-width: 25%;
+  position: relative;
+}
+
+.crearGif__camara .path {
+  position: relative;
+  top: -1rem;
+}
+
+.crearGif__celluloidFilm {
+  max-width: 25%;
+  height: 20rem;
+  padding-top: 18rem;
+  padding-left: 1.5rem;
+}
+
+.crearGif__recordingZone {
+  padding: 2rem;
+  width: 50%;
+  height: 20rem;
+  border: 1px solid #572ee5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+body.darkMode .crearGif__recordingZone {
+  border: 1px solid #fff;
+}
+
+.crearGif__title {
+  font-family: "Montserrat", sans-serif;
+}
+
+.crearGif__text {
+  padding-top: 10px;
+  color: #000;
+}
+
+body.darkMode .crearGif__text {
+  color: #fff;
+}
+
+.crearGif .corner {
+  width: 1.7rem;
+  height: 1.7rem;
+  position: absolute;
+}
+
+.crearGif .top--left {
+  border-top: 1px solid #50e3c2;
+  border-left: 1px solid #50e3c2;
+  top: 1.25rem;
+  left: 1.25rem;
+}
+
+.crearGif .top--right {
+  border-top: 1px solid #50e3c2;
+  border-right: 1px solid #50e3c2;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.crearGif .bottom--right {
+  border-bottom: 1px solid #50e3c2;
+  border-right: 1px solid #50e3c2;
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+
+.crearGif .bottom--left {
+  border-bottom: 1px solid #50e3c2;
+  border-left: 1px solid #50e3c2;
+  bottom: 1.25rem;
+  left: 1.25rem;
+}
+
+.crearGif .pagination {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.crearGif .pagination .step {
+  width: 2rem;
+  height: 2rem;
+  padding-top: 0.2em;
+  margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+  border: 1px solid #572ee5;
+  border-radius: 50%;
+  font-size: 1.2em;
+}
+
+body.darkMode .crearGif .pagination .step {
+  border: 1px solid #fff;
+}
+
+.crearGif .border {
+  width: 40rem;
+  margin: 0 auto;
+  border: 2px solid #572ee5;
 }
 
 .gif__container {
@@ -758,9 +878,42 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
     opacity: 100;
   }
   .gif__container .gifActions__btn {
+    width: 8rem;
     padding: 4%;
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     right: 0;
+  }
+  .gif__container .gifActions__btn .btn {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+  .gif__container .gifActions__btn .favorite {
+    background: url("/assets/icon-fav.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .favorite:hover {
+    background: url("/assets/icon-fav-hover.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .favorite:active {
+    background: url("/assets/icon-fav-active.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .download {
+    background: url("/assets/icon-download.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .download:hover {
+    background: url("/assets/icon-download-hover.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .maximize {
+    background: url("/assets/icon-max-normal.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .maximize:hover {
+    background: url("/assets/icon-max-hover.svg") center no-repeat;
   }
   .gif__container .gif__info {
     position: absolute;

@@ -42,9 +42,50 @@
 		}
 
 		.gifActions__btn {
+			width: 8rem;
 			padding: 4%;
 			position: absolute;
+			display: flex;
+			justify-content: space-between;
 			right: 0;
+
+			.btn {
+				width: 2rem;
+				height: 2rem;
+				cursor: pointer;
+			}
+
+			.favorite {
+				background: url('/assets/icon-fav.svg') center no-repeat;
+
+				&:hover {
+					background: url('/assets/icon-fav-hover.svg') center
+					no-repeat;;
+				}
+
+				&:active {
+					background: url('/assets/icon-fav-active.svg') center
+						no-repeat;
+				}
+			}
+
+			.download {
+				background: url('/assets/icon-download.svg') center no-repeat;
+
+				&:hover {
+					background: url('/assets/icon-download-hover.svg') center
+					no-repeat;;
+				}
+			}
+
+			.maximize {
+				background: url('/assets/icon-max-normal.svg') center no-repeat;
+
+				&:hover {
+					background: url('/assets/icon-max-hover.svg') center
+					no-repeat;;
+				}
+			}
 		}
 
 		.gif__info {
@@ -78,6 +119,4 @@
 			height: 16rem;
 		}
 	}
-
-
 }

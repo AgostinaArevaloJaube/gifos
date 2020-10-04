@@ -51,9 +51,9 @@ const displaySearchGif = (results) => {
 	
 		<div class="gifActions">
 			<div class="gifActions__btn">
-				<img src="assets/icon-fav.svg" class="favorite" alt="Botón para agregar a mis favoritos">
-				<img src="assets/icon-download.svg" class="download" alt="Botón para descargar">
-				<img src="assets/icon-max-normal.svg" class="maximize" alt="Botón para maximizar">
+				<div class="btn favorite"></div>
+				<div class="btn download"></div>
+				<div class="btn maximize"></div>
 			</div>
 			<div class="gif__info">
 				<p class="gif_user">${results.data[i].username}</p>

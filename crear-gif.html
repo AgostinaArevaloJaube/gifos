@@ -27,29 +27,29 @@
 
 	<header class="header__container" id="header__container">
 
-
-		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-mobile.svg"
+		<!-- Logo -->
+		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-desktop.svg"
 				alt="Logo"></a>
 
-		<form class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
-			<input class="navbarSearch__input" id="NavbarSearchInput" type="text" placeholder="Busca GIFOS y más">
-			<a href="">
-				<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
-			</a>
-		</form>
-
+		<!-- Barra de búsqueda del navbar -->
+		<div class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
+			<img class="navbarSearch__btn hidden" id="navbarSearch-gray-btn" src="assets/icon-search-gray.svg" alt="">
+			<input class="navbarSearch__input" id="navbarSearch__input" type="text" placeholder="Busca GIFOS y más">
+			<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
+			<img class="navbarSearch-close-icon hidden" id="navbarSearch-close-icon" src="assets/close.svg" alt="">
+		</div>
+		<!-- Menú -->
 		<nav class="navbar">
-
 			<img src="assets/burger.svg" alt="Menu hamburguesa" class="navbar__burguer" id="navbar__burger">
 
 
 			<ul class="navbar__list hiddenMenu" id="navbar__list">
-				<li class="navbar__list__item"><a class="navbar__link" id="switchTheme">Modo Nocturno</a></li>
-				<hr class="lines">
+				<li class="navbar__list__item"><a href="" class="navbar__link" id="switchTheme">Modo Nocturno</a></li>
+				<li class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Favoritos</a></li>
-				<hr class="lines">
+				<li class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Mis GIFOS</a></li>
-				<hr class="lines">
+				<li class="lines">
 				<li class="navbar__list__item hiddenMenu">
 					<a href="crear-gif.html">
 						<img class="navbar__createGif" id="crateGifBtn" src="assets/button-crear-gifo.svg" alt="">
@@ -63,40 +63,55 @@
 	<main class="crearGif">
 
 		<section class="crearGif__container">
+
+			<!-- cámara -->
 			<div class="crearGif__camara">
-				<img src="assets/camara.svg" alt="">
-				<img class="path" src="assets/Path 2.svg" alt="">
+				<img id="camera" src="assets/camara.svg" alt="cámara filmadora ilustrativa">
+				<img class="path" id="path" src="assets/element-luz-camara.svg" alt="luz de camara filmadora">
 			</div>
 			<div class="crearGif__recordingZone">
 
-				<div class="">
-					<div class="marco1"></div>
-					<div class="marco2"></div>
-					<div class="marco3"></div>
-					<div class="marco4"></div>
-				</div>
+				<!-- bordes -->
+				<div class="corner top--left"></div>
+				<div class="corner top--right"></div>
+				<div class="corner bottom--left"></div>
+				<div class="corner bottom--right"></div>
 
-				<div class="crearGif__recordingZone__">
 
+				<!-- recuadro de grabación -->
+				<div class="crearGif__recordingZone__content">
+					<h3 class="crearGif__title" id="crearGif_title">Aquí podrás <br> crear tus propios <span
+							class="aqua-text">GIFOS</span> </h3>
+					<p class="crearGif__text" id="crearGif_text">¡Crea tu GIFO en solo 3 pasos! <br> (solo necesitas una
+						cámara para grabar un video)</p>
+
+						<!-- ! FALTAN LOS OTROS TEXTOS, EL FONDO LILA CON TRANSPARENCIA, EL TIMMER, LOS ICONOS -->
 				</div>
 
 			</div>
+
+			<!-- celuloide -->
 			<div class="crearGif__celluloidFilm">
-				<img src="assets/pelicula.svg" alt="">
+				<img class="celuloide" id="celuloide" src="assets/pelicula.svg" alt="celuloide ilustracion">
 			</div>
 
 
 		</section>
 
-		<hr>
-				<!-- <div class="botones-creargifo-contenedor">
+		<div class="pagination">
+			<p class="step">1</p>
+			<p class="step">2</p>
+			<p class="step">3</p>
+		</div>
 
-			<button id="btn-creargifo-comenzar" class="btn-generico">comenzar</button>
-			<button id="btn-creargifo-grabar" class="btn-generico">grabar</button>
-			<button id="btn-creargifo-finalizar" class="btn-generico">finalizar</button>
-			<button id="btn-creargifo-subirgifo" class="btn-generico">subir gifo</button>
+		<hr class="border">
 
-		</div> -->
+		<div class="buttons">
+			<a class="button" id="buttons__creargif--start">COMENZAR</a>
+			<a class="button" id="buttons__creargif--record">GRABAR</a>
+			<a class="button" id="buttons__creargif--finalizar">FINALIZAR</a>
+			<a class="button" id="buttons__creargif--subirgifo">SUBIR GIFO</a>
+		</div>
 
 
 	</main>

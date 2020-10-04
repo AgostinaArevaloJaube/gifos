@@ -18,9 +18,6 @@
 	font-size: 1.6em;
 	font-weight: 700;
 
-	.aqua-text {
-		color: $aqua;
-	}
 
 	@media screen and (min-width: $tablet) {
 		font-size: 2em;
@@ -32,6 +29,10 @@
 		font-size: 2.5em;
 	}
 }
+.aqua-text {
+	color: $aqua;
+}
+
 
 .ilustra-header {
 	max-width: 90%;

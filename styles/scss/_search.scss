@@ -44,18 +44,18 @@
 	color: $aqua;
 }
 
-.verMasBtn {
+.button {
 	display: block;
-	width: 10rem;
+	width: fit-content;
 	margin: 1rem auto;
-	border: 2px solid $purple;
+	border: 1.8px solid $purple;
 	border-radius: 2rem;
-	padding: 1.3rem 1.5rem;
+	padding: 1.2rem 1.3rem;
 	text-decoration: none;
 	font-family: $secondary-font;
 	text-align: center;
 	font-weight: 500;
-	font-size: 1em;
+	font-size: 13px;
 	color: $purple;
 
 	&:hover {
