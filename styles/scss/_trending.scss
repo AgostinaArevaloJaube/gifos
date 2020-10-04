@@ -57,21 +57,35 @@
 	}
 
 	&__container {
+		max-width: 100%;
 		display: flex;
-		// justify-content:space-evenly;
 		align-items: center;
-		overflow: scroll;
 
-		@media screen and (min-width: $tablet) {
-			overflow: hidden;
+		.trending__slider {
+			width: 100%;
+			display: flex;
+			overflow: scroll;
+
+			@media screen and (min-width: $tablet) {
+				overflow: hidden;
+			}
+		}
+
+		.arrows {
+			display: none;
+
+			@media screen and (min-width: $tablet) {
+				display: block;
+				padding: 0.5rem;
+				width: 10%;
+			}
 		}
 	}
 
-	.trending__slider {
-		display: flex;
+	@media screen and (min-width: $tablet) {
+		.trending__slider--container {
+			overflow: hidden;
+		}
 	}
-}
-
-.arrows {
-	padding: 1rem;
+	
 }

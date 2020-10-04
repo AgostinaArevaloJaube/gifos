@@ -551,29 +551,45 @@ body.darkMode .trending__paragraph {
 }
 
 .trending__container {
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.trending__container .trending__slider {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow: scroll;
 }
 
 @media screen and (min-width: 768px) {
-  .trending__container {
+  .trending__container .trending__slider {
     overflow: hidden;
   }
 }
 
-.trending .trending__slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.trending__container .arrows {
+  display: none;
 }
 
-.arrows {
-  padding: 1rem;
+@media screen and (min-width: 768px) {
+  .trending__container .arrows {
+    display: block;
+    padding: 0.5rem;
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .trending .trending__slider--container {
+    overflow: hidden;
+  }
 }
 
 .footer {

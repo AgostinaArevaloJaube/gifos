@@ -23,7 +23,7 @@ $nextBtn.addEventListener('mouseout', setTrendingBtn);
 
 // TODO ---------------------- Trending API ----------------------  \\
 
-// TODO ------- Trending tags
+// TODO ------- Trending TAGS
 
 const getTrendingTags = async () => {
 	await fetch(`${trendingTagsEndpoint}?api_key=${apiKey}`)
@@ -50,51 +50,18 @@ const displayTrendingTags = (trendingTags) => {
 	}
 };
 
-// TODO ------- Trending slider
+// TODO ------- Trending SLIDER
 const getTrendingGif = async () => {
-	if (window.innerWidth < 768) {
-		await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=12&rating=g`)
-			.then((response) => response.json())
-			.then((trendings) => {
-				console.log(trendings);
-				displayTrendingGifs(trendings);
-			})
-			.catch((err) => console.error(err));
-	} else {
-		await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=3&rating=g`)
-			.then((response) => response.json())
-			.then((trendings) => {
-				console.log(trendings);
-				displayTrendingGifs(trendings);
-			})
-			.catch((err) => console.error(err));
-	}
+	await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=12&rating=g`)
+		.then((response) => response.json())
+		.then((trendings) => {
+			console.log(trendings);
+			displayTrendingGifs(trendings);
+		})
+		.catch((err) => console.error(err));
 };
 
 getTrendingGif();
-
-// const displayTrendingGifsMobile = (trendings) => {
-// 	for (let i = 0; i < trendings.data.length; i++) {
-// 		const gifContainer = document.createElement('div');
-// 		gifContainer.classList.add('gif__container');
-// 		gifContainer.innerHTML = `
-// 		<img class="gif" src="${trendings.data[i].images.original.url}" alt="${trendings.data[i].title}">
-
-// 		<div class="gifActions">
-// 			<div class="gifActions__btn">
-// 				<img src="assets/icon-fav.svg" class="favorite" alt="Botón para agregar a mis favoritos">
-// 				<img src="assets/icon-download.svg" class="download" alt="Botón para descargar">
-// 				<img src="assets/icon-max-normal.svg" class="maximize" alt="Botón para maximizar">
-// 			</div>
-// 			<div class="gif__info">
-// 				<p class="gif_user">${trendings.data[i].username}</p>
-// 				<p class="gif_title">${trendings.data[i].title}</p>
-// 			</div>
-// 		</div>
-// 		`;
-// 		$trendingSlider.appendChild(gifContainer);
-// 	}
-// };
 
 const displayTrendingGifs = (trendings) => {
 	for (let i = 0; i < trendings.data.length; i++) {
@@ -115,11 +82,17 @@ const displayTrendingGifs = (trendings) => {
 			</div>
 		</div>
 		`;
-
-		if (window.innerWidth < 768) {
-			$trendingSliderMobile.appendChild(gifContainer);
-		} else {
-			$trendingSlider.appendChild(gifContainer);
-		}
+		$trendingSlider.appendChild(gifContainer);
 	}
 };
+
+const nextSliderBtn = () => {
+	$trendingSlider.scrollLeft += 400;
+};
+
+const prevSliderBtn = () => {
+	$trendingSlider.scrollLeft -= 400;
+};
+
+$nextBtn.addEventListener('click', nextSliderBtn);
+$previousBtn.addEventListener('click', prevSliderBtn);
