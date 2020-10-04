@@ -526,7 +526,7 @@ body.darkMode .button:hover {
 }
 
 .trending {
-  padding: 15% 0 0 0;
+  padding: 15% 0 8% 0;
   background-color: #f3f5f8;
   text-align: center;
 }
@@ -588,6 +588,24 @@ body.darkMode .trending__paragraph {
 
 .trending .trending__slider--container {
   overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .trending {
+    padding: 12% 0 8% 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .trending {
+    padding: 10% 0 8% 0;
+  }
+}
+
+@media screen and (min-width: 1530px) {
+  .trending {
+    padding: 8% 0 8% 0;
+  }
 }
 
 .footer {

@@ -33,7 +33,7 @@
 
 //------ Trending slider
 .trending {
-	padding: 15% 0 0 0;
+	padding: 15% 0 8% 0;
 	background-color: #f3f5f8;
 	text-align: center;
 
@@ -84,5 +84,17 @@
 
 	.trending__slider--container {
 		overflow: hidden;
+	}
+
+	@media screen and (min-width: $tablet) {
+		padding: 12% 0 8% 0;
+	}
+
+	@media screen and (min-width: $desktop) {
+		padding: 10% 0 8% 0;
+	}
+
+	@media screen and (min-width: $genericLaptop) {
+		padding: 8% 0 8% 0;
 	}
 }
