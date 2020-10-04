@@ -581,15 +581,13 @@ body.darkMode .trending__paragraph {
 @media screen and (min-width: 768px) {
   .trending__container .arrows {
     display: block;
-    padding: 0.5rem;
+    padding: 1rem;
     width: 10%;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .trending .trending__slider--container {
-    overflow: hidden;
-  }
+.trending .trending__slider--container {
+  overflow: hidden;
 }
 
 .footer {

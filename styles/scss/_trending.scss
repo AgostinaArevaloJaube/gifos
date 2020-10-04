@@ -76,16 +76,13 @@
 
 			@media screen and (min-width: $tablet) {
 				display: block;
-				padding: 0.5rem;
+				padding: 1rem;
 				width: 10%;
 			}
 		}
 	}
 
-	@media screen and (min-width: $tablet) {
-		.trending__slider--container {
-			overflow: hidden;
-		}
+	.trending__slider--container {
+		overflow: hidden;
 	}
-	
 }
