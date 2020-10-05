@@ -33,8 +33,6 @@ const displayFavoriteSection = () => {
 	}
 };
 
-
-
 const displayFavoriteGifs = () => {
 	$favContainer.innerHTML = '';
 
@@ -60,7 +58,6 @@ const displayFavoriteGifs = () => {
 			`;
 		$favContainer.appendChild(gifContainer);
 	}
-};
 
 displayFavoriteGifs();
 $favoritosMenu.addEventListener('click', displayFavoriteSection);
@@ -82,3 +79,7 @@ const removeGif = (gif) => {
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
 	displayFavoriteSection();
 };
+
+// TODO ---------------------- GIF Actions Mobile ----------------------  \\
+
+$favoritosMenu.addEventListener("touchstart", displayFavoriteSection);
