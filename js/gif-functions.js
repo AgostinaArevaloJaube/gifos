@@ -79,5 +79,3 @@ const removeGif = (gif) => {
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
 	displayFavoriteSection();
 };
-
-$favoritosMenu.addEventListener('touchstart', displayFavoriteSection, false);
