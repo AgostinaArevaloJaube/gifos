@@ -222,7 +222,7 @@ body.darkMode .navbarSearch__container .navbarSearch__input {
   display: none;
 }
 
-.hero__container {
+.topContainers {
   padding: 5%;
   padding-top: 30%;
   position: relative;
@@ -230,7 +230,7 @@ body.darkMode .navbarSearch__container .navbarSearch__input {
 }
 
 @media screen and (min-width: 500px) {
-  .hero__container {
+  .topContainers {
     padding-top: 20%;
   }
 }
@@ -675,7 +675,6 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 }
 
 .container {
-  padding: 5%;
   padding-top: 30%;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -946,6 +945,12 @@ body.darkMode .crearGif .pagination .step {
   }
   .gif__container .gifActions__btn .maximize:hover {
     background: url("/assets/icon-max-hover.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .remove {
+    background: url("/assets/icon-trash-normal.svg") center no-repeat;
+  }
+  .gif__container .gifActions__btn .remove:hover {
+    background: url("/assets/icon-trash-hover.svg") center no-repeat;
   }
   .gif__container .gif__info {
     position: absolute;

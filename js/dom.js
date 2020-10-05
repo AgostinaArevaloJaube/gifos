@@ -5,6 +5,8 @@ const $burgerMenu = document.querySelector('#navbar__burger');
 const $logo = document.querySelector('#logo');
 const $switchThemeBtn = document.querySelector('#switchTheme');
 const $crearGifBtn = document.querySelector('#crateGifBtn');
+const $favoritosMenu = document.querySelector('#FavoritosMenu');
+const $heroSection = document.querySelector('#heroSection')
 
 // DOM elements SEARCH
 const $searchContainer = document.querySelector('#search__container');
@@ -48,6 +50,12 @@ const $trendingSlider = document.querySelector('#trending__slider');
 // DOM gif elements
 const $gifContainer = document.querySelectorAll('.gif__container');
 const $gifAcctions = document.querySelectorAll('.gifActions');
+
+// DOM favorites
+
+const $favSection = document.querySelector('#favorites-section')
+const $favContainer = document.querySelector('#fav-container');
+const $noFavsContainer = document.querySelector('#noFavs_container');
 
 // DOM create GIFOs
 const $camera = document.querySelector('#camera');

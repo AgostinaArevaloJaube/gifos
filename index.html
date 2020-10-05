@@ -46,7 +46,7 @@
 			<ul class="navbar__list hiddenMenu" id="navbar__list">
 				<li class="navbar__list__item"><a href="" class="navbar__link" id="switchTheme">Modo Nocturno</a></li>
 				<li class="lines">
-				<li class="navbar__list__item"><a class="navbar__link" href="#">Favoritos</a></li>
+				<li class="navbar__list__item" id="FavoritosMenu"><a class="navbar__link" href="#">Favoritos</a></li>
 				<li class="lines">
 				<li class="navbar__list__item"><a class="navbar__link" href="#">Mis GIFOS</a></li>
 				<li class="lines">
@@ -61,7 +61,7 @@
 	</header>
 
 	<!-- Main -->
-	<main class="hero__container">
+	<main class="topContainers" id="heroSection">
 
 		<!-- hero -->
 		<section class="heading__container">
@@ -115,29 +115,28 @@
 	</main>
 
 	<!-- Favoritos -->
-	<section class="container hidden" id="Favoritos">
+
+	<section class="topContainers hidden" id="favorites-section">
 
 		<img src="assets/icon-favoritos.svg" alt="Imagen decorativa">
 		<h2 class="title">Favoritos</h2>
 
-		<section class="empty__container" id="noFavs_container">
+		<section class="empty__container hidden" id="noFavs_container">
 			<img class="empty__image" src="assets/icon-fav-sin-contenido.svg" alt="Imagen decorativa">
 			<h3 class="empty__text">¡Guarda tu primer GIFO en Favoritos <br>
 				para que se muestre aquí!</h3>
 		</section>
 
 		<div class="searchResult">
-			<div class="searchResult__gallery">
+			<div class="searchResult__gallery hidden" id="fav-container">
 				<!-- Acá van a aparecer los gifs favoriteados -->
 			</div>
-
-			<a href="" class="button">VER MÁS</a>
 		</div>
 
 	</section>
 
 	<!-- Mis gifs -->
-	<section class="container hidden" id="MisGifos">
+	<section class="topContainers hidden" id="MisGifos">
 
 		<img src="assets/icon-mis-gifos.svg" alt="Imagen decorativa">
 		<h2 class="title">Mis GIFOS</h2>
@@ -151,8 +150,6 @@
 			<div class="searchResult__gallery">
 				<!-- Acá van a aparecer los gifs creados y subidos a gifos -->
 			</div>
-
-			<a href="" class="button">VER MÁS</a>
 		</div>
 
 	</section>
@@ -200,29 +197,30 @@
 	</footer>
 
 	<!-- TODO TEMPLATE DE GIF -->
-	<!-- <div class="gif__container">
+	<div class="gif__container">
 		<img class="gif" src="https://media.giphy.com/media/xMGh0bajSyNdC/giphy.gif" alt="${results.data[i].title}">
 
 		<div class="gifActions">
 			<div class="gifActions__btn">
-				<div class="btn favorite"></div>
-				<div class="btn download"></div>
-				<div class="btn maximize"></div>
+				<div class="btn favorite" onclick=""></div>
+				<div class="btn download" onclick=""></div>
+				<div class="btn maximize" onclick=""></div>
 			</div>
 			<div class="gif__info">
 				<p class="gif_user">Usuario</p>
 				<p class="gif_title">Titulo</p>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
+	<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 	<script src="js/dom.js"></script>
 	<script src="js/dark-mode.js"></script>
 	<script src="js/navbar.js"></script>
 	<script src="js/api.js"></script>
+	<script src="js/gif-functions.js"></script>
 	<script src="js/search.js"></script>
 	<script src="js/trending.js"></script>
-	<script src="js/gif-functions.js"></script>
 	<script src="js/create-gif.js"></script>
 
 </body>

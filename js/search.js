@@ -40,7 +40,7 @@ const displaySearchGif = (results) => {
 	}
 
 	if (results.data.length < 12) {
-		$verMasbtn.style.display = "none";
+		$verMasbtn.style.display = 'none';
 	}
 
 	for (let i = 0; i < results.data.length; i++) {
@@ -51,8 +51,8 @@ const displaySearchGif = (results) => {
 	
 		<div class="gifActions">
 			<div class="gifActions__btn">
-				<div class="btn favorite"></div>
-				<div class="btn download"></div>
+				<div class="btn favorite" onclick="addToFav('${results.data[i].images.original.url}','${results.data[i].username}','${results.data[i].title}')"></div>
+				<div class="btn download" onclick="downloadGifo('${results.data[i].images.original.url}','${results.data[i].title}')"></div>
 				<div class="btn maximize"></div>
 			</div>
 			<div class="gif__info">

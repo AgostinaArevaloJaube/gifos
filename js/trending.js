@@ -54,31 +54,31 @@ const displayTrendingTags = (trendingTags) => {
 const getTrendingGif = async () => {
 	await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=12&rating=g`)
 		.then((response) => response.json())
-		.then((trendings) => {
-			console.log(trendings);
-			displayTrendingGifs(trendings);
+		.then((results) => {
+			console.log(results);
+			displayTrendingGifs(results);
 		})
 		.catch((err) => console.error(err));
 };
 
 getTrendingGif();
 
-const displayTrendingGifs = (trendings) => {
-	for (let i = 0; i < trendings.data.length; i++) {
+const displayTrendingGifs = (results) => {
+	for (let i = 0; i < results.data.length; i++) {
 		const gifContainer = document.createElement('div');
 		gifContainer.classList.add('gif__container');
 		gifContainer.innerHTML = ` 
-		<img class="gif" src="${trendings.data[i].images.original.url}" alt="${trendings.data[i].title}">
+		<img class="gif" src="${results.data[i].images.original.url}" alt="${results.data[i].title}">
 	
 		<div class="gifActions">
 			<div class="gifActions__btn">
-				<div class="btn favorite"></div>
+			<div class="btn favorite" onclick="addToFav('${results.data[i].images.original.url}','${results.data[i].username}','${results.data[i].title}')"></div>
 				<div class="btn download"></div>
 				<div class="btn maximize"></div>
 			</div>
 			<div class="gif__info">
-				<p class="gif_user">${trendings.data[i].username}</p>
-				<p class="gif_title">${trendings.data[i].title}</p>
+				<p class="gif_user">${results.data[i].username}</p>
+				<p class="gif_title">${results.data[i].title}</p>
 			</div>
 		</div>
 		`;
