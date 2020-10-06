@@ -44,19 +44,17 @@ const displayFavoriteGifs = () => {
 	if (arrFavoriteGifs == null) {
 		arrFavoriteGifs = [];
 	} else {
-		// arrFavoriteGifs = JSON.parse(localStorage.getItem('FavoriteGifs'));
-
 		for (let i = 0; i < arrFavoriteGifs.length; i++) {
 			const gifContainer = document.createElement('div');
 			gifContainer.classList.add('gif__container');
 			gifContainer.innerHTML = ` 
-			<img class="gif" src="${arrFavoriteGifs[i].gif}" alt="${arrFavoriteGifs[i].title}">
+			<img class="gif" onclick="maximizeGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].username}','${arrFavoriteGifs[i].title}')" src="${arrFavoriteGifs[i].gif}" alt="${arrFavoriteGifs[i].title}">
 		
 			<div class="gifActions">
 				<div class="gifActions__btn">
 					<div class="btn remove" onclick="removeGif('${arrFavoriteGifs[i].gif}')"></div>
-					<div class="btn download"></div>
-					<div class="btn maximize"></div>
+					<div class="btn download" onclick="downloadGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].title}')"></div>
+					<div class="btn maximize" onclick="maximizeGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].username}','${arrFavoriteGifs[i].title}')"></div>
 				</div>
 				<div class="gif__info">
 					<p class="gif_user">${arrFavoriteGifs[i].username}</p>
