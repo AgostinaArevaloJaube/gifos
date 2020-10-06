@@ -1,8 +1,7 @@
 // TODO ---------------------- GIF Actions ----------------------  \\
 
-// ---- Favoritear
+// ---- Favoritear ---- \\
 let arrFavoriteGifs = [];
-console.log(arrFavoriteGifs);
 
 const addToFav = (gif, username, title) => {
 	let objGif = {
@@ -13,9 +12,6 @@ const addToFav = (gif, username, title) => {
 
 	arrFavoriteGifs.push(objGif);
 
-	console.log(arrFavoriteGifs);
-
-	// guardarlo en el local storage.
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
 	displayFavoriteGifs();
 };
@@ -69,16 +65,14 @@ const displayFavoriteGifs = () => {
 
 $favoritosMenu.addEventListener('click', displayFavoriteSection);
 
-// ---- Descargar
-// función por defecto
+// ---- Descargar ---- \\
 
 const downloadGif = async (url, title) => {
 	let blob = await fetch(url).then((img) => img.blob());
 	invokeSaveAsDialog(blob, title + '.gif');
 };
 
-// ---- Maximizar
-// template en HTML, estilarlo y ponerle una función onclick.
+// ---- Maximizar ---- \\
 
 const maximizeGif = (gif, username, title) => {
 	$maximizedGifSection.classList.remove('hidden');
@@ -111,9 +105,12 @@ const closeMaximized = () => {
 	$maximizedGifSection.classList.remove('maximizedGif');
 };
 
-// ---- Eliminar en favoritos
+// ---- Eliminar en favoritos ---- \\
+
 const removeGif = (gif) => {
 	arrFavoriteGifs.splice(gif, 1);
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
 	displayFavoriteSection(event);
 };
+
+// ---- Eliminar en Mis gifos ---- \\

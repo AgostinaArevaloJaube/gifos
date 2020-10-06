@@ -1074,8 +1074,6 @@ body.darkMode .gif__info {
   height: 1rem;
   padding: 0.8rem;
   margin: 2px;
-  border: 1px solid #572ee5;
-  border-radius: 6px;
   cursor: pointer;
 }
 
