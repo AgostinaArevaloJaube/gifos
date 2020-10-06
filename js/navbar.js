@@ -20,8 +20,9 @@ const displayBurgerMenu = () => {
 };
 
 // Navbar Events
-// --muestra la hamburguesa
+// --muestra u oculta la hamburguesa
 $burgerMenu.addEventListener('click', displayBurgerMenu);
+$favoritosMenu.addEventListener('click', displayBurgerMenu);
 
 // --cambia los assets del botón crear gifos
 $crearGifBtn.addEventListener('click', () => {
