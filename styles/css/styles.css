@@ -674,7 +674,7 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
   }
 }
 
-.container {
+.topContainers {
   padding-top: 30%;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -682,19 +682,19 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 }
 
 @media screen and (min-width: 400px) {
-  .container {
+  .topContainers {
     padding-top: 20%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
+  .topContainers {
     padding-top: 15%;
   }
 }
 
 @media screen and (min-width: 1530px) {
-  .container {
+  .topContainers {
     padding-top: 10%;
   }
 }
@@ -925,31 +925,31 @@ body.darkMode .crearGif .pagination .step {
     height: 2rem;
     cursor: pointer;
   }
-  .gif__container .gifActions__btn .favorite {
+  .gif__container .favorite {
     background: url("/assets/icon-fav.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .favorite:hover {
+  .gif__container .favorite:hover {
     background: url("/assets/icon-fav-hover.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .favorite:active {
+  .gif__container .favorite:active {
     background: url("/assets/icon-fav-active.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .download {
+  .gif__container .download {
     background: url("/assets/icon-download.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .download:hover {
+  .gif__container .download:hover {
     background: url("/assets/icon-download-hover.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .maximize {
+  .gif__container .maximize {
     background: url("/assets/icon-max-normal.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .maximize:hover {
+  .gif__container .maximize:hover {
     background: url("/assets/icon-max-hover.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .remove {
+  .gif__container .remove {
     background: url("/assets/icon-trash-normal.svg") center no-repeat;
   }
-  .gif__container .gifActions__btn .remove:hover {
+  .gif__container .remove:hover {
     background: url("/assets/icon-trash-hover.svg") center no-repeat;
   }
   .gif__container .gif__info {
@@ -982,5 +982,127 @@ body.darkMode .crearGif .pagination .step {
     width: 22rem;
     height: 16rem;
   }
+}
+
+.maximizedGif {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 2000;
+}
+
+body.darkMode .maximizedGif {
+  background-color: #37383c;
+}
+
+.maximizedGif__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.close-btn {
+  padding-bottom: 2rem;
+  margin-right: 2rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+}
+
+.gif__info {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .gif__info {
+    font-size: 16px;
+  }
+}
+
+body.darkMode .gif__info {
+  color: #fff;
+}
+
+.gif_title {
+  font-weight: 500;
+}
+
+.gifMax {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.gifMaxActions {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.gifMaxActions__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.buttonsMax {
+  width: 1rem;
+  height: 1rem;
+  padding: 0.8rem;
+  margin: 2px;
+  border: 1px solid #572ee5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .buttonsMax {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.downloadMax {
+  background: url("/assets/icon-download.svg") center no-repeat;
+}
+
+.downloadMax:hover {
+  background: url("/assets/icon-download-hover.svg") center no-repeat;
+}
+
+.favoriteMax {
+  background: url("/assets/icon-fav.svg") center no-repeat;
+}
+
+.favoriteMax:hover {
+  background: url("/assets/icon-fav-hover.svg") center no-repeat;
+}
+
+.favoriteMax:active {
+  background: url("/assets/icon-fav-active.svg") center no-repeat;
 }
 /*# sourceMappingURL=styles.css.map */

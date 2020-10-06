@@ -17,14 +17,17 @@ const addToFav = (gif, username, title) => {
 
 	// guardarlo en el local storage.
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
+	displayFavoriteGifs();
 };
 
-const displayFavoriteSection = () => {
+const displayFavoriteSection = (event) => {
+	event.preventDefault();
 	$heroSection.classList.add('hidden');
 	$favSection.classList.remove('hidden');
+	window.scrollTo({ top: 0, behavior: 'smooth' });
 	displayFavoriteGifs();
 
-	if (arrFavoriteGifs == 0) {
+	if (arrFavoriteGifs == 0 || arrFavoriteGifs == null) {
 		$noFavsContainer.classList.remove('hidden');
 		$favContainer.classList.add('hidden');
 	} else {
@@ -38,10 +41,15 @@ const displayFavoriteGifs = () => {
 
 	arrFavoriteGifs = JSON.parse(localStorage.getItem('FavoriteGifs'));
 
-	for (let i = 0; i < arrFavoriteGifs.length; i++) {
-		const gifContainer = document.createElement('div');
-		gifContainer.classList.add('gif__container');
-		gifContainer.innerHTML = ` 
+	if (arrFavoriteGifs == null) {
+		arrFavoriteGifs = [];
+	} else {
+		// arrFavoriteGifs = JSON.parse(localStorage.getItem('FavoriteGifs'));
+
+		for (let i = 0; i < arrFavoriteGifs.length; i++) {
+			const gifContainer = document.createElement('div');
+			gifContainer.classList.add('gif__container');
+			gifContainer.innerHTML = ` 
 			<img class="gif" src="${arrFavoriteGifs[i].gif}" alt="${arrFavoriteGifs[i].title}">
 		
 			<div class="gifActions">
@@ -56,16 +64,17 @@ const displayFavoriteGifs = () => {
 				</div>
 			</div>
 			`;
-		$favContainer.appendChild(gifContainer);
+			$favContainer.appendChild(gifContainer);
+		}
 	}
-}
-displayFavoriteGifs();
+};
+
 $favoritosMenu.addEventListener('click', displayFavoriteSection);
 
 // ---- Descargar
 // función por defecto
 
-const downloadGifo = async (url, title) => {
+const downloadGif = async (url, title) => {
 	let blob = await fetch(url).then((img) => img.blob());
 	invokeSaveAsDialog(blob, title + '.gif');
 };
@@ -73,9 +82,40 @@ const downloadGifo = async (url, title) => {
 // ---- Maximizar
 // template en HTML, estilarlo y ponerle una función onclick.
 
+const maximizeGif = (gif, username, title) => {
+	$maximizedGifSection.classList.remove('hidden');
+	$maximizedGifSection.classList.add('maximizedGif');
+	$maximizedGifSection.innerHTML = '';
+	const maximizedGifContainer = document.createElement('div');
+	maximizedGifContainer.classList.add('maximizedGif__container');
+	maximizedGifContainer.innerHTML = `
+	<img class="close-btn" id="close-max-btn" src="assets/close.svg" alt="Botón cerrar gif maximizado" onclick="closeMaximized()">
+
+	<div class="maxGif_Container">
+		<img class="gifMax" src="${gif}" alt="${title}">
+	</div>
+
+	<div class="gifMaxActions">
+		<div class="gif__info">
+			<p class="gif_user">${username}</p>
+			<p class="gif_title">${title}</p>
+		</div>
+		<div class="gifMaxActions__btn">
+			<div class="buttonsMax favoriteMax" onclick="addToFav('${gif}', '${username}', '${title}')"></div>
+			<div class="buttonsMax downloadMax" onclick="downloadGif('${gif}','${title}')"></div>
+			</div>
+	</div>`;
+	$maximizedGifSection.appendChild(maximizedGifContainer);
+};
+
+const closeMaximized = () => {
+	$maximizedGifSection.classList.add('hidden');
+	$maximizedGifSection.classList.remove('maximizedGif');
+};
+
 // ---- Eliminar en favoritos
 const removeGif = (gif) => {
 	arrFavoriteGifs.splice(gif, 1);
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
-	displayFavoriteSection();
+	displayFavoriteSection(event);
 };
