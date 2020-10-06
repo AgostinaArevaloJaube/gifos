@@ -223,3 +223,11 @@
 		background: url('/assets/icon-fav-active.svg') center no-repeat;
 	}
 }
+
+.removeMax {
+	background: url('/assets/icon-trash-normal.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-trash-hover.svg') center no-repeat;
+	}
+}

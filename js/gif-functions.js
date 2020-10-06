@@ -44,13 +44,13 @@ const displayFavoriteGifs = () => {
 			const gifContainer = document.createElement('div');
 			gifContainer.classList.add('gif__container');
 			gifContainer.innerHTML = ` 
-			<img class="gif" onclick="maximizeGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].username}','${arrFavoriteGifs[i].title}')" src="${arrFavoriteGifs[i].gif}" alt="${arrFavoriteGifs[i].title}">
+			<img class="gif" onclick="maximizeFavoriteGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].username}','${arrFavoriteGifs[i].title}')" src="${arrFavoriteGifs[i].gif}" alt="${arrFavoriteGifs[i].title}">
 		
 			<div class="gifActions">
 				<div class="gifActions__btn">
 					<div class="btn remove" onclick="removeGif('${arrFavoriteGifs[i].gif}')"></div>
 					<div class="btn download" onclick="downloadGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].title}')"></div>
-					<div class="btn maximize" onclick="maximizeGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].username}','${arrFavoriteGifs[i].title}')"></div>
+					<div class="btn maximize" onclick="maximizeFavoriteGif('${arrFavoriteGifs[i].gif}','${arrFavoriteGifs[i].username}','${arrFavoriteGifs[i].title}')"></div>
 				</div>
 				<div class="gif__info">
 					<p class="gif_user">${arrFavoriteGifs[i].username}</p>
@@ -100,6 +100,32 @@ const maximizeGif = (gif, username, title) => {
 	$maximizedGifSection.appendChild(maximizedGifContainer);
 };
 
+const maximizeFavoriteGif = (gif, username, title) => {
+	$maximizedGifSection.classList.remove('hidden');
+	$maximizedGifSection.classList.add('maximizedGif');
+	$maximizedGifSection.innerHTML = '';
+	const maximizedGifContainer = document.createElement('div');
+	maximizedGifContainer.classList.add('maximizedGif__container');
+	maximizedGifContainer.innerHTML = `
+	<img class="close-btn" id="close-max-btn" src="assets/close.svg" alt="Botón cerrar gif maximizado" onclick="closeMaximized()">
+
+	<div class="maxGif_Container">
+		<img class="gifMax" src="${gif}" alt="${title}">
+	</div>
+
+	<div class="gifMaxActions">
+		<div class="gif__info">
+			<p class="gif_user">${username}</p>
+			<p class="gif_title">${title}</p>
+		</div>
+		<div class="gifMaxActions__btn">
+			<div class="buttonsMax removeMax" onclick="removeGif('${gif}')"></div>
+			<div class="buttonsMax downloadMax" onclick="downloadGif('${gif}','${title}')"></div>
+			</div>
+	</div>`;
+	$maximizedGifSection.appendChild(maximizedGifContainer);
+};
+
 const closeMaximized = () => {
 	$maximizedGifSection.classList.add('hidden');
 	$maximizedGifSection.classList.remove('maximizedGif');
@@ -111,6 +137,7 @@ const removeGif = (gif) => {
 	arrFavoriteGifs.splice(gif, 1);
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
 	displayFavoriteSection(event);
+	closeMaximized();
 };
 
 // ---- Eliminar en Mis gifos ---- \\

@@ -1103,4 +1103,12 @@ body.darkMode .gif__info {
 .favoriteMax:active {
   background: url("/assets/icon-fav-active.svg") center no-repeat;
 }
+
+.removeMax {
+  background: url("/assets/icon-trash-normal.svg") center no-repeat;
+}
+
+.removeMax:hover {
+  background: url("/assets/icon-trash-hover.svg") center no-repeat;
+}
 /*# sourceMappingURL=styles.css.map */
