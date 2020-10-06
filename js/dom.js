@@ -51,6 +51,7 @@ const $trendingSlider = document.querySelector('#trending__slider');
 const $gifContainer = document.querySelectorAll('.gif__container');
 const $gifAcctions = document.querySelectorAll('.gifActions');
 const $maximizedGifSection = document.querySelector('#maximizedGif');
+const $maxCloseBtn = document.querySelector('close-btn')
 
 // DOM favorites
 

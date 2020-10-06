@@ -25,7 +25,6 @@ const setLocalStorageTheme = () => {
 		$navbarSearchCloseBtn.src = 'assets/close-modo-noct.svg';
 		$searchBtn.src = 'assets/icon-search-mod-noc.svg';
 		$searchCloseBtn.src = 'assets/close-modo-noct.svg';
-
 		$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
 		$nextBtn.src = 'assets/button-slider-right-md-noct.svg';
 	} else {

@@ -149,10 +149,17 @@
 }
 
 .close-btn {
-	padding-bottom: 2rem;
+	width: 2rem;
+	padding-bottom: 3rem;
 	margin-right: 2rem;
 	align-self: flex-end;
 	cursor: pointer;
+	background: url('/assets/close.svg') center no-repeat;
+
+	body.darkMode & {
+		background: url('/assets/close-modo-noct.svg') center no-repeat;
+	}
+
 }
 
 .gif__info {

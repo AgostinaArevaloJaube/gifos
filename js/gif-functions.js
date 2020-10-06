@@ -81,7 +81,7 @@ const maximizeGif = (gif, username, title) => {
 	const maximizedGifContainer = document.createElement('div');
 	maximizedGifContainer.classList.add('maximizedGif__container');
 	maximizedGifContainer.innerHTML = `
-	<img class="close-btn" id="close-max-btn" src="assets/close.svg" alt="Botón cerrar gif maximizado" onclick="closeMaximized()">
+	<div class="close-btn" id="close-max-btn" onclick="closeMaximized()"></div>
 
 	<div class="maxGif_Container">
 		<img class="gifMax" src="${gif}" alt="${title}">
@@ -107,7 +107,7 @@ const maximizeFavoriteGif = (gif, username, title) => {
 	const maximizedGifContainer = document.createElement('div');
 	maximizedGifContainer.classList.add('maximizedGif__container');
 	maximizedGifContainer.innerHTML = `
-	<img class="close-btn" id="close-max-btn" src="assets/close.svg" alt="Botón cerrar gif maximizado" onclick="closeMaximized()">
+	<div class="close-btn" id="close-max-btn" onclick="closeMaximized()"></div>
 
 	<div class="maxGif_Container">
 		<img class="gifMax" src="${gif}" alt="${title}">

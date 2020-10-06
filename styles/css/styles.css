@@ -1018,11 +1018,17 @@ body.darkMode .maximizedGif {
 }
 
 .close-btn {
-  padding-bottom: 2rem;
+  width: 2rem;
+  padding-bottom: 3rem;
   margin-right: 2rem;
   -ms-flex-item-align: end;
       align-self: flex-end;
   cursor: pointer;
+  background: url("/assets/close.svg") center no-repeat;
+}
+
+body.darkMode .close-btn {
+  background: url("/assets/close-modo-noct.svg") center no-repeat;
 }
 
 .gif__info {
