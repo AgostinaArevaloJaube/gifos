@@ -64,6 +64,7 @@ const displayCreateGifSection = (event) => {
 	$favSection.classList.add('hidden');
 	$trendingSection.classList.add('hidden');
 	$misGifosSection.classList.add('hidden');
+	window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 const displayMisGifosSection = (event) => {
@@ -72,6 +73,7 @@ const displayMisGifosSection = (event) => {
 	$heroSection.classList.add('hidden');
 	$favSection.classList.add('hidden');
 	$createGifSection.classList.add('hidden');
+	window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 $crearGifosMenu.addEventListener('click', displayCreateGifSection);
