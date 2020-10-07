@@ -27,6 +27,8 @@ const setLocalStorageTheme = () => {
 		$searchCloseBtn.src = 'assets/close-modo-noct.svg';
 		$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
 		$nextBtn.src = 'assets/button-slider-right-md-noct.svg';
+		$camera.src = 'assets/camara-modo-noc.svg';
+		$celuloide.src = 'assets/pelicula-modo-noc.svg';
 	} else {
 		document.body.classList.remove('darkMode');
 		$switchThemeBtn.textContent = 'Modo Nocturno';

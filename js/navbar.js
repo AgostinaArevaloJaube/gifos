@@ -37,7 +37,6 @@ $crearGifBtn.addEventListener('mouseout', () => {
 	$crearGifBtn.src = 'assets/button-crear-gifo.svg';
 });
 
-
 // Navbar Sticky
 // --función para dejar sticky el navbar, aparezca la barra de búsqueda y se agregue la sombra.
 function stickyNav() {
@@ -56,3 +55,25 @@ function stickyNav() {
 }
 
 window.addEventListener('scroll', stickyNav);
+
+// Navegación
+const displayCreateGifSection = (event) => {
+	event.preventDefault();
+	$createGifSection.classList.remove('hidden');
+	$heroSection.classList.add('hidden');
+	$favSection.classList.add('hidden');
+	$trendingSection.classList.add('hidden');
+	$misGifosSection.classList.add('hidden');
+};
+
+const displayMisGifosSection = (event) => {
+	event.preventDefault();
+	$misGifosSection.classList.remove('hidden');
+	$heroSection.classList.add('hidden');
+	$favSection.classList.add('hidden');
+	$createGifSection.classList.add('hidden');
+};
+
+$crearGifosMenu.addEventListener('click', displayCreateGifSection);
+
+$misGifosMenu.addEventListener('click', displayMisGifosSection);

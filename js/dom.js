@@ -6,7 +6,9 @@ const $logo = document.querySelector('#logo');
 const $switchThemeBtn = document.querySelector('#switchTheme');
 const $crearGifBtn = document.querySelector('#crateGifBtn');
 const $favoritosMenu = document.querySelector('#FavoritosMenu');
-const $heroSection = document.querySelector('#heroSection')
+const $heroSection = document.querySelector('#heroSection');
+const $misGifosMenu = document.querySelector('#misGifosMenu')
+const $crearGifosMenu = document.querySelector('#crearGifosMenu');
 
 // DOM elements SEARCH
 const $searchContainer = document.querySelector('#search__container');
@@ -43,6 +45,7 @@ const $searchSuggestionList = document.querySelector('#search-sugestion-list');
 const $trendingTagList = document.querySelector('#trendingTag_list')
 
 // DOM elements trending slider
+const $trendingSection = document.querySelector('#trendingSection')
 const $previousBtn = document.querySelector('#previous-btn');
 const $nextBtn = document.querySelector('#next-btn');
 const $trendingSlider = document.querySelector('#trending__slider');
@@ -54,11 +57,14 @@ const $maximizedGifSection = document.querySelector('#maximizedGif');
 const $maxCloseBtn = document.querySelector('close-btn')
 
 // DOM favorites
-
 const $favSection = document.querySelector('#favorites-section')
 const $favContainer = document.querySelector('#fav-container');
 const $noFavsContainer = document.querySelector('#noFavs_container');
 
 // DOM create GIFOs
+const $createGifSection = document.querySelector('#createGifSection')
 const $camera = document.querySelector('#camera');
 const $celuloide = document.querySelector('#celuloide');
+
+// DOM Mis Gifos
+const $misGifosSection = document.querySelector('#misGifosSection');

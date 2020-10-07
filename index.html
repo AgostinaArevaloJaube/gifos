@@ -48,10 +48,10 @@
 				<li class="lines"></li>
 				<li ><a id="FavoritosMenu" class="navbar__link" href="">Favoritos</a></li>
 				<li class="lines"></li>
-				<li><a class="navbar__link" href="">Mis GIFOS</a></li>
+				<li><a class="navbar__link" href="" id="misGifosMenu">Mis GIFOS</a></li>
 				<li class="lines"></li>
 				<li class="navbar__list__item hiddenMenu">
-					<a href="crear-gif.html">
+					<a href="" id="crearGifosMenu">
 						<img class="navbar__createGif" id="crateGifBtn" src="assets/button-crear-gifo.svg" alt="">
 					</a>
 				</li>
@@ -61,6 +61,7 @@
 	</header>
 
 	<!-- Main -->
+		<!-- !remover hidden -->
 	<main class="topContainers" id="heroSection">
 
 		<!-- hero -->
@@ -142,7 +143,7 @@
 	</section>
 
 	<!-- Mis gifs -->
-	<section class="topContainers hidden" id="MisGifos">
+	<section class="topContainers hidden" id="misGifosSection">
 
 		<img src="assets/icon-mis-gifos.svg" alt="Imagen decorativa">
 		<h2 class="title">Mis GIFOS</h2>
@@ -161,7 +162,7 @@
 	</section>
 
 	<!-- Crear gifs -->
-	<div class="crearGif hidden">
+	<div class="crearGif hidden" id="createGifSection">
 
 		<section class="crearGif__container">
 
@@ -218,7 +219,8 @@
 	</div>
 
 	<!-- Trending -->
-	<section class="trending">
+	<!-- !remover hidden -->
+	<section class="trending" id="trendingSection">
 		<h2 class="trending__title">Trending GIFOS</h2>
 		<p class="trending__paragraph">Mira los últimos GIFOS de nuestra comunidad</p>
 

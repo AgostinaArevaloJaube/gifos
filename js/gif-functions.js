@@ -19,6 +19,8 @@ const addToFav = (gif, username, title) => {
 const displayFavoriteSection = (event) => {
 	event.preventDefault();
 	$heroSection.classList.add('hidden');
+	$misGifosSection.classList.add('hidden');
+	$createGifSection.classList.add('hidden');
 	$favSection.classList.remove('hidden');
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 	displayFavoriteGifs();
