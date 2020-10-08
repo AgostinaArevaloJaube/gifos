@@ -476,6 +476,7 @@ body.darkMode .SearchSuggestions__container {
   font-weight: 500;
   font-size: 13px;
   color: #572ee5;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -716,8 +717,20 @@ body.darkMode .footer .socialmedia .socialmedia__item:hover {
 }
 
 .crearGif {
-  padding-top: 10%;
+  padding-top: 12%;
   position: relative;
+}
+
+@media screen and (min-width: 1280px) {
+  .crearGif {
+    padding-top: 10%;
+  }
+}
+
+@media screen and (min-width: 1530px) {
+  .crearGif {
+    padding-top: 9%;
+  }
 }
 
 .crearGif__container {
@@ -794,6 +807,106 @@ body.darkMode .crearGif__text {
   color: #fff;
 }
 
+.crearGif .overlay {
+  width: 26rem;
+  height: 16rem;
+  padding: 6rem 4rem 6rem 4rem;
+  position: relative;
+  bottom: -0.7rem;
+  background-color: rgba(87, 46, 229, 0.6);
+  color: #fff;
+}
+
+@media screen and (min-width: 1280px) {
+  .crearGif .overlay {
+    width: 28rem;
+    height: 17rem;
+  }
+}
+
+@media screen and (min-width: 1530px) {
+  .crearGif .overlay {
+    width: 30rem;
+    height: 18rem;
+  }
+}
+
+.crearGif .overlay__status-icon {
+  margin: 0.8rem;
+}
+
+.crearGif .pagination {
+  margin: 0 auto;
+  width: 75%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.crearGif .pagination .step {
+  width: 2rem;
+  height: 2rem;
+  padding-top: 0.2em;
+  margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+  border: 1px solid #572ee5;
+  border-radius: 50%;
+  font-size: 1.2em;
+}
+
+body.darkMode .crearGif .pagination .step {
+  border: 1px solid #fff;
+}
+
+.crearGif .pagination .step-active {
+  background-color: #572ee5;
+  color: #fff;
+}
+
+.crearGif .recording_video {
+  width: 26rem;
+  height: 16rem;
+}
+
+.crearGif #repeatShot {
+  color: #572ee5;
+  text-decoration: none;
+}
+
+.crearGif #repeatShot:hover {
+  border-bottom: 2px solid #50e3c2;
+}
+
+.crearGif #repeatShot:active {
+  color: #9cafc3;
+  border-bottom: hidden;
+}
+
+.crearGif .timer {
+  width: 25%;
+  text-align: right;
+  position: absolute;
+  top: 58%;
+  right: 24%;
+}
+
+.crearGif .timer .timer__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+
 .crearGif .corner {
   width: 1.7rem;
   height: 1.7rem;
@@ -828,40 +941,8 @@ body.darkMode .crearGif__text {
   left: 1.25rem;
 }
 
-.crearGif .pagination {
-  margin: 0 auto;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.crearGif .pagination .step {
-  width: 2rem;
-  height: 2rem;
-  padding-top: 0.2em;
-  margin: 1.5rem 0.5rem 1.5rem 0.5rem;
-  border: 1px solid #572ee5;
-  border-radius: 50%;
-  font-size: 1.2em;
-}
-
-body.darkMode .crearGif .pagination .step {
-  border: 1px solid #fff;
-}
-
 .crearGif .border {
-  width: 40rem;
+  width: 58%;
   margin: 0 auto;
   border: 2px solid #572ee5;
 }

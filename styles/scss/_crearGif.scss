@@ -1,6 +1,14 @@
 .crearGif {
-	padding-top: 10%;
+	padding-top: 12%;
 	position: relative;
+
+	@media screen and (min-width: $desktop2) {
+		padding-top: 10%;
+	}
+
+	@media screen and (min-width: $genericLaptop) {
+		padding-top: 9%;
+	}
 
 	&__container {
 		display: flex;
@@ -57,6 +65,96 @@
 		}
 	}
 
+	.overlay {
+		width: 26rem;
+		height: 16rem;
+		padding: 6rem 4rem 6rem 4rem;
+		position: relative;
+		bottom: -0.7rem;
+		background-color: $purpleTransparency;
+		color: #fff;
+
+		@media screen and (min-width: $desktop2) {
+			width: 28rem;
+			height: 17rem;
+		}
+
+		@media screen and (min-width: $genericLaptop) {
+			width: 30rem;
+			height: 18rem;
+		}
+
+		&__status-icon {
+			margin: 0.8rem;
+		}
+	}
+
+	.pagination {
+		margin: 0 auto;
+		width: 75%;
+		width: fit-content;
+		justify-self: flex-end;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		text-align: center;
+
+		.step {
+			width: 2rem;
+			height: 2rem;
+			padding-top: 0.2em;
+			margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+			border: 1px solid $purple;
+			border-radius: 50%;
+			font-size: 1.2em;
+
+			body.darkMode & {
+				border: 1px solid #fff;
+			}
+		}
+
+		.step-active {
+			background-color: $purple;
+			color: #fff;
+		}
+	}
+
+	.recording_video {
+		width: 26rem;
+		height: 16rem;
+	}
+	
+
+	#repeatShot {
+		color: $purple;
+		text-decoration: none;
+
+		&:hover {
+			border-bottom: 2px solid $aqua;
+		}
+
+		&:active {
+			color: $lightGray;
+			border-bottom: hidden;
+		}
+	}
+
+	.timer {
+		width: 25%;
+		text-align: right;
+		position: absolute;
+		top: 58%;
+		right: 24%;
+
+		.timer__text {
+			font-family: $secondary-font;
+			font-size: 16px;
+
+			line-height: 22px;
+		}
+	}
+
+	// UI
 	.corner {
 		width: 1.7rem;
 		height: 1.7rem;
@@ -87,34 +185,9 @@
 		left: 1.25rem;
 	}
 
-	.pagination {
-		margin: 0 auto;
-		width: fit-content;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		text-align: center;
-
-		.step {
-			width: 2rem;
-			height: 2rem;
-			padding-top: 0.2em;
-			margin: 1.5rem 0.5rem 1.5rem 0.5rem;
-			border: 1px solid $purple;
-			border-radius: 50%;
-			font-size: 1.2em;
-
-			body.darkMode & {
-				border: 1px solid #fff;
-			}
-		}
-	}
-
 	.border {
-		width: 40rem;
+		width: 58%;
 		margin: 0 auto;
 		border: 2px solid $purple;
 	}
-
-
 }

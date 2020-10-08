@@ -28,7 +28,7 @@
 	<header class="header__container" id="header__container">
 
 		<!-- Logo -->
-		<a class="logo__link" href="index.html"><img class="logo__imagen" id="logo" src="assets/logo-desktop.svg"
+		<a class="logo__link" href="index.html" id="logoSection"><img class="logo__imagen" id="logo" src="assets/logo-desktop.svg"
 				alt="Logo"></a>
 
 		<!-- Barra de búsqueda del navbar -->
@@ -46,7 +46,7 @@
 			<ul class="navbar__list hiddenMenu" id="navbar__list">
 				<li class="navbar__list__item"><a href="" class="navbar__link" id="switchTheme">Modo Nocturno</a></li>
 				<li class="lines"></li>
-				<li ><a id="FavoritosMenu" class="navbar__link" href="">Favoritos</a></li>
+				<li><a id="FavoritosMenu" class="navbar__link" href="">Favoritos</a></li>
 				<li class="lines"></li>
 				<li><a class="navbar__link" href="" id="misGifosMenu">Mis GIFOS</a></li>
 				<li class="lines"></li>
@@ -61,7 +61,7 @@
 	</header>
 
 	<!-- Main -->
-		<!-- !remover hidden -->
+	<!-- !remover hidden -->
 	<main class="topContainers" id="heroSection">
 
 		<!-- hero -->
@@ -115,10 +115,11 @@
 		</section>
 	</main>
 
+	
 	<!-- Gif Maximizado -->
 
 	<div class="hidden" id="maximizedGif">
-		
+
 	</div>
 
 	<!-- Favoritos -->
@@ -162,18 +163,21 @@
 	</section>
 
 	<!-- Crear gifs -->
-	<div class="crearGif hidden" id="createGifSection">
+	<!-- !poner hidden -->
+	<div class="crearGif" id="createGifSection">
 
-		<section class="crearGif__container">
+		<div class="crearGif__container">
 
 			<!-- cámara -->
 			<div class="crearGif__camara">
 				<img id="camera" src="assets/camara.svg" alt="cámara filmadora ilustrativa">
 				<img class="path" id="path" src="assets/element-luz-camara.svg" alt="luz de camara filmadora">
 			</div>
+
+			<!-- recuadro de grabación -->
 			<div class="crearGif__recordingZone">
 
-				<!-- bordes -->
+				<!-- bordes para estilos -->
 				<div class="corner top--left"></div>
 				<div class="corner top--right"></div>
 				<div class="corner bottom--left"></div>
@@ -182,41 +186,70 @@
 
 				<!-- recuadro de grabación -->
 				<div class="crearGif__recordingZone__content">
+
+					<!-- !TIENE HIDDEN -->
 					<h3 class="crearGif__title" id="crearGif_title">Aquí podrás <br> crear tus propios <span
 							class="aqua-text">GIFOS</span> </h3>
-					<p class="crearGif__text" id="crearGif_text">¡Crea tu GIFO en solo 3 pasos! <br> (solo necesitas una
+					<!-- !TIENE HIDDEN -->
+					<p class="crearGif__text" id="crearGif_text">¡Crea tu GIFO en solo 3 pasos! <br> (solo necesitas
+						una
 						cámara para grabar un video)</p>
 
-					<!-- ! FALTAN LOS OTROS TEXTOS, EL FONDO LILA CON TRANSPARENCIA, EL TIMMER, LOS ICONOS -->
+					<!-- PARA QUE EL VIDEO SE ACOMODE ACA MIENTRAS GRABA -->
+
+					<video class="recording_video hidden" src="" id="recording_video"></video>
+
+					<!-- !TIENE HIDDEN -->
+					<div class="overlay hidden" id="overlay">
+
+						<div class="overlay__status-container" id="overlay-status-container">
+							<img src="assets/loader.svg" class="overlay__status-icon" alt="loading gifo"
+								id="overlay_status-icon">
+							<p class="overlay__status-text" id="overlay_status-text">Estamos subiendo tu GIFO</p>
+						</div>
+
+					</div>
+
+					<!-- VER SI CONVIENE METER EL GIF DESDE ACA O HACER UNA FUNCION DE TEMPLATE -->
+					<video src="" alt="" id="recorded_gifo"></video>
+
 				</div>
-
 			</div>
-
 			<!-- celuloide -->
+
 			<div class="crearGif__celluloidFilm">
 				<img class="celuloide" id="celuloide" src="assets/pelicula.svg" alt="celuloide ilustracion">
 			</div>
 
-
-		</section>
+		</div>
 
 		<div class="pagination">
-			<p class="step">1</p>
-			<p class="step">2</p>
-			<p class="step">3</p>
+			<p class="step" id="step-1">1</p>
+			<p class="step" id="step-2">2</p>
+			<p class="step" id="step-3">3</p>
 		</div>
 
+
+		<div class="timer hidden">
+			<p class="timer__recorder timer__text hidden" id="timer-recording">0:00:00</p>
+			<a href="" class="timer__repeatShot timer__text hidden" id="repeatShot">REPETIR CAPTURA</a>
+		</div>
+
+		<!-- linea decorativa -->
 		<hr class="border">
 
-		<div class="buttons">
-			<a class="button" id="buttons__creargif--start">COMENZAR</a>
-			<a class="button" id="buttons__creargif--record">GRABAR</a>
-			<a class="button" id="buttons__creargif--finalizar">FINALIZAR</a>
-			<a class="button" id="buttons__creargif--subirgifo">SUBIR GIFO</a>
+		<!-- botones -->
+		<div class="button__container">
+			<a class="button" id="button--grabar">GRABAR</a>
+			<a class="button" id="button--comenzar">COMENZAR</a>
+			<a class="button" id="button--finalizar">FINALIZAR</a>
+			<a class="button" id="button--subirGif">SUBIR GIFO</a>
 		</div>
-
-
 	</div>
+
+
+
+
 
 	<!-- Trending -->
 	<!-- !remover hidden -->
@@ -260,23 +293,6 @@
 		<p class="footer__paragraph">© GIFOS 2020 All Rights Reserved.</p>
 
 	</footer>
-
-	<!-- TODO TEMPLATE DE GIF -->
-	<!-- <div class="gif__container">
-		<img class="gif" src="https://media.giphy.com/media/xMGh0bajSyNdC/giphy.gif" alt="${results.data[i].title}">
-
-		<div class="gifActions">
-			<div class="gifActions__btn">
-				<div class="btn favorite" onclick=""></div>
-				<div class="btn download" onclick=""></div>
-				<div class="btn maximize" onclick=""></div>
-			</div>
-			<div class="gif__info">
-				<p class="gif_user">Usuario</p>
-				<p class="gif_title">Titulo</p>
-			</div>
-		</div>
-	</div> -->
 
 	<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 	<script src="js/dom.js"></script>

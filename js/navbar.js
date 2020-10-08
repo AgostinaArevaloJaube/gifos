@@ -73,9 +73,22 @@ const displayMisGifosSection = (event) => {
 	$heroSection.classList.add('hidden');
 	$favSection.classList.add('hidden');
 	$createGifSection.classList.add('hidden');
+	$trendingSection.classList.remove('hidden');
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+const displayMainSection = (event) => {
+	event.preventDefault();
+	$heroSection.classList.remove('hidden');
+	$misGifosSection.classList.add('hidden');
+	$favSection.classList.add('hidden');
+	$createGifSection.classList.add('hidden');
+	$trendingSection.classList.remove('hidden');
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 $crearGifosMenu.addEventListener('click', displayCreateGifSection);
 
 $misGifosMenu.addEventListener('click', displayMisGifosSection);
+
+$logoSection.addEventListener('click', displayMainSection);
