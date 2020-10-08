@@ -807,32 +807,47 @@ body.darkMode .crearGif__text {
   color: #fff;
 }
 
+.crearGif .recording_video {
+  width: 80%;
+  height: 20rem;
+}
+
 .crearGif .overlay {
-  width: 26rem;
-  height: 16rem;
-  padding: 6rem 4rem 6rem 4rem;
-  position: relative;
-  bottom: -0.7rem;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 2rem;
+  left: 10%;
   background-color: rgba(87, 46, 229, 0.6);
   color: #fff;
-}
-
-@media screen and (min-width: 1280px) {
-  .crearGif .overlay {
-    width: 28rem;
-    height: 17rem;
-  }
-}
-
-@media screen and (min-width: 1530px) {
-  .crearGif .overlay {
-    width: 30rem;
-    height: 18rem;
-  }
+  z-index: 90;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .crearGif .overlay__status-icon {
   margin: 0.8rem;
+}
+
+.crearGif .overlaystatus-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .crearGif .pagination {
@@ -874,11 +889,6 @@ body.darkMode .crearGif .pagination .step {
   color: #fff;
 }
 
-.crearGif .recording_video {
-  width: 26rem;
-  height: 16rem;
-}
-
 .crearGif #repeatShot {
   color: #572ee5;
   text-decoration: none;
@@ -897,7 +907,7 @@ body.darkMode .crearGif .pagination .step {
   width: 25%;
   text-align: right;
   position: absolute;
-  top: 58%;
+  top: 79%;
   right: 24%;
 }
 

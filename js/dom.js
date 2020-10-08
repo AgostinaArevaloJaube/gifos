@@ -75,9 +75,11 @@ const $buttonFinalizar = document.querySelector('#button--finalizar');
 const $buttonSubirGif = document.querySelector('#button--subirGif');
 const $timer = document.querySelector('#timer-recording');
 const $repeatBtn = document.querySelector('#repeatShot');
+const $overlay = document.querySelector('#overlay')
 const $overlayStatusIcon = document.querySelector('#overlay_status-icon');
 const $overlayStatusText = document.querySelector('#overlay_status-text');
-const $video = document.querySelector('#recording_video')
+const $video = document.querySelector('#recording_video');
+const $recordedGifo = document.querySelector('#recorded_gifo');
 
 const $camera = document.querySelector('#camera');
 const $celuloide = document.querySelector('#celuloide');

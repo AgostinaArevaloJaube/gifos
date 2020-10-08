@@ -65,27 +65,33 @@
 		}
 	}
 
+	.recording_video {
+		width: 80%;
+        height: 20rem;
+
+	}
+
 	.overlay {
-		width: 26rem;
-		height: 16rem;
-		padding: 6rem 4rem 6rem 4rem;
-		position: relative;
-		bottom: -0.7rem;
+		width: 80%;
+    	height: 80%;
+		position: absolute;
+		top: 2rem;
+		left: 10%;
 		background-color: $purpleTransparency;
 		color: #fff;
-
-		@media screen and (min-width: $desktop2) {
-			width: 28rem;
-			height: 17rem;
-		}
-
-		@media screen and (min-width: $genericLaptop) {
-			width: 30rem;
-			height: 18rem;
-		}
+		z-index: 90;
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
 		&__status-icon {
 			margin: 0.8rem;
+		}
+
+		&status-container {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 
@@ -118,13 +124,6 @@
 			color: #fff;
 		}
 	}
-
-	.recording_video {
-		width: 26rem;
-		height: 16rem;
-	}
-	
-
 	#repeatShot {
 		color: $purple;
 		text-decoration: none;
@@ -143,7 +142,7 @@
 		width: 25%;
 		text-align: right;
 		position: absolute;
-		top: 58%;
+		top: 79%;
 		right: 24%;
 
 		.timer__text {

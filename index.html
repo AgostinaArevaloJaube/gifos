@@ -28,8 +28,8 @@
 	<header class="header__container" id="header__container">
 
 		<!-- Logo -->
-		<a class="logo__link" href="index.html" id="logoSection"><img class="logo__imagen" id="logo" src="assets/logo-desktop.svg"
-				alt="Logo"></a>
+		<a class="logo__link" href="index.html" id="logoSection"><img class="logo__imagen" id="logo"
+				src="assets/logo-desktop.svg" alt="Logo"></a>
 
 		<!-- Barra de búsqueda del navbar -->
 		<div class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
@@ -62,7 +62,7 @@
 
 	<!-- Main -->
 	<!-- !remover hidden -->
-	<main class="topContainers" id="heroSection">
+	<main class="topContainers hidden" id="heroSection">
 
 		<!-- hero -->
 		<section class="heading__container">
@@ -115,7 +115,7 @@
 		</section>
 	</main>
 
-	
+
 	<!-- Gif Maximizado -->
 
 	<div class="hidden" id="maximizedGif">
@@ -199,8 +199,11 @@
 
 					<video class="recording_video hidden" src="" id="recording_video"></video>
 
+					<!-- VER SI CONVIENE METER EL GIF DESDE ACA O HACER UNA FUNCION DE TEMPLATE -->
+					<video class="recording_video hidden" src="" id="recorded_gifo"></video>
+
 					<!-- !TIENE HIDDEN -->
-					<div class="overlay hidden" id="overlay">
+					<div class="overlay" id="overlay">
 
 						<div class="overlay__status-container" id="overlay-status-container">
 							<img src="assets/loader.svg" class="overlay__status-icon" alt="loading gifo"
@@ -210,8 +213,7 @@
 
 					</div>
 
-					<!-- VER SI CONVIENE METER EL GIF DESDE ACA O HACER UNA FUNCION DE TEMPLATE -->
-					<video src="" alt="" id="recorded_gifo"></video>
+
 
 				</div>
 			</div>
@@ -230,7 +232,7 @@
 		</div>
 
 
-		<div class="timer hidden">
+		<div class="timer">
 			<p class="timer__recorder timer__text hidden" id="timer-recording">0:00:00</p>
 			<a href="" class="timer__repeatShot timer__text hidden" id="repeatShot">REPETIR CAPTURA</a>
 		</div>
@@ -240,8 +242,8 @@
 
 		<!-- botones -->
 		<div class="button__container">
-			<a class="button" id="button--grabar">GRABAR</a>
 			<a class="button" id="button--comenzar">COMENZAR</a>
+			<a class="button" id="button--grabar">GRABAR</a>
 			<a class="button" id="button--finalizar">FINALIZAR</a>
 			<a class="button" id="button--subirGif">SUBIR GIFO</a>
 		</div>
@@ -253,7 +255,7 @@
 
 	<!-- Trending -->
 	<!-- !remover hidden -->
-	<section class="trending" id="trendingSection">
+	<section class="trending hidden" id="trendingSection">
 		<h2 class="trending__title">Trending GIFOS</h2>
 		<p class="trending__paragraph">Mira los últimos GIFOS de nuestra comunidad</p>
 
