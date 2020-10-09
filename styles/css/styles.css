@@ -808,16 +808,24 @@ body.darkMode .crearGif__text {
 }
 
 .crearGif .recording_video {
-  width: 80%;
-  height: 20rem;
+  min-width: 80%;
+  min-height: 20rem;
+  max-width: 80%;
+  max-height: 20rem;
+  z-index: 3000;
+}
+
+.crearGif .recorded_video {
+  width: 100%;
+  z-index: 3000;
 }
 
 .crearGif .overlay {
-  width: 80%;
-  height: 80%;
+  width: 66%;
+  height: 15rem;
   position: absolute;
-  top: 2rem;
-  left: 10%;
+  top: 2.3rem;
+  left: 5.78rem;
   background-color: rgba(87, 46, 229, 0.6);
   color: #fff;
   z-index: 90;
@@ -915,6 +923,26 @@ body.darkMode .crearGif .pagination .step {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 22px;
+}
+
+.crearGif .overlay__buttons {
+  width: 6.8rem;
+  padding: 4%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: 0;
+  right: 0;
+}
+
+.crearGif .overlay__buttons .btns {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }
 
 .crearGif .corner {
@@ -1207,5 +1235,21 @@ body.darkMode .gif__info {
 
 .removeMax:hover {
   background: url("/assets/icon-trash-hover.svg") center no-repeat;
+}
+
+.linkOverlay {
+  background: url("/assets/icon-link-normal.svg") center no-repeat;
+}
+
+.linkOverlay:hover {
+  background: url("/assets/icon-link-hover.svg") center no-repeat;
+}
+
+.downloadOverlay {
+  background: url("/assets/icon-download.svg") center no-repeat;
+}
+
+.downloadOverlay:hover {
+  background: url("/assets/icon-download-hover.svg") center no-repeat;
 }
 /*# sourceMappingURL=styles.css.map */

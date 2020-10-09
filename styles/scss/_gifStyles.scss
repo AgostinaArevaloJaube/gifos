@@ -238,3 +238,20 @@
 		background: url('/assets/icon-trash-hover.svg') center no-repeat;
 	}
 }
+
+.linkOverlay {
+	background: url('/assets/icon-link-normal.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-link-hover.svg') center no-repeat;
+	}	
+}
+
+.downloadOverlay {
+	background: url('/assets/icon-download.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-download-hover.svg') center
+			no-repeat;
+	}
+}

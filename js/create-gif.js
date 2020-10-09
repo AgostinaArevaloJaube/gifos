@@ -15,32 +15,28 @@ Pasitos desglosados:
 
 ? click en GRABAR
 	* Aparece botón FINALIZAR ----> LISTO
-	! * Aparece el timer
-		función que calcule el tiempo KE
-	! * Empieza a grabar
+	* Aparece el timer ----> LISTO
+	* Empieza a grabar ----> LISTO
 
 ? click en FINALIZAR
 	* Cambia a botón SUBIR GIFO ----> LISTO
 	* Cambia a STEP 3 ----> LISTO
 	* Apaprece REPETIR CAPTURA ----> LISTO
-	! * Aparece el gif YA GRABADO
+	* Aparece el gif YA GRABADO
 
 ? click en SUBIR GIFO
-	! * SUBIENDO GIFO 
+	* SUBIENDO GIFO 
 		* función que suba el gif y cambie esto? :
-		Aparece SOBRE EL VIDEO el overlay ---> FALTA CHEQUEAR
+		Aparece SOBRE EL VIDEO el overlay ----> LISTO
 
 	! * GIFO SUBIDO CON ESITO 
-		* 1. Cambia el texto e ícono:
-			$overlayStatusText.innerHTML = 'GIFO subido con éxito'
-			Cambia el ícono: $overlayStatusIcon.src = 'assets/check.svg'
-		* 2. Se envía a MIS GIFOS
-	
+		* 1. Cambia el texto e ícono ----> LISTO
+	!	* 2. Se envía a MIS GIFOS
 		* 3. Al overlay le aparecen los botones de descargar o copiar link?
 
 ? click en REPETIR CAPTURA
-	! * Vuelve al estado 2? Grabar?
-	! * Acá habría que resetear textos del bottón a comenzar
+	* Vuelve al estado 2? Grabar? ----> LISTO
+	* Acá habría que resetear textos del bottón a comenzar ----> LISTO
 
 */
 $buttonGrabar.style.display = 'none';
@@ -49,6 +45,15 @@ $buttonSubirGif.style.display = 'none';
 $overlay.style.display = 'none';
 
 let recorder;
+let blob;
+let form = new FormData();
+let myGifos = [];
+
+// seteo del timer
+let timer;
+let hours = '00';
+let minutes = '00';
+let seconds = '00';
 
 const getStreamAndRecord = async () => {
 	$crearGifTitle.innerHTML = `¿Nos das acceso <br> a tu cámara?`;
@@ -60,10 +65,10 @@ const getStreamAndRecord = async () => {
 		.getUserMedia({
 			audio: false,
 			video: {
-				height: { max: 640 }
+				height: { max: 480 }
 			}
 		})
-		.then((stream) => {
+		.then((mediaStreamObj) => {
 			$crearGifTitle.classList.add('hidden');
 			$crearGifText.classList.add('hidden');
 			$step1.classList.remove('step-active');
@@ -71,10 +76,10 @@ const getStreamAndRecord = async () => {
 			$buttonComenzar.style.display = 'none';
 			$buttonGrabar.style.display = 'block';
 			$video.classList.remove('hidden');
-			$video.srcObject = stream;
+			$video.srcObject = mediaStreamObj;
 			$video.play();
 
-			recorder = RecordRTC(stream, {
+			recorder = RecordRTC(mediaStreamObj, {
 				type: 'gif',
 				frameRate: 1,
 				quality: 10,
@@ -88,58 +93,150 @@ const getStreamAndRecord = async () => {
 		.catch((err) => console.log(err));
 };
 
-// Cuando clickea grabar, se ejecuta la cámara
+// Cuando clickea comenzar, se ejecuta la cámara y se setea la API
 $buttonComenzar.addEventListener('click', getStreamAndRecord);
 
 const createGifo = () => {
 	console.log('está grabando');
-
 	$buttonGrabar.style.display = 'none';
 	$buttonFinalizar.style.display = 'block';
 	$timer.classList.remove('hidden');
 	$repeatBtn.classList.add('hidden');
-	
 	recorder.startRecording();
-
+	timer = setInterval(timerActive, 1000);
 };
 
+// Cuando clickea en grabar, empieza la grabación pues
 $buttonGrabar.addEventListener('click', createGifo);
 
 const stopCreatingGif = () => {
-
+	$video.classList.add('hidden');
+	$recordedGifo.classList.remove('hidden');
 	recorder.stopRecording(() => {
-		$video.classList.add('hidden');
-		$recordedGifo.classList.remove('hidden');
+		blob = recorder.getBlob();
+		$recordedGifo.src = URL.createObjectURL(blob);
 
-		let blob = recorder.getBlob();
-        $recordedGifo.src = URL.createObjectURL(recorder.getBlob());
-		
+		form.append('file', recorder.getBlob(), 'myGif.gif');
+		console.log(form.get('file'));
 	});
 
 	$buttonFinalizar.style.display = 'none';
 	$buttonSubirGif.style.display = 'block';
 	$timer.classList.add('hidden');
 	$repeatBtn.classList.remove('hidden');
-}
 
+	// acá debería limpiar y volver a setear el cronómetro
+	clearInterval(timer);
+	hours = '00';
+	minutes = '00';
+	seconds = '00';
+	$timer.innerText = `${hours}:${minutes}:${seconds}`;
+};
+
+// Cuando clickea en finalizar
 $buttonFinalizar.addEventListener('click', stopCreatingGif);
 
-// función para subir a Giphy y almacenar el gif en Mis gifos
-const uploeadCreatedGif = () => {
+// TODO función para subir a Giphy y almacenar el gif en Mis gifos
+const uploeadCreatedGif = async () => {
 	$overlay.style.display = 'flex';
 	$step2.classList.remove('step-active');
 	$step3.classList.add('step-active');
+	$repeatBtn.classList.add('hidden');
+	$buttonSubirGif.style.visibility = 'hidden';
 
-	// acá falta cambiar el overlay cuando suba el gif con éxito
+	await fetch(`${uploadGifEndpoint}?api_key=${apiKey}`, {
+		method: 'POST',
+		body: form
+	})
+		.then((response) => response.json())
+		.then((myGif) => {
+			console.log(myGif.data.id);
+			$overlayStatusIcon.src = 'assets/check.svg';
+			$overlayStatusText.innerHTML = 'GIFO subido con éxito';
 
-}
+			let buttonsMyGif = document.createElement('div');
+			buttonsMyGif.classList.add('overlay__buttons');
+			buttonsMyGif.innerHTML = `<div class="btns downloadOverlay" onclick="downloadCreatedGif('${myGif.data.id}')"></div> 
+			<div class="btns linkOverlay" onclick="displayMisGifosSection(event)"></div>`;
+			$overlay.appendChild(buttonsMyGif);
 
+			myGifos.push(myGif);
+			console.log(myGifos);
+
+			localStorage.setItem('MyGifs', JSON.stringify(myGifos));
+		})
+		.catch((err) => {
+			console.error(err);
+		});
+};
 
 $buttonSubirGif.addEventListener('click', uploeadCreatedGif);
 
-// función para repetir
+// TODO función para repetir
+const repeatRecordingGif = (event) => {
+	event.preventDefault();
+	recorder.clearRecordedData();
+	console.log('New Recording: Started');
+	$step2.classList.add('step-active');
+	$repeatBtn.classList.add('hidden');
+	$buttonGrabar.style.display = 'block';
+	$buttonSubirGif.style.display = 'none';
+	$video.classList.remove('hidden');
+	$recordedGifo.classList.add('hidden');
 
-// $repeatBtn.addEventListener('click', función);
+	navigator.mediaDevices
+		.getUserMedia({
+			audio: false,
+			video: {
+				height: { max: 480 }
+			}
+		})
+		.then((mediaStreamObj) => {
+			$video.srcObject = mediaStreamObj;
+			$video.play();
 
+			recorder = RecordRTC(mediaStreamObj, {
+				type: 'gif',
+				frameRate: 1,
+				quality: 10,
+				width: 360,
+				hidden: 240,
+				onGifRecordingStarted: function () {
+					console.log('started');
+				}
+			});
+		})
+		.catch((err) => console.log(err));
+};
+$repeatBtn.addEventListener('click', repeatRecordingGif);
 
-// función para el timer??
+// TODO función para descargar el gif creado
+const downloadCreatedGif = async (myGifId) => {
+	let blob = await fetch(
+		`https://media.giphy.com/media/${myGifId}/giphy.gif`
+	).then((img) => img.blob());
+	invokeSaveAsDialog(blob, 'My-Gif.gif');
+};
+
+// TODO función para el timer
+function timerActive() {
+	seconds++;
+
+	if (seconds < 10) seconds = `0` + seconds;
+
+	if (seconds > 59) {
+		seconds = `00`;
+		minutes ++;
+
+		if (minutes < 10) minutes = `0` + minutes;
+	}
+
+	if (minutes > 59) {
+		minutes = `00`;
+		hours++;
+
+		if (hours < 10) hours = `0` + hours;
+	}
+
+	$timer.innerHTML = `${hours}:${minutes}:${seconds}`;
+}
