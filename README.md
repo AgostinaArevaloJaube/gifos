@@ -3,6 +3,8 @@
 ### Aplicación web interactiva para compartir GIFs animados
 <br>
 
+[Link a la demo](https://gifos-agostina.netlify.app/)
+
 #### Trabajo práctico cierre de bloque de Acámica.
 
 * Bloque 2: Javacript
