@@ -67,6 +67,70 @@ const displayFavoriteGifs = () => {
 
 $favoritosMenu.addEventListener('click', displayFavoriteSection);
 
+const displayMisGifosSection = (event) => {
+	event.preventDefault();
+	$misGifosSection.classList.remove('hidden');
+	$heroSection.classList.add('hidden');
+	$favSection.classList.add('hidden');
+	$createGifSection.classList.add('hidden');
+	$trendingSection.classList.remove('hidden');
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+	displayMiGifos();
+
+	if (arrMyGifos == 0 || arrMyGifos == null) {
+		$noGifContainer.classList.remove('hidden');
+		$misGifosContainer.classList.add('hidden');
+	} else {
+		$noGifContainer.classList.add('hidden');
+		$misGifosContainer.classList.remove('hidden');
+	}
+};
+$misGifosMenu.addEventListener('click', displayMisGifosSection);
+
+const displayMiGifos = () => {
+	$misGifosContainer.innerHTML = '';
+
+	arrMyGifos = JSON.parse(localStorage.getItem('MyGifs'));
+
+	console.log(arrMyGifos);
+	if (arrMyGifos == null) {
+		arrMyGifos = [];
+	} else {
+		for (let i = 0; i < arrMyGifos.length; i++) {
+			fetch(
+				`${getGifByIdEndpoint}?ids=${arrMyGifos[i]}&api_key=${apiKey}`
+			)
+				.then((response) => response.json())
+				.then((misGifosGiphy) => {
+					console.log(misGifosGiphy);
+
+					const gifContainer = document.createElement('div');
+					gifContainer.classList.add('gif__container');
+					gifContainer.innerHTML = `
+					<img class="gif" src="${misGifosGiphy.data[0].images.original.url}" alt="Gif Creado por el usuario">
+
+					<div class="gifActions">
+						<div class="gifActions__btn">
+							<div class="btn remove" onclick="removeMyGifos('${misGifosGiphy.data[0].images.original.url}')"></div>
+							<div class="btn download" onclick="downloadGif('${misGifosGiphy.data[0].images.original.url}','Gif')"></div>
+							<div class="btn maximize" onclick="maximizeFavoriteGif('${misGifosGiphy.data[0].images.original.url}','User','Gif')"></div>
+						</div>
+						<div class="gif__info">
+							<p class="gif_user">User</p>
+							<p class="gif_title">Gif</p>
+						</div>
+					</div>
+					`;
+					$misGifosContainer.appendChild(gifContainer);
+				})
+				.catch((err) => {
+					console.error(err);
+				});
+		}
+	}
+};
+
+
 // ---- Descargar ---- \\
 
 const downloadGif = async (url, title) => {
@@ -143,3 +207,9 @@ const removeGif = (gif) => {
 };
 
 // ---- Eliminar en Mis gifos ---- \\
+const removeMyGifos = (gif) => {
+	arrMyGifos.splice(gif, 1);
+	localStorage.setItem('MyGifs', JSON.stringify(arrMyGifos));
+	displayMisGifosSection(event)
+	closeMaximized();
+};

@@ -62,6 +62,11 @@ const $favSection = document.querySelector('#favorites-section');
 const $favContainer = document.querySelector('#fav-container');
 const $noFavsContainer = document.querySelector('#noFavs_container');
 
+// DOM Mis gifos
+const $misGifosSection = document.querySelector('#misGifosSection');
+const $misGifosContainer = document.querySelector('#misGifos-container');
+const $noGifContainer = document.querySelector('#noGif_container');
+
 // DOM create GIFOs
 const $createGifSection = document.querySelector('#createGifSection');
 const $crearGifTitle = document.querySelector('#crearGif_title')
@@ -84,5 +89,3 @@ const $recordedGifo = document.querySelector('#recorded_gifo');
 const $camera = document.querySelector('#camera');
 const $celuloide = document.querySelector('#celuloide');
 
-// DOM Mis Gifos
-const $misGifosSection = document.querySelector('#misGifosSection');
